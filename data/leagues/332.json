@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 332,
+    "season": 2025
+  },
+  "league": {
+    "id": 332,
+    "name": "Super Liga",
+    "country": "Slovakia",
+    "logo": "https://media.api-sports.io/football/leagues/332.png",
+    "flag": "https://media.api-sports.io/flags/sk.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-23T00:00:00+00:00"
+  },
+  "highlightTeams": [
+    "Slovan Bratislava"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "teamId": 656,
+      "teamName": "Slovan Bratislava",
+      "teamLogo": "https://media.api-sports.io/football/teams/656.png",
+      "points": 43,
+      "played": 21,
+      "goalsDiff": 13,
+      "form": "DLWWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 2,
+      "teamId": 2257,
+      "teamName": "Dunajska Streda",
+      "teamLogo": "https://media.api-sports.io/football/teams/2257.png",
+      "points": 42,
+      "played": 21,
+      "goalsDiff": 19,
+      "form": "WDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 3,
+      "teamId": 3554,
+      "teamName": "Žilina",
+      "teamLogo": "https://media.api-sports.io/football/teams/3554.png",
+      "points": 39,
+      "played": 21,
+      "goalsDiff": 18,
+      "form": "DDWLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 1120,
+      "teamName": "Spartak Trnava",
+      "teamLogo": "https://media.api-sports.io/football/teams/1120.png",
+      "points": 37,
+      "played": 21,
+      "goalsDiff": 11,
+      "form": "LDDWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 3548,
+      "teamName": "Podbrezová",
+      "teamLogo": "https://media.api-sports.io/football/teams/3548.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 14,
+      "form": "WWWLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 1,
+      "teamId": 656,
+      "teamName": "Slovan Bratislava",
+      "teamLogo": "https://media.api-sports.io/football/teams/656.png",
+      "points": 43,
+      "played": 21,
+      "goalsDiff": 13,
+      "form": "DLWWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": true,
+      "pointsToFirst": 0,
+      "pointsDeltaToComparison": 1,
+      "comparisonTeamName": "Dunajska Streda",
+      "summary": "Slovan Bratislava is clear by 1 points over Dunajska Streda."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 656,
+      "teamName": "Slovan Bratislava",
+      "teamLogo": "https://media.api-sports.io/football/teams/656.png",
+      "points": 43,
+      "played": 21,
+      "goalsDiff": 13,
+      "form": "DLWWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 2,
+      "teamId": 2257,
+      "teamName": "Dunajska Streda",
+      "teamLogo": "https://media.api-sports.io/football/teams/2257.png",
+      "points": 42,
+      "played": 21,
+      "goalsDiff": 19,
+      "form": "WDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 3,
+      "teamId": 3554,
+      "teamName": "Žilina",
+      "teamLogo": "https://media.api-sports.io/football/teams/3554.png",
+      "points": 39,
+      "played": 21,
+      "goalsDiff": 18,
+      "form": "DDWLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 1120,
+      "teamName": "Spartak Trnava",
+      "teamLogo": "https://media.api-sports.io/football/teams/1120.png",
+      "points": 37,
+      "played": 21,
+      "goalsDiff": 11,
+      "form": "LDDWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 3548,
+      "teamName": "Podbrezová",
+      "teamLogo": "https://media.api-sports.io/football/teams/3548.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 14,
+      "form": "WWWLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 6,
+      "teamId": 3552,
+      "teamName": "Zemplín Michalovce",
+      "teamLogo": "https://media.api-sports.io/football/teams/3552.png",
+      "points": 29,
+      "played": 21,
+      "goalsDiff": -2,
+      "form": "WLDWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 7,
+      "teamId": 3549,
+      "teamName": "Ružomberok",
+      "teamLogo": "https://media.api-sports.io/football/teams/3549.png",
+      "points": 24,
+      "played": 21,
+      "goalsDiff": -10,
+      "form": "DLWDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 8,
+      "teamId": 10535,
+      "teamName": "Komárno",
+      "teamLogo": "https://media.api-sports.io/football/teams/10535.png",
+      "points": 21,
+      "played": 21,
+      "goalsDiff": -10,
+      "form": "DDLLD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 9,
+      "teamId": 10534,
+      "teamName": "FK Košice",
+      "teamLogo": "https://media.api-sports.io/football/teams/10534.png",
+      "points": 21,
+      "played": 21,
+      "goalsDiff": -9,
+      "form": "DWWWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 10,
+      "teamId": 655,
+      "teamName": "AS Trencin",
+      "teamLogo": "https://media.api-sports.io/football/teams/655.png",
+      "points": 21,
+      "played": 21,
+      "goalsDiff": -20,
+      "form": "LWLDD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 11,
+      "teamId": 10550,
+      "teamName": "Tatran Prešov",
+      "teamLogo": "https://media.api-sports.io/football/teams/10550.png",
+      "points": 21,
+      "played": 21,
+      "goalsDiff": -10,
+      "form": "DLLLD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 12,
+      "teamId": 10542,
+      "teamName": "Skalica",
+      "teamLogo": "https://media.api-sports.io/football/teams/10542.png",
+      "points": 16,
+      "played": 21,
+      "goalsDiff": -14,
+      "form": "LWLLD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 218,
+    "season": 2025
+  },
+  "league": {
+    "id": 218,
+    "name": "Bundesliga",
+    "country": "Austria",
+    "logo": "https://media.api-sports.io/football/leagues/218.png",
+    "flag": "https://media.api-sports.io/flags/at.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-23T00:00:00+00:00"
+  },
+  "highlightTeams": [
+    "Red Bull Salzburg"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "teamId": 571,
+      "teamName": "Red Bull Salzburg",
+      "teamLogo": "https://media.api-sports.io/football/teams/571.png",
+      "points": 36,
+      "played": 20,
+      "goalsDiff": 17,
+      "form": "WDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 2,
+      "teamId": 637,
+      "teamName": "Sturm Graz",
+      "teamLogo": "https://media.api-sports.io/football/teams/637.png",
+      "points": 34,
+      "played": 20,
+      "goalsDiff": 5,
+      "form": "WLWLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 3,
+      "teamId": 1026,
+      "teamName": "Lask Linz",
+      "teamLogo": "https://media.api-sports.io/football/teams/1026.png",
+      "points": 33,
+      "played": 20,
+      "goalsDiff": 0,
+      "form": "LDWWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 601,
+      "teamName": "Austria Vienna",
+      "teamLogo": "https://media.api-sports.io/football/teams/601.png",
+      "points": 32,
+      "played": 20,
+      "goalsDiff": 2,
+      "form": "LWWWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 1072,
+      "teamName": "TSV Hartberg",
+      "teamLogo": "https://media.api-sports.io/football/teams/1072.png",
+      "points": 31,
+      "played": 20,
+      "goalsDiff": 5,
+      "form": "WDDWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 1,
+      "teamId": 571,
+      "teamName": "Red Bull Salzburg",
+      "teamLogo": "https://media.api-sports.io/football/teams/571.png",
+      "points": 36,
+      "played": 20,
+      "goalsDiff": 17,
+      "form": "WDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": true,
+      "pointsToFirst": 0,
+      "pointsDeltaToComparison": 2,
+      "comparisonTeamName": "Sturm Graz",
+      "summary": "Red Bull Salzburg is clear by 2 points over Sturm Graz."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 571,
+      "teamName": "Red Bull Salzburg",
+      "teamLogo": "https://media.api-sports.io/football/teams/571.png",
+      "points": 36,
+      "played": 20,
+      "goalsDiff": 17,
+      "form": "WDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 2,
+      "teamId": 637,
+      "teamName": "Sturm Graz",
+      "teamLogo": "https://media.api-sports.io/football/teams/637.png",
+      "points": 34,
+      "played": 20,
+      "goalsDiff": 5,
+      "form": "WLWLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 3,
+      "teamId": 1026,
+      "teamName": "Lask Linz",
+      "teamLogo": "https://media.api-sports.io/football/teams/1026.png",
+      "points": 33,
+      "played": 20,
+      "goalsDiff": 0,
+      "form": "LDWWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 601,
+      "teamName": "Austria Vienna",
+      "teamLogo": "https://media.api-sports.io/football/teams/601.png",
+      "points": 32,
+      "played": 20,
+      "goalsDiff": 2,
+      "form": "LWWWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 1072,
+      "teamName": "TSV Hartberg",
+      "teamLogo": "https://media.api-sports.io/football/teams/1072.png",
+      "points": 31,
+      "played": 20,
+      "goalsDiff": 5,
+      "form": "WDDWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 6,
+      "teamId": 781,
+      "teamName": "Rapid Vienna",
+      "teamLogo": "https://media.api-sports.io/football/teams/781.png",
+      "points": 29,
+      "played": 20,
+      "goalsDiff": 0,
+      "form": "WLDDL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 7,
+      "teamId": 1028,
+      "teamName": "Ried",
+      "teamLogo": "https://media.api-sports.io/football/teams/1028.png",
+      "points": 28,
+      "played": 20,
+      "goalsDiff": -1,
+      "form": "DDLWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 8,
+      "teamId": 618,
+      "teamName": "SCR Altach",
+      "teamLogo": "https://media.api-sports.io/football/teams/618.png",
+      "points": 28,
+      "played": 20,
+      "goalsDiff": 1,
+      "form": "WDWLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 9,
+      "teamId": 1025,
+      "teamName": "Wolfsberger AC",
+      "teamLogo": "https://media.api-sports.io/football/teams/1025.png",
+      "points": 25,
+      "played": 20,
+      "goalsDiff": 1,
+      "form": "LLDLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 10,
+      "teamId": 1398,
+      "teamName": "WSG Wattens",
+      "teamLogo": "https://media.api-sports.io/football/teams/1398.png",
+      "points": 25,
+      "played": 20,
+      "goalsDiff": -2,
+      "form": "DWLLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 11,
+      "teamId": 4256,
+      "teamName": "Grazer AK",
+      "teamLogo": "https://media.api-sports.io/football/teams/4256.png",
+      "points": 17,
+      "played": 20,
+      "goalsDiff": -13,
+      "form": "LDDLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 12,
+      "teamId": 1394,
+      "teamName": "FC BW Linz",
+      "teamLogo": "https://media.api-sports.io/football/teams/1394.png",
+      "points": 14,
+      "played": 20,
+      "goalsDiff": -15,
+      "form": "LWLDL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ]
+}

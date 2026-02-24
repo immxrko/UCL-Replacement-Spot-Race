@@ -1,0 +1,295 @@
+{
+  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 333,
+    "season": 2025
+  },
+  "league": {
+    "id": 333,
+    "name": "Premier League",
+    "country": "Ukraine",
+    "logo": "https://media.api-sports.io/football/leagues/333.png",
+    "flag": "https://media.api-sports.io/flags/ua.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-23T00:00:00+00:00"
+  },
+  "highlightTeams": [
+    "Shakhtar Donetsk"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "teamId": 17161,
+      "teamName": "LNZ Cherkasy",
+      "teamLogo": "https://media.api-sports.io/football/teams/17161.png",
+      "points": 38,
+      "played": 17,
+      "goalsDiff": 14,
+      "form": "WWWWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 550,
+      "teamName": "Shakhtar Donetsk",
+      "teamLogo": "https://media.api-sports.io/football/teams/550.png",
+      "points": 38,
+      "played": 17,
+      "goalsDiff": 33,
+      "form": "WWDDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 6496,
+      "teamName": "Polessya",
+      "teamLogo": "https://media.api-sports.io/football/teams/6496.png",
+      "points": 33,
+      "played": 17,
+      "goalsDiff": 17,
+      "form": "WWLWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 572,
+      "teamName": "Dynamo Kyiv",
+      "teamLogo": "https://media.api-sports.io/football/teams/572.png",
+      "points": 29,
+      "played": 17,
+      "goalsDiff": 15,
+      "form": "WWWLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 6489,
+      "teamName": "Kryvbas KR",
+      "teamLogo": "https://media.api-sports.io/football/teams/6489.png",
+      "points": 27,
+      "played": 17,
+      "goalsDiff": 4,
+      "form": "DDWDD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 2,
+      "teamId": 550,
+      "teamName": "Shakhtar Donetsk",
+      "teamLogo": "https://media.api-sports.io/football/teams/550.png",
+      "points": 38,
+      "played": 17,
+      "goalsDiff": 33,
+      "form": "WWDDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": false,
+      "pointsToFirst": 0,
+      "pointsDeltaToComparison": 0,
+      "comparisonTeamName": "LNZ Cherkasy",
+      "summary": "Shakhtar Donetsk is 0 points behind LNZ Cherkasy."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 17161,
+      "teamName": "LNZ Cherkasy",
+      "teamLogo": "https://media.api-sports.io/football/teams/17161.png",
+      "points": 38,
+      "played": 17,
+      "goalsDiff": 14,
+      "form": "WWWWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 550,
+      "teamName": "Shakhtar Donetsk",
+      "teamLogo": "https://media.api-sports.io/football/teams/550.png",
+      "points": 38,
+      "played": 17,
+      "goalsDiff": 33,
+      "form": "WWDDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 6496,
+      "teamName": "Polessya",
+      "teamLogo": "https://media.api-sports.io/football/teams/6496.png",
+      "points": 33,
+      "played": 17,
+      "goalsDiff": 17,
+      "form": "WWLWD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 572,
+      "teamName": "Dynamo Kyiv",
+      "teamLogo": "https://media.api-sports.io/football/teams/572.png",
+      "points": 29,
+      "played": 17,
+      "goalsDiff": 15,
+      "form": "WWWLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 6489,
+      "teamName": "Kryvbas KR",
+      "teamLogo": "https://media.api-sports.io/football/teams/6489.png",
+      "points": 27,
+      "played": 17,
+      "goalsDiff": 4,
+      "form": "DDWDD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 6,
+      "teamId": 3628,
+      "teamName": "Metalist 1925 Kharkiv",
+      "teamLogo": "https://media.api-sports.io/football/teams/3628.png",
+      "points": 25,
+      "played": 16,
+      "goalsDiff": 6,
+      "form": "DWDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 7,
+      "teamId": 3627,
+      "teamName": "Kolos Kovalivka",
+      "teamLogo": "https://media.api-sports.io/football/teams/3627.png",
+      "points": 25,
+      "played": 17,
+      "goalsDiff": 2,
+      "form": "LDDDW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 8,
+      "teamId": 599,
+      "teamName": "Zorya Luhansk",
+      "teamLogo": "https://media.api-sports.io/football/teams/599.png",
+      "points": 24,
+      "played": 17,
+      "goalsDiff": 1,
+      "form": "DLWLD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 9,
+      "teamId": 6501,
+      "teamName": "Veres Rivne",
+      "teamLogo": "https://media.api-sports.io/football/teams/6501.png",
+      "points": 21,
+      "played": 16,
+      "goalsDiff": -3,
+      "form": "WLDD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 10,
+      "teamId": 3617,
+      "teamName": "Karpaty",
+      "teamLogo": "https://media.api-sports.io/football/teams/3617.png",
+      "points": 19,
+      "played": 17,
+      "goalsDiff": -4,
+      "form": "LLLDL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 11,
+      "teamId": 3632,
+      "teamName": "Ruh Lviv",
+      "teamLogo": "https://media.api-sports.io/football/teams/3632.png",
+      "points": 19,
+      "played": 17,
+      "goalsDiff": -9,
+      "form": "LWWWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 12,
+      "teamId": 3630,
+      "teamName": "Obolon'-Brovar",
+      "teamLogo": "https://media.api-sports.io/football/teams/3630.png",
+      "points": 17,
+      "played": 16,
+      "goalsDiff": -15,
+      "form": "LLDLW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 13,
+      "teamId": 21953,
+      "teamName": "Kudrivka",
+      "teamLogo": "https://media.api-sports.io/football/teams/21953.png",
+      "points": 16,
+      "played": 17,
+      "goalsDiff": -11,
+      "form": "DDLLL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 14,
+      "teamId": 14434,
+      "teamName": "Epitsentr Dunayivtsi",
+      "teamLogo": "https://media.api-sports.io/football/teams/14434.png",
+      "points": 14,
+      "played": 17,
+      "goalsDiff": -11,
+      "form": "LLWDD",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 15,
+      "teamId": 3619,
+      "teamName": "Oleksandria",
+      "teamLogo": "https://media.api-sports.io/football/teams/3619.png",
+      "points": 11,
+      "played": 16,
+      "goalsDiff": -14,
+      "form": "DLLDL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 16,
+      "teamId": 17165,
+      "teamName": "SK Poltava",
+      "teamLogo": "https://media.api-sports.io/football/teams/17165.png",
+      "points": 9,
+      "played": 17,
+      "goalsDiff": -25,
+      "form": "LLLWL",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ]
+}

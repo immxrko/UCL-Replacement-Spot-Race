@@ -1,0 +1,265 @@
+{
+  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 119,
+    "season": 2025
+  },
+  "league": {
+    "id": 119,
+    "name": "Superliga",
+    "country": "Denmark",
+    "logo": "https://media.api-sports.io/football/leagues/119.png",
+    "flag": "https://media.api-sports.io/flags/dk.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "highlightTeams": [
+    "FC Copenhagen",
+    "FC Midtjylland"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "teamId": 406,
+      "teamName": "Aarhus",
+      "teamLogo": "https://media.api-sports.io/football/teams/406.png",
+      "points": 47,
+      "played": 21,
+      "goalsDiff": 22,
+      "form": "WDWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 397,
+      "teamName": "FC Midtjylland",
+      "teamLogo": "https://media.api-sports.io/football/teams/397.png",
+      "points": 45,
+      "played": 21,
+      "goalsDiff": 35,
+      "form": "WWWDW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 407,
+      "teamName": "Brondby",
+      "teamLogo": "https://media.api-sports.io/football/teams/407.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 9,
+      "form": "DLDLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 396,
+      "teamName": "Sonderjyske",
+      "teamLogo": "https://media.api-sports.io/football/teams/396.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 5,
+      "form": "DWLWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 398,
+      "teamName": "FC Nordsjaelland",
+      "teamLogo": "https://media.api-sports.io/football/teams/398.png",
+      "points": 31,
+      "played": 21,
+      "goalsDiff": -1,
+      "form": "DWWWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 2,
+      "teamId": 397,
+      "teamName": "FC Midtjylland",
+      "teamLogo": "https://media.api-sports.io/football/teams/397.png",
+      "points": 45,
+      "played": 21,
+      "goalsDiff": 35,
+      "form": "WWWDW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": false,
+      "pointsToFirst": 2,
+      "pointsDeltaToComparison": -2,
+      "comparisonTeamName": "Aarhus",
+      "summary": "FC Midtjylland is 2 points behind Aarhus."
+    },
+    {
+      "rank": 7,
+      "teamId": 400,
+      "teamName": "FC Copenhagen",
+      "teamLogo": "https://media.api-sports.io/football/teams/400.png",
+      "points": 29,
+      "played": 21,
+      "goalsDiff": 2,
+      "form": "DLLLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": false,
+      "pointsToFirst": 18,
+      "pointsDeltaToComparison": -18,
+      "comparisonTeamName": "Aarhus",
+      "summary": "FC Copenhagen is 18 points behind Aarhus."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 406,
+      "teamName": "Aarhus",
+      "teamLogo": "https://media.api-sports.io/football/teams/406.png",
+      "points": 47,
+      "played": 21,
+      "goalsDiff": 22,
+      "form": "WDWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 397,
+      "teamName": "FC Midtjylland",
+      "teamLogo": "https://media.api-sports.io/football/teams/397.png",
+      "points": 45,
+      "played": 21,
+      "goalsDiff": 35,
+      "form": "WWWDW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 407,
+      "teamName": "Brondby",
+      "teamLogo": "https://media.api-sports.io/football/teams/407.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 9,
+      "form": "DLDLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 396,
+      "teamName": "Sonderjyske",
+      "teamLogo": "https://media.api-sports.io/football/teams/396.png",
+      "points": 33,
+      "played": 21,
+      "goalsDiff": 5,
+      "form": "DWLWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 398,
+      "teamName": "FC Nordsjaelland",
+      "teamLogo": "https://media.api-sports.io/football/teams/398.png",
+      "points": 31,
+      "played": 21,
+      "goalsDiff": -1,
+      "form": "DWWWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 6,
+      "teamId": 2070,
+      "teamName": "Viborg",
+      "teamLogo": "https://media.api-sports.io/football/teams/2070.png",
+      "points": 30,
+      "played": 21,
+      "goalsDiff": 1,
+      "form": "LWWDD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 7,
+      "teamId": 400,
+      "teamName": "FC Copenhagen",
+      "teamLogo": "https://media.api-sports.io/football/teams/400.png",
+      "points": 29,
+      "played": 21,
+      "goalsDiff": 2,
+      "form": "DLLLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 8,
+      "teamId": 405,
+      "teamName": "Odense",
+      "teamLogo": "https://media.api-sports.io/football/teams/405.png",
+      "points": 27,
+      "played": 21,
+      "goalsDiff": -9,
+      "form": "DLLWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 9,
+      "teamId": 401,
+      "teamName": "Randers FC",
+      "teamLogo": "https://media.api-sports.io/football/teams/401.png",
+      "points": 23,
+      "played": 21,
+      "goalsDiff": -6,
+      "form": "LWDLD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 10,
+      "teamId": 2061,
+      "teamName": "FC Fredericia",
+      "teamLogo": "https://media.api-sports.io/football/teams/2061.png",
+      "points": 21,
+      "played": 21,
+      "goalsDiff": -20,
+      "form": "WDWLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 11,
+      "teamId": 2073,
+      "teamName": "Silkeborg",
+      "teamLogo": "https://media.api-sports.io/football/teams/2073.png",
+      "points": 19,
+      "played": 21,
+      "goalsDiff": -20,
+      "form": "LLLLD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 12,
+      "teamId": 395,
+      "teamName": "Vejle",
+      "teamLogo": "https://media.api-sports.io/football/teams/395.png",
+      "points": 14,
+      "played": 21,
+      "goalsDiff": -18,
+      "form": "DLLWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 179,
+    "season": 2025
+  },
+  "league": {
+    "id": 179,
+    "name": "Premiership",
+    "country": "Scotland",
+    "logo": "https://media.api-sports.io/football/leagues/179.png",
+    "flag": "https://media.api-sports.io/flags/gb-sct.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "highlightTeams": [
+    "Rangers",
+    "Celtic"
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "teamId": 254,
+      "teamName": "Heart Of Midlothian",
+      "teamLogo": "https://media.api-sports.io/football/teams/254.png",
+      "points": 60,
+      "played": 28,
+      "goalsDiff": 27,
+      "form": "WLWLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 257,
+      "teamName": "Rangers",
+      "teamLogo": "https://media.api-sports.io/football/teams/257.png",
+      "points": 56,
+      "played": 28,
+      "goalsDiff": 26,
+      "form": "DWDWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 247,
+      "teamName": "Celtic",
+      "teamLogo": "https://media.api-sports.io/football/teams/247.png",
+      "points": 54,
+      "played": 27,
+      "goalsDiff": 21,
+      "form": "LWWWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 4,
+      "teamId": 256,
+      "teamName": "Motherwell",
+      "teamLogo": "https://media.api-sports.io/football/teams/256.png",
+      "points": 50,
+      "played": 27,
+      "goalsDiff": 27,
+      "form": "WWDWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 249,
+      "teamName": "Hibernian",
+      "teamLogo": "https://media.api-sports.io/football/teams/249.png",
+      "points": 45,
+      "played": 28,
+      "goalsDiff": 13,
+      "form": "WWLWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 2,
+      "teamId": 257,
+      "teamName": "Rangers",
+      "teamLogo": "https://media.api-sports.io/football/teams/257.png",
+      "points": 56,
+      "played": 28,
+      "goalsDiff": 26,
+      "form": "DWDWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": false,
+      "pointsToFirst": 4,
+      "pointsDeltaToComparison": -4,
+      "comparisonTeamName": "Heart Of Midlothian",
+      "summary": "Rangers is 4 points behind Heart Of Midlothian."
+    },
+    {
+      "rank": 3,
+      "teamId": 247,
+      "teamName": "Celtic",
+      "teamLogo": "https://media.api-sports.io/football/teams/247.png",
+      "points": 54,
+      "played": 27,
+      "goalsDiff": 21,
+      "form": "LWWWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": false,
+      "pointsToFirst": 6,
+      "pointsDeltaToComparison": -6,
+      "comparisonTeamName": "Heart Of Midlothian",
+      "summary": "Celtic is 6 points behind Heart Of Midlothian."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 254,
+      "teamName": "Heart Of Midlothian",
+      "teamLogo": "https://media.api-sports.io/football/teams/254.png",
+      "points": 60,
+      "played": 28,
+      "goalsDiff": 27,
+      "form": "WLWLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 2,
+      "teamId": 257,
+      "teamName": "Rangers",
+      "teamLogo": "https://media.api-sports.io/football/teams/257.png",
+      "points": 56,
+      "played": 28,
+      "goalsDiff": 26,
+      "form": "DWDWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 3,
+      "teamId": 247,
+      "teamName": "Celtic",
+      "teamLogo": "https://media.api-sports.io/football/teams/247.png",
+      "points": 54,
+      "played": 27,
+      "goalsDiff": 21,
+      "form": "LWWWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 4,
+      "teamId": 256,
+      "teamName": "Motherwell",
+      "teamLogo": "https://media.api-sports.io/football/teams/256.png",
+      "points": 50,
+      "played": 27,
+      "goalsDiff": 27,
+      "form": "WWDWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 249,
+      "teamName": "Hibernian",
+      "teamLogo": "https://media.api-sports.io/football/teams/249.png",
+      "points": 45,
+      "played": 28,
+      "goalsDiff": 13,
+      "form": "WWLWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 6,
+      "teamId": 1389,
+      "teamName": "Falkirk",
+      "teamLogo": "https://media.api-sports.io/football/teams/1389.png",
+      "points": 39,
+      "played": 28,
+      "goalsDiff": -4,
+      "form": "LLWWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 7,
+      "teamId": 1386,
+      "teamName": "Dundee Utd",
+      "teamLogo": "https://media.api-sports.io/football/teams/1386.png",
+      "points": 29,
+      "played": 26,
+      "goalsDiff": -9,
+      "form": "DWLLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 8,
+      "teamId": 252,
+      "teamName": "Aberdeen",
+      "teamLogo": "https://media.api-sports.io/football/teams/252.png",
+      "points": 28,
+      "played": 26,
+      "goalsDiff": -10,
+      "form": "LLLWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 9,
+      "teamId": 253,
+      "teamName": "Dundee",
+      "teamLogo": "https://media.api-sports.io/football/teams/253.png",
+      "points": 27,
+      "played": 27,
+      "goalsDiff": -18,
+      "form": "WDLDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 10,
+      "teamId": 251,
+      "teamName": "ST Mirren",
+      "teamLogo": "https://media.api-sports.io/football/teams/251.png",
+      "points": 23,
+      "played": 27,
+      "goalsDiff": -21,
+      "form": "LLLWD",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 11,
+      "teamId": 250,
+      "teamName": "Kilmarnock",
+      "teamLogo": "https://media.api-sports.io/football/teams/250.png",
+      "points": 21,
+      "played": 28,
+      "goalsDiff": -24,
+      "form": "DLWLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 12,
+      "teamId": 255,
+      "teamName": "Livingston",
+      "teamLogo": "https://media.api-sports.io/football/teams/255.png",
+      "points": 13,
+      "played": 28,
+      "goalsDiff": -28,
+      "form": "DDLLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ]
+}

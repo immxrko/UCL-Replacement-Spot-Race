@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T14:01:09.235Z",
+  "generatedAt": "2026-02-24T17:28:12.857Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 286,
@@ -14,47 +14,10 @@
     "season": 2025,
     "updatedAt": "2026-02-24T00:00:00+00:00"
   },
-  "focusTeamName": "FK Crvena Zvezda",
-  "focusTeam": {
-    "rank": 1,
-    "teamId": 598,
-    "teamName": "FK Crvena Zvezda",
-    "teamLogo": "https://media.api-sports.io/football/teams/598.png",
-    "points": 57,
-    "played": 24,
-    "goalsDiff": 53,
-    "form": "WWWWW",
-    "updatedAt": "2026-02-24T00:00:00+00:00"
-  },
-  "leaderTeam": {
-    "rank": 1,
-    "teamId": 598,
-    "teamName": "FK Crvena Zvezda",
-    "teamLogo": "https://media.api-sports.io/football/teams/598.png",
-    "points": 57,
-    "played": 24,
-    "goalsDiff": 53,
-    "form": "WWWWW",
-    "updatedAt": "2026-02-24T00:00:00+00:00"
-  },
-  "comparisonTeam": {
-    "rank": 2,
-    "teamId": 573,
-    "teamName": "FK Partizan",
-    "teamLogo": "https://media.api-sports.io/football/teams/573.png",
-    "points": 53,
-    "played": 24,
-    "goalsDiff": 25,
-    "form": "LWWDL",
-    "updatedAt": "2026-02-24T00:00:00+00:00"
-  },
-  "analysis": {
-    "focusIsFirst": true,
-    "pointsToFirst": 0,
-    "pointsDeltaToComparison": 4,
-    "summary": "FK Crvena Zvezda is clear by 4 points over FK Partizan."
-  },
-  "standings": [
+  "highlightTeams": [
+    "FK Crvena Zvezda"
+  ],
+  "top5": [
     {
       "rank": 1,
       "teamId": 598,
@@ -64,7 +27,8 @@
       "played": 24,
       "goalsDiff": 53,
       "form": "WWWWW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
     },
     {
       "rank": 2,
@@ -75,7 +39,8 @@
       "played": 24,
       "goalsDiff": 25,
       "form": "LWWDL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 3,
@@ -86,7 +51,8 @@
       "played": 24,
       "goalsDiff": 20,
       "form": "LWWWW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 4,
@@ -97,7 +63,8 @@
       "played": 24,
       "goalsDiff": 0,
       "form": "WWLDL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 5,
@@ -108,7 +75,89 @@
       "played": 24,
       "goalsDiff": 3,
       "form": "DLWWL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    }
+  ],
+  "highlightedTeams": [
+    {
+      "rank": 1,
+      "teamId": 598,
+      "teamName": "FK Crvena Zvezda",
+      "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+      "points": 57,
+      "played": 24,
+      "goalsDiff": 53,
+      "form": "WWWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true,
+      "focusIsFirst": true,
+      "pointsToFirst": 0,
+      "pointsDeltaToComparison": 4,
+      "comparisonTeamName": "FK Partizan",
+      "summary": "FK Crvena Zvezda is clear by 4 points over FK Partizan."
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 598,
+      "teamName": "FK Crvena Zvezda",
+      "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+      "points": 57,
+      "played": 24,
+      "goalsDiff": 53,
+      "form": "WWWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": true
+    },
+    {
+      "rank": 2,
+      "teamId": 573,
+      "teamName": "FK Partizan",
+      "teamLogo": "https://media.api-sports.io/football/teams/573.png",
+      "points": 53,
+      "played": 24,
+      "goalsDiff": 25,
+      "form": "LWWDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 3,
+      "teamId": 702,
+      "teamName": "Vojvodina",
+      "teamLogo": "https://media.api-sports.io/football/teams/702.png",
+      "points": 49,
+      "played": 24,
+      "goalsDiff": 20,
+      "form": "LWWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 4,
+      "teamId": 2643,
+      "teamName": "Novi Pazar",
+      "teamLogo": "https://media.api-sports.io/football/teams/2643.png",
+      "points": 39,
+      "played": 24,
+      "goalsDiff": 0,
+      "form": "WWLDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
+    },
+    {
+      "rank": 5,
+      "teamId": 12360,
+      "teamName": "Železničar Pančevo",
+      "teamLogo": "https://media.api-sports.io/football/teams/12360.png",
+      "points": 38,
+      "played": 24,
+      "goalsDiff": 3,
+      "form": "DLWWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 6,
@@ -119,7 +168,8 @@
       "played": 24,
       "goalsDiff": 1,
       "form": "WDLLW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 7,
@@ -130,7 +180,8 @@
       "played": 24,
       "goalsDiff": -2,
       "form": "DDLWW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 8,
@@ -141,7 +192,8 @@
       "played": 24,
       "goalsDiff": -3,
       "form": "DLLLW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 9,
@@ -152,7 +204,8 @@
       "played": 24,
       "goalsDiff": -2,
       "form": "DLWDL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 10,
@@ -163,7 +216,8 @@
       "played": 24,
       "goalsDiff": -1,
       "form": "WWWDW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 11,
@@ -174,7 +228,8 @@
       "played": 24,
       "goalsDiff": -5,
       "form": "DWDLW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 12,
@@ -185,7 +240,8 @@
       "played": 24,
       "goalsDiff": -16,
       "form": "LWWLW",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 13,
@@ -196,7 +252,8 @@
       "played": 24,
       "goalsDiff": -16,
       "form": "DLLDL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 14,
@@ -207,7 +264,8 @@
       "played": 24,
       "goalsDiff": -10,
       "form": "DLDWL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 15,
@@ -218,7 +276,8 @@
       "played": 24,
       "goalsDiff": -18,
       "form": "DLLDL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     },
     {
       "rank": 16,
@@ -229,7 +288,8 @@
       "played": 24,
       "goalsDiff": -29,
       "form": "LLLLL",
-      "updatedAt": "2026-02-24T00:00:00+00:00"
+      "updatedAt": "2026-02-24T00:00:00+00:00",
+      "isHighlighted": false
     }
   ]
 }
