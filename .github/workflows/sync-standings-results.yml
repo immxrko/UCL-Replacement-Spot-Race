@@ -1,0 +1,36 @@
+name: Sync Standings And Results
+
+on:
+  schedule:
+    - cron: "59 23 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync API data to MongoDB
+        run: npm run sync:data
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_FOOTBALL_HOST: v3.football.api-sports.io
+          API_BASE_URL: https://v3.football.api-sports.io
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_DB: ${{ vars.MONGODB_DB }}
+          LEAGUE_ID: "286"
+          SEASON: "2025"
+          RESULTS_LIMIT: "50"
+          RESULTS_STATUS: "FT"
