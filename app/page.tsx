@@ -1,6 +1,7 @@
 import { StandingsSnapshot } from "@/types/standings";
 
-const DATA_REPO_OWNER = process.env.DATA_REPO_OWNER ?? "markocvejic";
+const DATA_URL = process.env.DATA_URL;
+const DATA_REPO_OWNER = process.env.DATA_REPO_OWNER ?? "immxrko";
 const DATA_REPO_NAME = process.env.DATA_REPO_NAME ?? "UCL-Replacement-Spot-Race";
 const DATA_BRANCH = process.env.DATA_BRANCH ?? "data";
 const DATA_FILE_PATH = process.env.DATA_FILE_PATH ?? "data/standings.json";
@@ -11,6 +12,7 @@ const formatGap = (value: number) => {
 };
 
 const getDataUrl = () =>
+  DATA_URL ??
   `https://raw.githubusercontent.com/${DATA_REPO_OWNER}/${DATA_REPO_NAME}/${DATA_BRANCH}/${DATA_FILE_PATH}`;
 
 const getSnapshot = async (): Promise<StandingsSnapshot> => {

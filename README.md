@@ -58,6 +58,7 @@ The page fetches this raw GitHub URL at runtime:
 `https://raw.githubusercontent.com/<DATA_REPO_OWNER>/<DATA_REPO_NAME>/<DATA_BRANCH>/<DATA_FILE_PATH>`
 
 Set runtime env vars if needed:
+- `DATA_URL` (full URL override, takes precedence)
 - `DATA_REPO_OWNER`
 - `DATA_REPO_NAME`
 - `DATA_BRANCH`
