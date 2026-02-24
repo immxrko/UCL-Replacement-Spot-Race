@@ -1,0 +1,235 @@
+{
+  "generatedAt": "2026-02-24T14:00:48.751Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/standings",
+    "leagueId": 286,
+    "season": 2025
+  },
+  "league": {
+    "id": 286,
+    "name": "Super Liga",
+    "country": "Serbia",
+    "logo": "https://media.api-sports.io/football/leagues/286.png",
+    "flag": "https://media.api-sports.io/flags/rs.svg",
+    "season": 2025,
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "focusTeamName": "FK Crvena Zvezda",
+  "focusTeam": {
+    "rank": 1,
+    "teamId": 598,
+    "teamName": "FK Crvena Zvezda",
+    "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+    "points": 57,
+    "played": 24,
+    "goalsDiff": 53,
+    "form": "WWWWW",
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "leaderTeam": {
+    "rank": 1,
+    "teamId": 598,
+    "teamName": "FK Crvena Zvezda",
+    "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+    "points": 57,
+    "played": 24,
+    "goalsDiff": 53,
+    "form": "WWWWW",
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "comparisonTeam": {
+    "rank": 2,
+    "teamId": 573,
+    "teamName": "FK Partizan",
+    "teamLogo": "https://media.api-sports.io/football/teams/573.png",
+    "points": 53,
+    "played": 24,
+    "goalsDiff": 25,
+    "form": "LWWDL",
+    "updatedAt": "2026-02-24T00:00:00+00:00"
+  },
+  "analysis": {
+    "focusIsFirst": true,
+    "pointsToFirst": 0,
+    "pointsDeltaToComparison": 4,
+    "summary": "FK Crvena Zvezda is clear by 4 points over FK Partizan."
+  },
+  "standings": [
+    {
+      "rank": 1,
+      "teamId": 598,
+      "teamName": "FK Crvena Zvezda",
+      "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+      "points": 57,
+      "played": 24,
+      "goalsDiff": 53,
+      "form": "WWWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 2,
+      "teamId": 573,
+      "teamName": "FK Partizan",
+      "teamLogo": "https://media.api-sports.io/football/teams/573.png",
+      "points": 53,
+      "played": 24,
+      "goalsDiff": 25,
+      "form": "LWWDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 3,
+      "teamId": 702,
+      "teamName": "Vojvodina",
+      "teamLogo": "https://media.api-sports.io/football/teams/702.png",
+      "points": 49,
+      "played": 24,
+      "goalsDiff": 20,
+      "form": "LWWWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 4,
+      "teamId": 2643,
+      "teamName": "Novi Pazar",
+      "teamLogo": "https://media.api-sports.io/football/teams/2643.png",
+      "points": 39,
+      "played": 24,
+      "goalsDiff": 0,
+      "form": "WWLDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 5,
+      "teamId": 12360,
+      "teamName": "Železničar Pančevo",
+      "teamLogo": "https://media.api-sports.io/football/teams/12360.png",
+      "points": 38,
+      "played": 24,
+      "goalsDiff": 3,
+      "form": "DLWWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 6,
+      "teamId": 2657,
+      "teamName": "Radnik Surdulica",
+      "teamLogo": "https://media.api-sports.io/football/teams/2657.png",
+      "points": 32,
+      "played": 24,
+      "goalsDiff": 1,
+      "form": "WDLLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 7,
+      "teamId": 2644,
+      "teamName": "Radnicki 1923",
+      "teamLogo": "https://media.api-sports.io/football/teams/2644.png",
+      "points": 32,
+      "played": 24,
+      "goalsDiff": -2,
+      "form": "DDLWW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 8,
+      "teamId": 2656,
+      "teamName": "Cukaricki",
+      "teamLogo": "https://media.api-sports.io/football/teams/2656.png",
+      "points": 31,
+      "played": 24,
+      "goalsDiff": -3,
+      "form": "DLLLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 9,
+      "teamId": 2633,
+      "teamName": "OFK Beograd",
+      "teamLogo": "https://media.api-sports.io/football/teams/2633.png",
+      "points": 30,
+      "played": 24,
+      "goalsDiff": -2,
+      "form": "DLWDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 10,
+      "teamId": 2254,
+      "teamName": "Radnicki NIS",
+      "teamLogo": "https://media.api-sports.io/football/teams/2254.png",
+      "points": 29,
+      "played": 24,
+      "goalsDiff": -1,
+      "form": "WWWDW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 11,
+      "teamId": 2646,
+      "teamName": "TSC Backa Topola",
+      "teamLogo": "https://media.api-sports.io/football/teams/2646.png",
+      "points": 29,
+      "played": 24,
+      "goalsDiff": -5,
+      "form": "DWDLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 12,
+      "teamId": 12316,
+      "teamName": "IMT Novi Beograd",
+      "teamLogo": "https://media.api-sports.io/football/teams/12316.png",
+      "points": 28,
+      "played": 24,
+      "goalsDiff": -16,
+      "form": "LWWLW",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 13,
+      "teamId": 699,
+      "teamName": "Mladost Lucani",
+      "teamLogo": "https://media.api-sports.io/football/teams/699.png",
+      "points": 27,
+      "played": 24,
+      "goalsDiff": -16,
+      "form": "DLLDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 14,
+      "teamId": 2653,
+      "teamName": "Javor",
+      "teamLogo": "https://media.api-sports.io/football/teams/2653.png",
+      "points": 26,
+      "played": 24,
+      "goalsDiff": -10,
+      "form": "DLDWL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 15,
+      "teamId": 2251,
+      "teamName": "FK Spartak Zdrepceva KRV",
+      "teamLogo": "https://media.api-sports.io/football/teams/2251.png",
+      "points": 17,
+      "played": 24,
+      "goalsDiff": -18,
+      "form": "DLLDL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    },
+    {
+      "rank": 16,
+      "teamId": 2655,
+      "teamName": "Napredak",
+      "teamLogo": "https://media.api-sports.io/football/teams/2655.png",
+      "points": 12,
+      "played": 24,
+      "goalsDiff": -29,
+      "form": "LLLLL",
+      "updatedAt": "2026-02-24T00:00:00+00:00"
+    }
+  ]
+}
