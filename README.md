@@ -9,7 +9,7 @@ GitHub Actions writes data into the `data` branch every day at `23:59 UTC`:
 Tracked leagues:
 - `197` Greece
 - `179` Scotland
-- `120` Denmark
+- `119` Denmark
 - `333` Ukraine
 - `271` Hungary
 - `286` Serbia

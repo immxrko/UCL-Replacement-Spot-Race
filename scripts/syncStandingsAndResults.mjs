@@ -12,7 +12,7 @@ for (const key of requiredEnv) {
 const TRACKED_LEAGUES = [
   { leagueId: 197, highlightTeams: ["Olympiakos Piraeus"] },
   { leagueId: 179, highlightTeams: ["Rangers", "Celtic"] },
-  { leagueId: 120, highlightTeams: ["FC Copenhagen", "FC Midtjylland"] },
+  { leagueId: 119, highlightTeams: ["FC Copenhagen", "FC Midtjylland"] },
   { leagueId: 333, highlightTeams: ["Shakhtar Donetsk"] },
   { leagueId: 271, highlightTeams: ["Ferencvarosi TC"] },
   { leagueId: 286, highlightTeams: ["FK Crvena Zvezda"] },
