@@ -1,18 +1,42 @@
 # UCL Replacement Spot Race
 
-## Data flow
+## Data model
 
-The app reads standings from a dedicated `data` branch file:
-- `data/standings.json`
+GitHub Actions writes data into the `data` branch every day at `23:59 UTC`:
+- `data/race.json` (aggregated snapshot for homepage)
+- `data/leagues/<leagueId>.json` (full table per league)
 
-GitHub Actions updates that file every day at `23:59 UTC` and on manual dispatch.
+Tracked leagues:
+- `197` Greece
+- `179` Scotland
+- `120` Denmark
+- `333` Ukraine
+- `271` Hungary
+- `286` Serbia
+- `210` Croatia
+- `218` Austria
+- `332` Slovakia
 
-The snapshot includes:
-- full league table
-- focus team (`FK Crvena Zvezda` by default)
-- comparison logic:
-  - if focus team is 1st, compare to 2nd (points clear)
-  - otherwise compare to 1st (points behind)
+Tracked clubs:
+- Olympiakos Piraeus
+- Rangers
+- FC Copenhagen
+- Shakhtar Donetsk
+- Ferencvarosi TC
+- FK Crvena Zvezda
+- Dinamo Zagreb
+- FC Midtjylland
+- Red Bull Salzburg
+- Celtic
+- Slovan Bratislava
+
+## UI behavior
+
+- Homepage loads `data/race.json` from the data branch.
+- Shows top-5 snapshot card for each tracked league.
+- Highlights tracked clubs inside those top-5 lists.
+- Shows race table for all tracked clubs.
+- Clicking a league card opens `/league/<leagueId>` with full standings from `data/leagues/<leagueId>.json`.
 
 ## Workflow
 
@@ -22,44 +46,38 @@ Workflow file:
 Required repository secret:
 - `API_FOOTBALL_KEY`
 
-Optional repository variable:
-- `FOCUS_TEAM_NAME` (default: `FK Crvena Zvezda`)
+Cron:
+- `59 23 * * *` (23:59 UTC)
 
-Branch/file target (in workflow env):
-- `DATA_BRANCH` (default: `data`)
-- `DATA_FILE_PATH` (default: `data/standings.json`)
+Behavior:
+1. Fetch standings for all 9 leagues.
+2. Generate JSON snapshots.
+3. Overwrite `data/` folder in branch `data`.
+4. Commit only if content changed.
 
-## Manual workflow test
-
-1. Push latest workflow + script changes to your default branch.
-2. In GitHub: `Actions` -> `Sync Standings And Results` -> `Run workflow`.
-3. Confirm the run creates/updates branch `data`.
-4. Open `data/standings.json` in that branch and verify `analysis.summary` + `focusTeam`.
-
-## Local run
+## Local generation
 
 1. Copy env file:
 ```bash
 cp .env.example .env
 ```
 
-2. Export env values and generate snapshot:
+2. Export env vars and run generator:
 ```bash
 export $(grep -v '^#' .env | xargs)
 npm run sync:data
 ```
 
-This writes `data/standings.json` locally.
+This writes:
+- `data/race.json`
+- `data/leagues/*.json`
 
 ## Frontend data source
 
-The page fetches this raw GitHub URL at runtime:
+Preferred:
+- `DATA_ROOT_URL` (full raw root URL to data branch)
 
-`https://raw.githubusercontent.com/<DATA_REPO_OWNER>/<DATA_REPO_NAME>/<DATA_BRANCH>/<DATA_FILE_PATH>`
-
-Set runtime env vars if needed:
-- `DATA_URL` (full URL override, takes precedence)
+Fallback assembly if `DATA_ROOT_URL` is not set:
 - `DATA_REPO_OWNER`
 - `DATA_REPO_NAME`
 - `DATA_BRANCH`
-- `DATA_FILE_PATH`

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "UCL Replacement Spot Race",
-  description: "Mock live dashboard for UCL replacement spot contenders"
+  description: "Live multi-league dashboard for UCL replacement spot contenders"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

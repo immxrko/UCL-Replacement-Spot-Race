@@ -8,9 +8,18 @@ export interface StandingRow {
   goalsDiff: number;
   form: string | null;
   updatedAt: string | null;
+  isHighlighted: boolean;
 }
 
-export interface StandingsSnapshot {
+export interface HighlightedTeamRow extends StandingRow {
+  focusIsFirst: boolean;
+  pointsToFirst: number;
+  pointsDeltaToComparison: number;
+  comparisonTeamName: string | null;
+  summary: string;
+}
+
+export interface LeagueSnapshot {
   generatedAt: string;
   source: {
     endpoint: string;
@@ -26,15 +35,46 @@ export interface StandingsSnapshot {
     season: number;
     updatedAt: string | null;
   };
-  focusTeamName: string;
-  focusTeam: StandingRow;
-  leaderTeam: StandingRow;
-  comparisonTeam: StandingRow | null;
-  analysis: {
-    focusIsFirst: boolean;
-    pointsToFirst: number;
-    pointsDeltaToComparison: number;
-    summary: string;
-  };
+  highlightTeams: string[];
+  top5: StandingRow[];
+  highlightedTeams: HighlightedTeamRow[];
   standings: StandingRow[];
+}
+
+export interface RaceEntry {
+  leagueId: number;
+  leagueName: string;
+  leagueCountry: string;
+  leagueLogo: string;
+  teamId: number;
+  teamName: string;
+  teamLogo: string;
+  rank: number;
+  points: number;
+  played: number;
+  goalsDiff: number;
+  pointsToFirst: number;
+  pointsDeltaToComparison: number;
+  comparisonTeamName: string | null;
+  focusIsFirst: boolean;
+  summary: string;
+}
+
+export interface RaceLeagueSummary {
+  leagueId: number;
+  leagueName: string;
+  leagueCountry: string;
+  leagueLogo: string;
+  leagueFlag: string;
+  leagueUpdatedAt: string | null;
+  filePath: string;
+  top5: StandingRow[];
+  highlightedTeams: HighlightedTeamRow[];
+}
+
+export interface RaceSnapshot {
+  generatedAt: string;
+  season: number;
+  leagues: RaceLeagueSummary[];
+  race: RaceEntry[];
 }

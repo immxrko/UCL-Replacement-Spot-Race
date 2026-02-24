@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 
 const requiredEnv = ["API_FOOTBALL_KEY"];
 
@@ -8,6 +8,18 @@ for (const key of requiredEnv) {
     throw new Error(`Missing required environment variable: ${key}`);
   }
 }
+
+const TRACKED_LEAGUES = [
+  { leagueId: 197, highlightTeams: ["Olympiakos Piraeus"] },
+  { leagueId: 179, highlightTeams: ["Rangers", "Celtic"] },
+  { leagueId: 120, highlightTeams: ["FC Copenhagen", "FC Midtjylland"] },
+  { leagueId: 333, highlightTeams: ["Shakhtar Donetsk"] },
+  { leagueId: 271, highlightTeams: ["Ferencvarosi TC"] },
+  { leagueId: 286, highlightTeams: ["FK Crvena Zvezda"] },
+  { leagueId: 210, highlightTeams: ["Dinamo Zagreb"] },
+  { leagueId: 218, highlightTeams: ["Red Bull Salzburg"] },
+  { leagueId: 332, highlightTeams: ["Slovan Bratislava"] },
+];
 
 const getEnvOrDefault = (key, fallback) => {
   const value = process.env[key];
@@ -27,10 +39,8 @@ const normalizeName = (value) => value.trim().toLocaleLowerCase();
 const API_BASE_URL = getEnvOrDefault("API_BASE_URL", "https://v3.football.api-sports.io");
 const API_FOOTBALL_HOST = getEnvOrDefault("API_FOOTBALL_HOST", new URL(API_BASE_URL).host);
 const API_FOOTBALL_KEY = process.env.API_FOOTBALL_KEY;
-const LEAGUE_ID = parsePositiveInt("LEAGUE_ID", getEnvOrDefault("LEAGUE_ID", "286"));
 const SEASON = parsePositiveInt("SEASON", getEnvOrDefault("SEASON", "2025"));
-const FOCUS_TEAM_NAME = getEnvOrDefault("FOCUS_TEAM_NAME", "FK Crvena Zvezda");
-const OUTPUT_FILE = getEnvOrDefault("OUTPUT_FILE", "data/standings.json");
+const OUTPUT_DIR = getEnvOrDefault("OUTPUT_DIR", "data");
 
 const createApiUrl = (endpoint, query = {}) => {
   const base = API_BASE_URL.endsWith("/") ? API_BASE_URL : `${API_BASE_URL}/`;
@@ -54,8 +64,8 @@ const parseApiErrors = (errors) => {
   return [String(errors)];
 };
 
-const fetchStandings = async () => {
-  const url = createApiUrl("/standings", { league: LEAGUE_ID, season: SEASON });
+const fetchStandings = async (leagueId) => {
+  const url = createApiUrl("/standings", { league: leagueId, season: SEASON });
   const response = await fetch(url, {
     headers: {
       "x-apisports-key": API_FOOTBALL_KEY,
@@ -71,7 +81,7 @@ const fetchStandings = async () => {
   const payload = await response.json();
   const apiErrors = parseApiErrors(payload.errors);
   if (apiErrors.length > 0) {
-    throw new Error(`API returned errors: ${apiErrors.join(", ")}`);
+    throw new Error(`API returned errors for league ${leagueId}: ${apiErrors.join(", ")}`);
   }
 
   return payload;
@@ -87,29 +97,62 @@ const mapStanding = (entry) => ({
   goalsDiff: entry.goalsDiff ?? 0,
   form: entry.form ?? null,
   updatedAt: entry.update ?? null,
+  isHighlighted: false,
 });
 
-const buildSummary = (focusTeam, leaderTeam, comparisonTeam) => {
-  const focusIsFirst = focusTeam.rank === 1;
+const resolveHighlightedRows = (standings, highlightTeams) => {
+  const usedTeamIds = new Set();
+  const foundRows = [];
+  const missingTeams = [];
+
+  for (const rawTeamName of highlightTeams) {
+    const teamName = normalizeName(rawTeamName);
+    let match =
+      standings.find(
+        (row) => normalizeName(row.teamName) === teamName && !usedTeamIds.has(row.teamId),
+      ) ??
+      standings.find(
+        (row) =>
+          (normalizeName(row.teamName).includes(teamName) || teamName.includes(normalizeName(row.teamName))) &&
+          !usedTeamIds.has(row.teamId),
+      );
+
+    if (!match) {
+      missingTeams.push(rawTeamName);
+      continue;
+    }
+
+    usedTeamIds.add(match.teamId);
+    foundRows.push(match);
+  }
+
+  return { foundRows, missingTeams };
+};
+
+const buildTeamAnalysis = (team, leaderTeam, secondTeam) => {
+  const focusIsFirst = team.rank === 1;
+  const comparisonTeam = focusIsFirst ? secondTeam : leaderTeam;
 
   if (!comparisonTeam) {
     return {
       focusIsFirst,
-      pointsToFirst: Math.max(leaderTeam.points - focusTeam.points, 0),
+      pointsToFirst: Math.max(leaderTeam.points - team.points, 0),
       pointsDeltaToComparison: 0,
-      summary: `${focusTeam.teamName} has no comparison team available.`,
+      comparisonTeamName: null,
+      summary: `${team.teamName} has no comparison team available.`,
     };
   }
 
-  const delta = focusTeam.points - comparisonTeam.points;
-  const pointsToFirst = Math.max(leaderTeam.points - focusTeam.points, 0);
+  const delta = team.points - comparisonTeam.points;
+  const pointsToFirst = Math.max(leaderTeam.points - team.points, 0);
 
   if (focusIsFirst) {
     return {
       focusIsFirst,
       pointsToFirst: 0,
       pointsDeltaToComparison: delta,
-      summary: `${focusTeam.teamName} is clear by ${Math.abs(delta)} points over ${comparisonTeam.teamName}.`,
+      comparisonTeamName: comparisonTeam.teamName,
+      summary: `${team.teamName} is clear by ${Math.abs(delta)} points over ${comparisonTeam.teamName}.`,
     };
   }
 
@@ -117,41 +160,56 @@ const buildSummary = (focusTeam, leaderTeam, comparisonTeam) => {
     focusIsFirst,
     pointsToFirst,
     pointsDeltaToComparison: delta,
-    summary: `${focusTeam.teamName} is ${Math.abs(delta)} points behind ${comparisonTeam.teamName}.`,
+    comparisonTeamName: comparisonTeam.teamName,
+    summary: `${team.teamName} is ${Math.abs(delta)} points behind ${comparisonTeam.teamName}.`,
   };
 };
 
-const run = async () => {
-  const payload = await fetchStandings();
+const createLeagueSnapshot = ({ leagueId, highlightTeams }, payload, generatedAt) => {
   const league = payload?.response?.[0]?.league;
   const standingsRaw = league?.standings?.[0];
 
   if (!league || !Array.isArray(standingsRaw) || standingsRaw.length === 0) {
-    throw new Error("Unexpected API response: standings table is missing.");
+    throw new Error(`Unexpected API response for league ${leagueId}: standings table is missing.`);
   }
 
-  const standings = standingsRaw.map(mapStanding).sort((a, b) => a.rank - b.rank);
-  const focusTeam = standings.find(
-    (entry) => normalizeName(entry.teamName) === normalizeName(FOCUS_TEAM_NAME),
-  );
+  const standings = standingsRaw.map((entry) => mapStanding(entry)).sort((a, b) => a.rank - b.rank);
+  const leaderTeam = standings[0];
+  const secondTeam = standings[1] ?? null;
 
-  if (!focusTeam) {
-    const available = standings.map((entry) => entry.teamName).join(", ");
-    throw new Error(
-      `Focus team "${FOCUS_TEAM_NAME}" not found in standings. Available teams: ${available}`,
+  const { foundRows: highlightedRows, missingTeams } = resolveHighlightedRows(standings, highlightTeams);
+  if (missingTeams.length > 0) {
+    console.warn(
+      `Warning: missing highlighted teams in league ${leagueId}: ${missingTeams.join(", ")}`,
     );
   }
 
-  const leaderTeam = standings[0];
-  const secondTeam = standings[1] ?? null;
-  const comparisonTeam = focusTeam.rank === 1 ? secondTeam : leaderTeam;
-  const analysis = buildSummary(focusTeam, leaderTeam, comparisonTeam);
+  if (highlightedRows.length === 0) {
+    const available = standings.map((row) => row.teamName).join(", ");
+    throw new Error(
+      `None of highlighted teams found in league ${leagueId}. Wanted: ${highlightTeams.join(", ")}. Available: ${available}`,
+    );
+  }
 
-  const output = {
-    generatedAt: new Date().toISOString(),
+  const highlightedTeamIds = new Set(highlightedRows.map((row) => row.teamId));
+  const standingsWithHighlights = standings.map((row) => ({
+    ...row,
+    isHighlighted: highlightedTeamIds.has(row.teamId),
+  }));
+  const highlightedRowsWithFlag = standingsWithHighlights.filter((row) =>
+    highlightedTeamIds.has(row.teamId),
+  );
+
+  const highlightedTeams = highlightedRowsWithFlag.map((row) => ({
+    ...row,
+    ...buildTeamAnalysis(row, leaderTeam, secondTeam),
+  }));
+
+  return {
+    generatedAt,
     source: {
       endpoint: `${API_BASE_URL}/standings`,
-      leagueId: LEAGUE_ID,
+      leagueId,
       season: SEASON,
     },
     league: {
@@ -161,21 +219,84 @@ const run = async () => {
       logo: league.logo,
       flag: league.flag,
       season: league.season,
-      updatedAt: standings[0]?.updatedAt ?? null,
+      updatedAt: standingsWithHighlights[0]?.updatedAt ?? null,
     },
-    focusTeamName: FOCUS_TEAM_NAME,
-    focusTeam,
-    leaderTeam,
-    comparisonTeam,
-    analysis,
-    standings,
+    highlightTeams,
+    top5: standingsWithHighlights.slice(0, 5),
+    highlightedTeams,
+    standings: standingsWithHighlights,
+  };
+};
+
+const writeJson = async (filePath, payload) => {
+  await mkdir(dirname(filePath), { recursive: true });
+  await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+};
+
+const run = async () => {
+  const generatedAt = new Date().toISOString();
+  const leaguePayloads = await Promise.all(
+    TRACKED_LEAGUES.map(async (config) => ({
+      config,
+      payload: await fetchStandings(config.leagueId),
+    })),
+  );
+
+  const leagueSnapshots = leaguePayloads.map(({ config, payload }) =>
+    createLeagueSnapshot(config, payload, generatedAt),
+  );
+
+  const raceEntries = leagueSnapshots
+    .flatMap((snapshot) =>
+      snapshot.highlightedTeams.map((team) => ({
+        leagueId: snapshot.league.id,
+        leagueName: snapshot.league.name,
+        leagueCountry: snapshot.league.country,
+        leagueLogo: snapshot.league.logo,
+        teamId: team.teamId,
+        teamName: team.teamName,
+        teamLogo: team.teamLogo,
+        rank: team.rank,
+        points: team.points,
+        played: team.played,
+        goalsDiff: team.goalsDiff,
+        pointsToFirst: team.pointsToFirst,
+        pointsDeltaToComparison: team.pointsDeltaToComparison,
+        comparisonTeamName: team.comparisonTeamName,
+        focusIsFirst: team.focusIsFirst,
+        summary: team.summary,
+      })),
+    )
+    .sort((a, b) => a.pointsToFirst - b.pointsToFirst || a.rank - b.rank || b.points - a.points);
+
+  const raceSnapshot = {
+    generatedAt,
+    season: SEASON,
+    leagues: leagueSnapshots.map((snapshot) => ({
+      leagueId: snapshot.league.id,
+      leagueName: snapshot.league.name,
+      leagueCountry: snapshot.league.country,
+      leagueLogo: snapshot.league.logo,
+      leagueFlag: snapshot.league.flag,
+      leagueUpdatedAt: snapshot.league.updatedAt,
+      filePath: `data/leagues/${snapshot.league.id}.json`,
+      top5: snapshot.top5,
+      highlightedTeams: snapshot.highlightedTeams,
+    })),
+    race: raceEntries,
   };
 
-  await mkdir(dirname(OUTPUT_FILE), { recursive: true });
-  await writeFile(OUTPUT_FILE, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  const leagueWrites = leagueSnapshots.map((snapshot) =>
+    writeJson(join(OUTPUT_DIR, "leagues", `${snapshot.league.id}.json`), snapshot),
+  );
 
-  console.log(`Standings snapshot saved to ${OUTPUT_FILE}`);
-  console.log(output.analysis.summary);
+  await Promise.all([
+    ...leagueWrites,
+    writeJson(join(OUTPUT_DIR, "race.json"), raceSnapshot),
+  ]);
+
+  console.log(`Saved race snapshot for ${leagueSnapshots.length} leagues into ${OUTPUT_DIR}`);
+  console.log(`Tracked clubs in race table: ${raceEntries.length}`);
 };
 
 run().catch((error) => {

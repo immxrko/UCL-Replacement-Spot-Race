@@ -27,15 +27,13 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           API_FOOTBALL_HOST: v3.football.api-sports.io
           API_BASE_URL: https://v3.football.api-sports.io
-          FOCUS_TEAM_NAME: ${{ vars.FOCUS_TEAM_NAME || 'FK Crvena Zvezda' }}
-          LEAGUE_ID: "286"
           SEASON: "2025"
-          OUTPUT_FILE: ${{ runner.temp }}/standings.json
+          OUTPUT_DIR: ${{ runner.temp }}/data
 
       - name: Commit snapshot to data branch
         env:
           DATA_BRANCH: data
-          DATA_FILE_PATH: data/standings.json
+          DATA_DIR_PATH: data
         run: |
           set -euo pipefail
 
@@ -50,10 +48,11 @@ jobs:
             git rm -rf . || true
           fi
 
-          mkdir -p "$(dirname "${DATA_FILE_PATH}")"
-          cp "${RUNNER_TEMP}/standings.json" "${DATA_FILE_PATH}"
+          rm -rf "${DATA_DIR_PATH}"
+          mkdir -p "${DATA_DIR_PATH}"
+          cp -R "${RUNNER_TEMP}/data/." "${DATA_DIR_PATH}/"
 
-          git add "${DATA_FILE_PATH}"
+          git add "${DATA_DIR_PATH}"
           if git diff --cached --quiet; then
             echo "No changes detected."
             exit 0
