@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "season": 2025,
   "leagues": [
     {
@@ -22,7 +22,13 @@
           "form": "WDWDW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -35,7 +41,13 @@
           "form": "WDLWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 62.25
+          "coefficient": 62.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Champions League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-24",
+          "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -48,7 +60,13 @@
           "form": "DDDWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 48.25
+          "coefficient": 48.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Celta vs PAOK",
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -61,7 +79,13 @@
           "form": "LDLWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -74,7 +98,13 @@
           "form": "WDWWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -90,6 +120,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 62.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Champions League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-24",
+          "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+          "europeStatusNote": null,
           "focusIsFirst": false,
           "pointsToFirst": 2,
           "pointsDeltaToComparison": -2,
@@ -108,6 +144,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 48.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Celta vs PAOK",
+          "europeStatusNote": null,
           "focusIsFirst": false,
           "pointsToFirst": 5,
           "pointsDeltaToComparison": -5,
@@ -136,7 +178,13 @@
           "form": "WLWLW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -149,7 +197,13 @@
           "form": "DWDWD",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 59.25
+          "coefficient": 59.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification)."
         },
         {
           "rank": 3,
@@ -162,7 +216,13 @@
           "form": "LWWWD",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 44
+          "coefficient": 44,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Stuttgart vs Celtic",
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -175,7 +235,13 @@
           "form": "WWDWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -188,7 +254,13 @@
           "form": "WWLWD",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -204,6 +276,12 @@
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 59.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification).",
           "focusIsFirst": false,
           "pointsToFirst": 4,
           "pointsDeltaToComparison": -4,
@@ -222,6 +300,12 @@
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 44,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Stuttgart vs Celtic",
+          "europeStatusNote": null,
           "focusIsFirst": false,
           "pointsToFirst": 6,
           "pointsDeltaToComparison": -6,
@@ -250,7 +334,13 @@
           "form": "WDWWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -263,7 +353,13 @@
           "form": "WWWDW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 46.25
+          "coefficient": 46.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
         },
         {
           "rank": 3,
@@ -276,7 +372,13 @@
           "form": "DLDLL",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -289,7 +391,13 @@
           "form": "DWLWD",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -302,7 +410,13 @@
           "form": "DWWWL",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -318,6 +432,12 @@
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 46.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
           "focusIsFirst": false,
           "pointsToFirst": 2,
           "pointsDeltaToComparison": -2,
@@ -336,6 +456,12 @@
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 54.375,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Champions League campaign ended on 2026-01-28 (no KO playoff).",
           "focusIsFirst": false,
           "pointsToFirst": 18,
           "pointsDeltaToComparison": -18,
@@ -364,7 +490,13 @@
           "form": "WWWWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -377,7 +509,13 @@
           "form": "WWDDW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 50.25
+          "coefficient": 50.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Eliminated in summer qualification block (through 2025-08-14)."
         },
         {
           "rank": 3,
@@ -390,7 +528,13 @@
           "form": "WWLWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -403,7 +547,13 @@
           "form": "WWWLL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -416,7 +566,13 @@
           "form": "DDWDD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -432,6 +588,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 50.25,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Eliminated in summer qualification block (through 2025-08-14).",
           "focusIsFirst": false,
           "pointsToFirst": 0,
           "pointsDeltaToComparison": 0,
@@ -460,7 +622,13 @@
           "form": "WWDDW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -473,7 +641,13 @@
           "form": "WLWWL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 48.25
+          "coefficient": 48.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -486,7 +660,13 @@
           "form": "DLWDW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -499,7 +679,13 @@
           "form": "LLLLW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -512,7 +698,13 @@
           "form": "WDLWL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -528,6 +720,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 48.25,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+          "europeStatusNote": null,
           "focusIsFirst": false,
           "pointsToFirst": 3,
           "pointsDeltaToComparison": -3,
@@ -556,7 +754,13 @@
           "form": "WWWWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 46.5
+          "coefficient": 46.5,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -569,7 +773,13 @@
           "form": "LWWDL",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -582,7 +792,13 @@
           "form": "LWWWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -595,7 +811,13 @@
           "form": "WWLDL",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -608,7 +830,13 @@
           "form": "DLWWL",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -624,6 +852,12 @@
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 46.5,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+          "europeStatusNote": null,
           "focusIsFirst": true,
           "pointsToFirst": 0,
           "pointsDeltaToComparison": 4,
@@ -652,7 +886,13 @@
           "form": "WWDWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 46.5
+          "coefficient": 46.5,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Genk vs Dinamo",
+          "europeStatusNote": null
         },
         {
           "rank": 2,
@@ -665,7 +905,13 @@
           "form": "WWWLL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -678,7 +924,13 @@
           "form": "LWDLD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -691,7 +943,13 @@
           "form": "LLWWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -704,7 +962,13 @@
           "form": "DWLLD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -720,6 +984,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 46.5,
+          "isActiveInEurope": true,
+          "europeCompetition": "UEFA Europa League",
+          "europeStage": "KO Play-offs",
+          "europeNextFixtureDate": "2026-02-26",
+          "europeNextFixtureLabel": "Genk vs Dinamo",
+          "europeStatusNote": null,
           "focusIsFirst": true,
           "pointsToFirst": 0,
           "pointsDeltaToComparison": 5,
@@ -748,7 +1018,13 @@
           "form": "WDLWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 45
+          "coefficient": 45,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
         },
         {
           "rank": 2,
@@ -761,7 +1037,13 @@
           "form": "WLWLW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -774,7 +1056,13 @@
           "form": "LDWWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -787,7 +1075,13 @@
           "form": "LWWWL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -800,7 +1094,13 @@
           "form": "WDDWD",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -816,6 +1116,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 45,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
           "focusIsFirst": true,
           "pointsToFirst": 0,
           "pointsDeltaToComparison": 2,
@@ -844,7 +1150,13 @@
           "form": "DLWWL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 36
+          "coefficient": 36,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Conference League campaign ended on 2025-12-18 (no KO playoff)."
         },
         {
           "rank": 2,
@@ -857,7 +1169,13 @@
           "form": "WDLWW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 3,
@@ -870,7 +1188,13 @@
           "form": "DDWLL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 4,
@@ -883,7 +1207,13 @@
           "form": "LDDWL",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         },
         {
           "rank": 5,
@@ -896,7 +1226,13 @@
           "form": "WWWLW",
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": false,
-          "coefficient": null
+          "coefficient": null,
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": null
         }
       ],
       "highlightedTeams": [
@@ -912,6 +1248,12 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 36,
+          "isActiveInEurope": false,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
+          "europeStatusNote": "Conference League campaign ended on 2025-12-18 (no KO playoff).",
           "focusIsFirst": true,
           "pointsToFirst": 0,
           "pointsDeltaToComparison": 1,
@@ -922,26 +1264,6 @@
     }
   ],
   "race": [
-    {
-      "leagueId": 210,
-      "leagueName": "HNL",
-      "leagueCountry": "Croatia",
-      "leagueLogo": "https://media.api-sports.io/football/leagues/210.png",
-      "leagueFlag": "https://media.api-sports.io/flags/hr.svg",
-      "teamId": 620,
-      "teamName": "Dinamo Zagreb",
-      "teamLogo": "https://media.api-sports.io/football/teams/620.png",
-      "rank": 1,
-      "points": 51,
-      "played": 23,
-      "goalsDiff": 35,
-      "pointsToFirst": 0,
-      "pointsDeltaToComparison": 5,
-      "comparisonTeamName": "HNK Hajduk Split",
-      "focusIsFirst": true,
-      "coefficient": 46.5,
-      "summary": "Dinamo Zagreb is clear by 5 points over HNK Hajduk Split."
-    },
     {
       "leagueId": 286,
       "leagueName": "Super Liga",
@@ -960,7 +1282,39 @@
       "comparisonTeamName": "FK Partizan",
       "focusIsFirst": true,
       "coefficient": 46.5,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+      "europeStatusNote": null,
       "summary": "FK Crvena Zvezda is clear by 4 points over FK Partizan."
+    },
+    {
+      "leagueId": 210,
+      "leagueName": "HNL",
+      "leagueCountry": "Croatia",
+      "leagueLogo": "https://media.api-sports.io/football/leagues/210.png",
+      "leagueFlag": "https://media.api-sports.io/flags/hr.svg",
+      "teamId": 620,
+      "teamName": "Dinamo Zagreb",
+      "teamLogo": "https://media.api-sports.io/football/teams/620.png",
+      "rank": 1,
+      "points": 51,
+      "played": 23,
+      "goalsDiff": 35,
+      "pointsToFirst": 0,
+      "pointsDeltaToComparison": 5,
+      "comparisonTeamName": "HNK Hajduk Split",
+      "focusIsFirst": true,
+      "coefficient": 46.5,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Genk vs Dinamo",
+      "europeStatusNote": null,
+      "summary": "Dinamo Zagreb is clear by 5 points over HNK Hajduk Split."
     },
     {
       "leagueId": 218,
@@ -980,6 +1334,12 @@
       "comparisonTeamName": "Sturm Graz",
       "focusIsFirst": true,
       "coefficient": 45,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
       "summary": "Red Bull Salzburg is clear by 2 points over Sturm Graz."
     },
     {
@@ -1000,6 +1360,12 @@
       "comparisonTeamName": "Dunajska Streda",
       "focusIsFirst": true,
       "coefficient": 36,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Conference League campaign ended on 2025-12-18 (no KO playoff).",
       "summary": "Slovan Bratislava is clear by 1 points over Dunajska Streda."
     },
     {
@@ -1020,6 +1386,12 @@
       "comparisonTeamName": "AEK Athens FC",
       "focusIsFirst": false,
       "coefficient": 62.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Champions League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-24",
+      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+      "europeStatusNote": null,
       "summary": "Olympiakos Piraeus is 2 points behind AEK Athens FC."
     },
     {
@@ -1040,6 +1412,12 @@
       "comparisonTeamName": "Heart Of Midlothian",
       "focusIsFirst": false,
       "coefficient": 59.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification).",
       "summary": "Rangers is 4 points behind Heart Of Midlothian."
     },
     {
@@ -1060,6 +1438,12 @@
       "comparisonTeamName": "Aarhus",
       "focusIsFirst": false,
       "coefficient": 54.375,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-01-28 (no KO playoff).",
       "summary": "FC Copenhagen is 18 points behind Aarhus."
     },
     {
@@ -1080,6 +1464,12 @@
       "comparisonTeamName": "LNZ Cherkasy",
       "focusIsFirst": false,
       "coefficient": 50.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Eliminated in summer qualification block (through 2025-08-14).",
       "summary": "Shakhtar Donetsk is 0 points behind LNZ Cherkasy."
     },
     {
@@ -1100,6 +1490,12 @@
       "comparisonTeamName": "Gyori ETO FC",
       "focusIsFirst": false,
       "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+      "europeStatusNote": null,
       "summary": "Ferencvarosi TC is 3 points behind Gyori ETO FC."
     },
     {
@@ -1120,6 +1516,12 @@
       "comparisonTeamName": "AEK Athens FC",
       "focusIsFirst": false,
       "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Celta vs PAOK",
+      "europeStatusNote": null,
       "summary": "PAOK is 5 points behind AEK Athens FC."
     },
     {
@@ -1140,6 +1542,12 @@
       "comparisonTeamName": "Aarhus",
       "focusIsFirst": false,
       "coefficient": 46.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
       "summary": "FC Midtjylland is 2 points behind Aarhus."
     },
     {
@@ -1160,6 +1568,12 @@
       "comparisonTeamName": "Heart Of Midlothian",
       "focusIsFirst": false,
       "coefficient": 44,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Stuttgart vs Celtic",
+      "europeStatusNote": null,
       "summary": "Celtic is 6 points behind Heart Of Midlothian."
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 218,
@@ -29,7 +29,13 @@
       "form": "WDLWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 45
+      "coefficient": 45,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
     },
     {
       "rank": 2,
@@ -42,7 +48,13 @@
       "form": "WLWLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -55,7 +67,13 @@
       "form": "LDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -68,7 +86,13 @@
       "form": "LWWWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -81,7 +105,13 @@
       "form": "WDDWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -97,6 +127,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 45,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
       "focusIsFirst": true,
       "pointsToFirst": 0,
       "pointsDeltaToComparison": 2,
@@ -116,7 +152,13 @@
       "form": "WDLWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 45
+      "coefficient": 45,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
     },
     {
       "rank": 2,
@@ -129,7 +171,13 @@
       "form": "WLWLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -142,7 +190,13 @@
       "form": "LDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -155,7 +209,13 @@
       "form": "LWWWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -168,7 +228,13 @@
       "form": "WDDWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -181,7 +247,13 @@
       "form": "WLDDL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -194,7 +266,13 @@
       "form": "DDLWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 8,
@@ -207,7 +285,13 @@
       "form": "WDWLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -220,7 +304,13 @@
       "form": "LLDLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -233,7 +323,13 @@
       "form": "DWLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -246,7 +342,13 @@
       "form": "LDDLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -259,7 +361,13 @@
       "form": "LWLDL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }

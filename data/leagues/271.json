@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 271,
@@ -29,7 +29,13 @@
       "form": "WWDDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -42,7 +48,13 @@
       "form": "WLWWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.25
+      "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -55,7 +67,13 @@
       "form": "DLWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -68,7 +86,13 @@
       "form": "LLLLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -81,7 +105,13 @@
       "form": "WDLWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -97,6 +127,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+      "europeStatusNote": null,
       "focusIsFirst": false,
       "pointsToFirst": 3,
       "pointsDeltaToComparison": -3,
@@ -116,7 +152,13 @@
       "form": "WWDDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -129,7 +171,13 @@
       "form": "WLWWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.25
+      "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Ferencvaros vs Ludogorets",
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -142,7 +190,13 @@
       "form": "DLWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -155,7 +209,13 @@
       "form": "LLLLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -168,7 +228,13 @@
       "form": "WDLWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -181,7 +247,13 @@
       "form": "DWWLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -194,7 +266,13 @@
       "form": "DLWDL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 8,
@@ -207,7 +285,13 @@
       "form": "WWLLD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -220,7 +304,13 @@
       "form": "LDLLW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -233,7 +323,13 @@
       "form": "DWWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -246,7 +342,13 @@
       "form": "LWDDL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -259,7 +361,13 @@
       "form": "LLLWL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }

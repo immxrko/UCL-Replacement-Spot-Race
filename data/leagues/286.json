@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 286,
@@ -29,7 +29,13 @@
       "form": "WWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 46.5
+      "coefficient": 46.5,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -42,7 +48,13 @@
       "form": "LWWDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -55,7 +67,13 @@
       "form": "LWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -68,7 +86,13 @@
       "form": "WWLDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -81,7 +105,13 @@
       "form": "DLWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -97,6 +127,12 @@
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 46.5,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+      "europeStatusNote": null,
       "focusIsFirst": true,
       "pointsToFirst": 0,
       "pointsDeltaToComparison": 4,
@@ -116,7 +152,13 @@
       "form": "WWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 46.5
+      "coefficient": 46.5,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Crvena Zvezda vs Lille",
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -129,7 +171,13 @@
       "form": "LWWDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -142,7 +190,13 @@
       "form": "LWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -155,7 +209,13 @@
       "form": "WWLDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -168,7 +228,13 @@
       "form": "DLWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -181,7 +247,13 @@
       "form": "WDLLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -194,7 +266,13 @@
       "form": "DDLWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 8,
@@ -207,7 +285,13 @@
       "form": "DLLLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -220,7 +304,13 @@
       "form": "DLWDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -233,7 +323,13 @@
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -246,7 +342,13 @@
       "form": "DWDLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -259,7 +361,13 @@
       "form": "LWWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 13,
@@ -272,7 +380,13 @@
       "form": "DLLDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 14,
@@ -285,7 +399,13 @@
       "form": "DLDWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 15,
@@ -298,7 +418,13 @@
       "form": "DLLDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 16,
@@ -311,7 +437,13 @@
       "form": "LLLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }

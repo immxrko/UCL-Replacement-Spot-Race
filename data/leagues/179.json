@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 179,
@@ -30,7 +30,13 @@
       "form": "WLWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -43,7 +49,13 @@
       "form": "DWDWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 59.25
+      "coefficient": 59.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification)."
     },
     {
       "rank": 3,
@@ -56,7 +68,13 @@
       "form": "LWWWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 44
+      "coefficient": 44,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Stuttgart vs Celtic",
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -69,7 +87,13 @@
       "form": "WWDWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -82,7 +106,13 @@
       "form": "WWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -98,6 +128,12 @@
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 59.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification).",
       "focusIsFirst": false,
       "pointsToFirst": 4,
       "pointsDeltaToComparison": -4,
@@ -116,6 +152,12 @@
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 44,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Stuttgart vs Celtic",
+      "europeStatusNote": null,
       "focusIsFirst": false,
       "pointsToFirst": 6,
       "pointsDeltaToComparison": -6,
@@ -135,7 +177,13 @@
       "form": "WLWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -148,7 +196,13 @@
       "form": "DWDWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 59.25
+      "coefficient": 59.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-22 (no KO playoff qualification)."
     },
     {
       "rank": 3,
@@ -161,7 +215,13 @@
       "form": "LWWWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 44
+      "coefficient": 44,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Stuttgart vs Celtic",
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -174,7 +234,13 @@
       "form": "WWDWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -187,7 +253,13 @@
       "form": "WWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -200,7 +272,13 @@
       "form": "LLWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -213,7 +291,13 @@
       "form": "DWLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 8,
@@ -226,7 +310,13 @@
       "form": "LLLWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -239,7 +329,13 @@
       "form": "WDLDL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -252,7 +348,13 @@
       "form": "LLLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -265,7 +367,13 @@
       "form": "DLWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -278,7 +386,13 @@
       "form": "DDLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }

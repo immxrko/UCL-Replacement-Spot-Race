@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 197,
@@ -30,7 +30,13 @@
       "form": "WDWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -43,7 +49,13 @@
       "form": "WDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 62.25
+      "coefficient": 62.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Champions League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-24",
+      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -56,7 +68,13 @@
       "form": "DDDWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.25
+      "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Celta vs PAOK",
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -69,7 +87,13 @@
       "form": "LDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -82,7 +106,13 @@
       "form": "WDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -98,6 +128,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 62.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Champions League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-24",
+      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+      "europeStatusNote": null,
       "focusIsFirst": false,
       "pointsToFirst": 2,
       "pointsDeltaToComparison": -2,
@@ -116,6 +152,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Celta vs PAOK",
+      "europeStatusNote": null,
       "focusIsFirst": false,
       "pointsToFirst": 5,
       "pointsDeltaToComparison": -5,
@@ -135,7 +177,13 @@
       "form": "WDWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -148,7 +196,13 @@
       "form": "WDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 62.25
+      "coefficient": 62.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Champions League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-24",
+      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+      "europeStatusNote": null
     },
     {
       "rank": 3,
@@ -161,7 +215,13 @@
       "form": "DDDWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.25
+      "coefficient": 48.25,
+      "isActiveInEurope": true,
+      "europeCompetition": "UEFA Europa League",
+      "europeStage": "KO Play-offs",
+      "europeNextFixtureDate": "2026-02-26",
+      "europeNextFixtureLabel": "Celta vs PAOK",
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -174,7 +234,13 @@
       "form": "LDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -187,7 +253,13 @@
       "form": "WDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -200,7 +272,13 @@
       "form": "DDDWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -213,7 +291,13 @@
       "form": "LDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 8,
@@ -226,7 +310,13 @@
       "form": "LDWWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -239,7 +329,13 @@
       "form": "WDWLD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -252,7 +348,13 @@
       "form": "DDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -265,7 +367,13 @@
       "form": "DDLWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -278,7 +386,13 @@
       "form": "LWWLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 13,
@@ -291,7 +405,13 @@
       "form": "LLWLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 14,
@@ -304,7 +424,13 @@
       "form": "WDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }

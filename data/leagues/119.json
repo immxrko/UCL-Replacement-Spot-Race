@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:53:25.643Z",
+  "generatedAt": "2026-02-24T18:17:43.287Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 119,
@@ -30,7 +30,13 @@
       "form": "WDWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -43,7 +49,13 @@
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 46.25
+      "coefficient": 46.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
     },
     {
       "rank": 3,
@@ -56,7 +68,13 @@
       "form": "DLDLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -69,7 +87,13 @@
       "form": "DWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -82,7 +106,13 @@
       "form": "DWWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ],
   "highlightedTeams": [
@@ -98,6 +128,12 @@
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 46.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff).",
       "focusIsFirst": false,
       "pointsToFirst": 2,
       "pointsDeltaToComparison": -2,
@@ -116,6 +152,12 @@
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 54.375,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-01-28 (no KO playoff).",
       "focusIsFirst": false,
       "pointsToFirst": 18,
       "pointsDeltaToComparison": -18,
@@ -135,7 +177,13 @@
       "form": "WDWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 2,
@@ -148,7 +196,13 @@
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 46.25
+      "coefficient": 46.25,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Europa League campaign ended on 2026-01-29 (no KO playoff)."
     },
     {
       "rank": 3,
@@ -161,7 +215,13 @@
       "form": "DLDLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 4,
@@ -174,7 +234,13 @@
       "form": "DWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 5,
@@ -187,7 +253,13 @@
       "form": "DWWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 6,
@@ -200,7 +272,13 @@
       "form": "LWWDD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 7,
@@ -213,7 +291,13 @@
       "form": "DLLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 54.375
+      "coefficient": 54.375,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-01-28 (no KO playoff)."
     },
     {
       "rank": 8,
@@ -226,7 +310,13 @@
       "form": "DLLWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 9,
@@ -239,7 +329,13 @@
       "form": "LWDLD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 10,
@@ -252,7 +348,13 @@
       "form": "WDWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 11,
@@ -265,7 +367,13 @@
       "form": "LLLLD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     },
     {
       "rank": 12,
@@ -278,7 +386,13 @@
       "form": "DLLWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": false,
-      "coefficient": null
+      "coefficient": null,
+      "isActiveInEurope": null,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": null
     }
   ]
 }
