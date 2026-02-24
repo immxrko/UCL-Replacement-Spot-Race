@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "generatedAt": "2026-02-24T17:53:25.643Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 197,
@@ -15,7 +15,8 @@
     "updatedAt": "2026-02-23T00:00:00+00:00"
   },
   "highlightTeams": [
-    "Olympiakos Piraeus"
+    "Olympiakos Piraeus",
+    "PAOK"
   ],
   "top5": [
     {
@@ -28,7 +29,8 @@
       "goalsDiff": 28,
       "form": "WDWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 2,
@@ -40,7 +42,8 @@
       "goalsDiff": 30,
       "form": "WDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": true
+      "isHighlighted": true,
+      "coefficient": 62.25
     },
     {
       "rank": 3,
@@ -52,7 +55,8 @@
       "goalsDiff": 28,
       "form": "DDDWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": true,
+      "coefficient": 48.25
     },
     {
       "rank": 4,
@@ -64,7 +68,8 @@
       "goalsDiff": 20,
       "form": "LDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 5,
@@ -76,7 +81,8 @@
       "goalsDiff": 9,
       "form": "WDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     }
   ],
   "highlightedTeams": [
@@ -91,11 +97,30 @@
       "form": "WDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
+      "coefficient": 62.25,
       "focusIsFirst": false,
       "pointsToFirst": 2,
       "pointsDeltaToComparison": -2,
       "comparisonTeamName": "AEK Athens FC",
       "summary": "Olympiakos Piraeus is 2 points behind AEK Athens FC."
+    },
+    {
+      "rank": 3,
+      "teamId": 619,
+      "teamName": "PAOK",
+      "teamLogo": "https://media.api-sports.io/football/teams/619.png",
+      "points": 47,
+      "played": 21,
+      "goalsDiff": 28,
+      "form": "DDDWW",
+      "updatedAt": "2026-02-23T00:00:00+00:00",
+      "isHighlighted": true,
+      "coefficient": 48.25,
+      "focusIsFirst": false,
+      "pointsToFirst": 5,
+      "pointsDeltaToComparison": -5,
+      "comparisonTeamName": "AEK Athens FC",
+      "summary": "PAOK is 5 points behind AEK Athens FC."
     }
   ],
   "standings": [
@@ -109,7 +134,8 @@
       "goalsDiff": 28,
       "form": "WDWDW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 2,
@@ -121,7 +147,8 @@
       "goalsDiff": 30,
       "form": "WDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": true
+      "isHighlighted": true,
+      "coefficient": 62.25
     },
     {
       "rank": 3,
@@ -133,7 +160,8 @@
       "goalsDiff": 28,
       "form": "DDDWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": true,
+      "coefficient": 48.25
     },
     {
       "rank": 4,
@@ -145,7 +173,8 @@
       "goalsDiff": 20,
       "form": "LDLWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 5,
@@ -157,7 +186,8 @@
       "goalsDiff": 9,
       "form": "WDWWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 6,
@@ -169,7 +199,8 @@
       "goalsDiff": -3,
       "form": "DDDWD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 7,
@@ -181,7 +212,8 @@
       "goalsDiff": -11,
       "form": "LDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 8,
@@ -193,7 +225,8 @@
       "goalsDiff": -10,
       "form": "LDWWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 9,
@@ -205,7 +238,8 @@
       "goalsDiff": -4,
       "form": "WDWLD",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 10,
@@ -217,7 +251,8 @@
       "goalsDiff": -6,
       "form": "DDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 11,
@@ -229,7 +264,8 @@
       "goalsDiff": -13,
       "form": "DDLWW",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 12,
@@ -241,7 +277,8 @@
       "goalsDiff": -14,
       "form": "LWWLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 13,
@@ -253,7 +290,8 @@
       "goalsDiff": -15,
       "form": "LLWLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 14,
@@ -265,7 +303,8 @@
       "goalsDiff": -39,
       "form": "WDLLL",
       "updatedAt": "2026-02-23T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     }
   ]
 }

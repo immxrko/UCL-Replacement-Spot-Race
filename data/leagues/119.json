@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-24T17:28:12.857Z",
+  "generatedAt": "2026-02-24T17:53:25.643Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 119,
@@ -29,7 +29,8 @@
       "goalsDiff": 22,
       "form": "WDWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 2,
@@ -41,7 +42,8 @@
       "goalsDiff": 35,
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": true
+      "isHighlighted": true,
+      "coefficient": 46.25
     },
     {
       "rank": 3,
@@ -53,7 +55,8 @@
       "goalsDiff": 9,
       "form": "DLDLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 4,
@@ -65,7 +68,8 @@
       "goalsDiff": 5,
       "form": "DWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 5,
@@ -77,7 +81,8 @@
       "goalsDiff": -1,
       "form": "DWWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     }
   ],
   "highlightedTeams": [
@@ -92,6 +97,7 @@
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
+      "coefficient": 46.25,
       "focusIsFirst": false,
       "pointsToFirst": 2,
       "pointsDeltaToComparison": -2,
@@ -109,6 +115,7 @@
       "form": "DLLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
+      "coefficient": 54.375,
       "focusIsFirst": false,
       "pointsToFirst": 18,
       "pointsDeltaToComparison": -18,
@@ -127,7 +134,8 @@
       "goalsDiff": 22,
       "form": "WDWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 2,
@@ -139,7 +147,8 @@
       "goalsDiff": 35,
       "form": "WWWDW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": true
+      "isHighlighted": true,
+      "coefficient": 46.25
     },
     {
       "rank": 3,
@@ -151,7 +160,8 @@
       "goalsDiff": 9,
       "form": "DLDLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 4,
@@ -163,7 +173,8 @@
       "goalsDiff": 5,
       "form": "DWLWD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 5,
@@ -175,7 +186,8 @@
       "goalsDiff": -1,
       "form": "DWWWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 6,
@@ -187,7 +199,8 @@
       "goalsDiff": 1,
       "form": "LWWDD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 7,
@@ -199,7 +212,8 @@
       "goalsDiff": 2,
       "form": "DLLLL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": true
+      "isHighlighted": true,
+      "coefficient": 54.375
     },
     {
       "rank": 8,
@@ -211,7 +225,8 @@
       "goalsDiff": -9,
       "form": "DLLWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 9,
@@ -223,7 +238,8 @@
       "goalsDiff": -6,
       "form": "LWDLD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 10,
@@ -235,7 +251,8 @@
       "goalsDiff": -20,
       "form": "WDWLW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 11,
@@ -247,7 +264,8 @@
       "goalsDiff": -20,
       "form": "LLLLD",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     },
     {
       "rank": 12,
@@ -259,7 +277,8 @@
       "goalsDiff": -18,
       "form": "DLLWL",
       "updatedAt": "2026-02-24T00:00:00+00:00",
-      "isHighlighted": false
+      "isHighlighted": false,
+      "coefficient": null
     }
   ]
 }
