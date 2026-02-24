@@ -9,6 +9,7 @@ export interface StandingRow {
   form: string | null;
   updatedAt: string | null;
   isHighlighted: boolean;
+  coefficient: number | null;
 }
 
 export interface HighlightedTeamRow extends StandingRow {
@@ -46,6 +47,7 @@ export interface RaceEntry {
   leagueName: string;
   leagueCountry: string;
   leagueLogo: string;
+  leagueFlag: string;
   teamId: number;
   teamName: string;
   teamLogo: string;
@@ -55,6 +57,7 @@ export interface RaceEntry {
   goalsDiff: number;
   pointsToFirst: number;
   pointsDeltaToComparison: number;
+  coefficient: number;
   comparisonTeamName: string | null;
   focusIsFirst: boolean;
   summary: string;

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildDataUrl } from "@/lib/dataBranch";
 import { LeagueSnapshot } from "@/types/standings";
@@ -11,6 +12,21 @@ interface LeaguePageProps {
 const formatSigned = (value: number) => {
   if (value === 0) return "0";
   return value > 0 ? `+${value}` : `${value}`;
+};
+
+const formatCoefficient = (value: number) => value.toFixed(3);
+
+const formatViennaTime = (iso: string) => {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return iso;
+  }
+
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Vienna",
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
 };
 
 const getLeagueSnapshot = async (leagueId: string): Promise<LeagueSnapshot> => {
@@ -63,21 +79,47 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           <Link href="/" className="text-xs uppercase tracking-[0.2em] text-sky-300 hover:text-sky-200">
             Back to all leagues
           </Link>
-          <h1 className="text-3xl font-semibold text-white sm:text-4xl">{snapshot.league.name}</h1>
+          <div className="flex items-center gap-3">
+            <Image
+              src={snapshot.league.logo}
+              alt={snapshot.league.name}
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full"
+            />
+            <Image
+              src={snapshot.league.flag}
+              alt={snapshot.league.country}
+              width={24}
+              height={24}
+              className="h-6 w-6 rounded-full"
+            />
+            <h1 className="text-3xl font-semibold text-white sm:text-4xl">{snapshot.league.name}</h1>
+          </div>
           <p className="text-sm text-slate-300">
             {snapshot.league.country} • Season {snapshot.league.season}
           </p>
-          <p className="text-xs text-slate-400">Updated: {snapshot.generatedAt}</p>
+          <p className="text-xs text-slate-400">Updated (Vienna): {formatViennaTime(snapshot.generatedAt)}</p>
         </header>
 
         <section className="grid gap-3 md:grid-cols-2">
           {snapshot.highlightedTeams.map((team) => (
             <article key={team.teamId} className="rounded-xl border border-emerald-300/20 bg-emerald-400/10 p-4">
               <p className="text-xs uppercase text-emerald-200">Tracked Club</p>
-              <h2 className="mt-1 text-lg font-semibold text-white">{team.teamName}</h2>
+              <div className="mt-1 flex items-center gap-2">
+                <Image
+                  src={team.teamLogo}
+                  alt={team.teamName}
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 rounded-full"
+                />
+                <h2 className="text-lg font-semibold text-white">{team.teamName}</h2>
+              </div>
               <p className="mt-1 text-sm text-slate-200">
                 Rank #{team.rank} • {team.points} pts • Gap to first: {team.pointsToFirst}
               </p>
+              <p className="mt-1 text-xs text-emerald-100">Coefficient: {formatCoefficient(team.coefficient ?? 0)}</p>
               <p className="mt-1 text-xs text-emerald-100">{team.summary}</p>
             </article>
           ))}
@@ -104,7 +146,18 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
                   }`}
                 >
                   <td className="px-4 py-3">#{row.rank}</td>
-                  <td className="px-4 py-3">{row.teamName}</td>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src={row.teamLogo}
+                        alt={row.teamName}
+                        width={20}
+                        height={20}
+                        className="h-5 w-5 rounded-full"
+                      />
+                      <span>{row.teamName}</span>
+                    </div>
+                  </td>
                   <td className="px-4 py-3">{row.points}</td>
                   <td className="px-4 py-3">{row.played}</td>
                   <td className="px-4 py-3">{formatSigned(row.goalsDiff)}</td>

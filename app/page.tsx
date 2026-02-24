@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildDataUrl } from "@/lib/dataBranch";
 import { RaceSnapshot } from "@/types/standings";
@@ -5,6 +6,21 @@ import { RaceSnapshot } from "@/types/standings";
 const formatSigned = (value: number) => {
   if (value === 0) return "0";
   return value > 0 ? `+${value}` : `${value}`;
+};
+
+const formatCoefficient = (value: number) => value.toFixed(3);
+
+const formatViennaTime = (iso: string) => {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return iso;
+  }
+
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Vienna",
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
 };
 
 const raceDataPath = "data/race.json";
@@ -60,7 +76,7 @@ export default async function HomePage() {
             table details.
           </p>
           <p className="text-xs text-slate-400">
-            Updated: {snapshot.generatedAt} • Season: {snapshot.season}
+            Updated (Vienna): {formatViennaTime(snapshot.generatedAt)} • Season: {snapshot.season}
           </p>
         </header>
 
@@ -72,9 +88,25 @@ export default async function HomePage() {
               className="group rounded-2xl border border-white/10 bg-slate-900/60 p-4 transition hover:border-sky-300/40 hover:bg-slate-900/80"
             >
               <div className="mb-3 flex items-center justify-between gap-3">
-                <div>
-                  <h2 className="text-lg font-semibold text-white group-hover:text-sky-200">{league.leagueName}</h2>
-                  <p className="text-xs text-slate-400">{league.leagueCountry}</p>
+                <div className="flex items-center gap-2">
+                  <Image
+                    src={league.leagueLogo}
+                    alt={league.leagueName}
+                    width={28}
+                    height={28}
+                    className="h-7 w-7 rounded-full"
+                  />
+                  <Image
+                    src={league.leagueFlag}
+                    alt={league.leagueCountry}
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 rounded-full"
+                  />
+                  <div>
+                    <h2 className="text-lg font-semibold text-white group-hover:text-sky-200">{league.leagueName}</h2>
+                    <p className="text-xs text-slate-400">{league.leagueCountry}</p>
+                  </div>
                 </div>
                 <span className="rounded-full border border-sky-300/20 bg-sky-500/10 px-2 py-1 text-xs text-sky-200">
                   Top 5
@@ -85,11 +117,18 @@ export default async function HomePage() {
                 {league.top5.map((row) => (
                   <div
                     key={row.teamId}
-                    className={`grid grid-cols-[auto_1fr_auto] items-center gap-2 rounded-md px-2 py-1 text-sm ${
+                    className={`grid grid-cols-[auto_auto_1fr_auto] items-center gap-2 rounded-md px-2 py-1 text-sm ${
                       row.isHighlighted ? "bg-emerald-400/15 text-emerald-100" : "text-slate-200"
                     }`}
                   >
                     <span className="w-6 text-slate-400">#{row.rank}</span>
+                    <Image
+                      src={row.teamLogo}
+                      alt={row.teamName}
+                      width={20}
+                      height={20}
+                      className="h-5 w-5 rounded-full"
+                    />
                     <span className="truncate">{row.teamName}</span>
                     <span>{row.points}</span>
                   </div>
@@ -117,23 +156,64 @@ export default async function HomePage() {
                   <th className="px-4 py-3">League</th>
                   <th className="px-4 py-3">Rank</th>
                   <th className="px-4 py-3">Pts</th>
+                  <th className="px-4 py-3">Coeff.</th>
                   <th className="px-4 py-3">Gap to 1st</th>
                   <th className="px-4 py-3">Delta</th>
                   <th className="px-4 py-3">Compared With</th>
                 </tr>
               </thead>
               <tbody>
-                {snapshot.race.map((entry) => (
-                  <tr key={`${entry.leagueId}-${entry.teamId}`} className="border-t border-white/5 text-sm">
-                    <td className="px-4 py-3 text-white">{entry.teamName}</td>
-                    <td className="px-4 py-3 text-slate-300">{entry.leagueName}</td>
-                    <td className="px-4 py-3 text-slate-300">#{entry.rank}</td>
-                    <td className="px-4 py-3 text-slate-300">{entry.points}</td>
-                    <td className="px-4 py-3 text-slate-300">{entry.pointsToFirst}</td>
-                    <td className="px-4 py-3 text-slate-300">{formatSigned(entry.pointsDeltaToComparison)}</td>
-                    <td className="px-4 py-3 text-slate-300">{entry.comparisonTeamName ?? "-"}</td>
-                  </tr>
-                ))}
+                {snapshot.race.map((entry) => {
+                  const leagueSummary = snapshot.leagues.find((league) => league.leagueId === entry.leagueId);
+                  const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
+                  const leagueLogo = entry.leagueLogo || leagueSummary?.leagueLogo;
+
+                  return (
+                    <tr key={`${entry.leagueId}-${entry.teamId}`} className="border-t border-white/5 text-sm">
+                      <td className="px-4 py-3 text-white">
+                        <div className="flex items-center gap-2">
+                          <Image
+                            src={entry.teamLogo}
+                            alt={entry.teamName}
+                            width={20}
+                            height={20}
+                            className="h-5 w-5 rounded-full"
+                          />
+                          <span>{entry.teamName}</span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-300">
+                        <div className="flex items-center gap-2">
+                          {leagueFlag ? (
+                            <Image
+                              src={leagueFlag}
+                              alt={entry.leagueCountry}
+                              width={16}
+                              height={16}
+                              className="h-4 w-4 rounded-full"
+                            />
+                          ) : null}
+                          {leagueLogo ? (
+                            <Image
+                              src={leagueLogo}
+                              alt={entry.leagueName}
+                              width={16}
+                              height={16}
+                              className="h-4 w-4 rounded-full"
+                            />
+                          ) : null}
+                          <span>{entry.leagueName}</span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-300">#{entry.rank}</td>
+                      <td className="px-4 py-3 text-slate-300">{entry.points}</td>
+                      <td className="px-4 py-3 text-slate-300">{formatCoefficient(entry.coefficient ?? 0)}</td>
+                      <td className="px-4 py-3 text-slate-300">{entry.pointsToFirst}</td>
+                      <td className="px-4 py-3 text-slate-300">{formatSigned(entry.pointsDeltaToComparison)}</td>
+                      <td className="px-4 py-3 text-slate-300">{entry.comparisonTeamName ?? "-"}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

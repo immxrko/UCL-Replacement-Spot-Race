@@ -23,6 +23,7 @@ Tracked clubs:
 - FC Copenhagen
 - Shakhtar Donetsk
 - Ferencvarosi TC
+- PAOK
 - FK Crvena Zvezda
 - Dinamo Zagreb
 - FC Midtjylland
@@ -36,6 +37,7 @@ Tracked clubs:
 - Shows top-5 snapshot card for each tracked league.
 - Highlights tracked clubs inside those top-5 lists.
 - Shows race table for all tracked clubs.
+- Race table order: domestic leaders (`#1`) first, tie-break by coefficient; remaining clubs then sorted by coefficient.
 - Clicking a league card opens `/league/<leagueId>` with full standings from `data/leagues/<leagueId>.json`.
 
 ## Workflow

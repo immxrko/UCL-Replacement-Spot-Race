@@ -10,15 +10,33 @@ for (const key of requiredEnv) {
 }
 
 const TRACKED_LEAGUES = [
-  { leagueId: 197, highlightTeams: ["Olympiakos Piraeus"] },
-  { leagueId: 179, highlightTeams: ["Rangers", "Celtic"] },
-  { leagueId: 119, highlightTeams: ["FC Copenhagen", "FC Midtjylland"] },
-  { leagueId: 333, highlightTeams: ["Shakhtar Donetsk"] },
-  { leagueId: 271, highlightTeams: ["Ferencvarosi TC"] },
-  { leagueId: 286, highlightTeams: ["FK Crvena Zvezda"] },
-  { leagueId: 210, highlightTeams: ["Dinamo Zagreb"] },
-  { leagueId: 218, highlightTeams: ["Red Bull Salzburg"] },
-  { leagueId: 332, highlightTeams: ["Slovan Bratislava"] },
+  {
+    leagueId: 197,
+    highlightTeams: [
+      { name: "Olympiakos Piraeus", coefficient: 62.25 },
+      { name: "PAOK", coefficient: 48.25 },
+    ],
+  },
+  {
+    leagueId: 179,
+    highlightTeams: [
+      { name: "Rangers", coefficient: 59.25 },
+      { name: "Celtic", coefficient: 44.0 },
+    ],
+  },
+  {
+    leagueId: 119,
+    highlightTeams: [
+      { name: "FC Copenhagen", coefficient: 54.375 },
+      { name: "FC Midtjylland", coefficient: 46.25 },
+    ],
+  },
+  { leagueId: 333, highlightTeams: [{ name: "Shakhtar Donetsk", coefficient: 50.25 }] },
+  { leagueId: 271, highlightTeams: [{ name: "Ferencvarosi TC", coefficient: 48.25 }] },
+  { leagueId: 286, highlightTeams: [{ name: "FK Crvena Zvezda", coefficient: 46.5 }] },
+  { leagueId: 210, highlightTeams: [{ name: "Dinamo Zagreb", coefficient: 46.5 }] },
+  { leagueId: 218, highlightTeams: [{ name: "Red Bull Salzburg", coefficient: 45.0 }] },
+  { leagueId: 332, highlightTeams: [{ name: "Slovan Bratislava", coefficient: 36.0 }] },
 ];
 
 const getEnvOrDefault = (key, fallback) => {
@@ -98,6 +116,7 @@ const mapStanding = (entry) => ({
   form: entry.form ?? null,
   updatedAt: entry.update ?? null,
   isHighlighted: false,
+  coefficient: null,
 });
 
 const resolveHighlightedRows = (standings, highlightTeams) => {
@@ -105,8 +124,8 @@ const resolveHighlightedRows = (standings, highlightTeams) => {
   const foundRows = [];
   const missingTeams = [];
 
-  for (const rawTeamName of highlightTeams) {
-    const teamName = normalizeName(rawTeamName);
+  for (const teamConfig of highlightTeams) {
+    const teamName = normalizeName(teamConfig.name);
     let match =
       standings.find(
         (row) => normalizeName(row.teamName) === teamName && !usedTeamIds.has(row.teamId),
@@ -118,12 +137,15 @@ const resolveHighlightedRows = (standings, highlightTeams) => {
       );
 
     if (!match) {
-      missingTeams.push(rawTeamName);
+      missingTeams.push(teamConfig.name);
       continue;
     }
 
     usedTeamIds.add(match.teamId);
-    foundRows.push(match);
+    foundRows.push({
+      row: match,
+      coefficient: teamConfig.coefficient,
+    });
   }
 
   return { foundRows, missingTeams };
@@ -187,14 +209,18 @@ const createLeagueSnapshot = ({ leagueId, highlightTeams }, payload, generatedAt
   if (highlightedRows.length === 0) {
     const available = standings.map((row) => row.teamName).join(", ");
     throw new Error(
-      `None of highlighted teams found in league ${leagueId}. Wanted: ${highlightTeams.join(", ")}. Available: ${available}`,
+      `None of highlighted teams found in league ${leagueId}. Wanted: ${highlightTeams
+        .map((team) => team.name)
+        .join(", ")}. Available: ${available}`,
     );
   }
 
-  const highlightedTeamIds = new Set(highlightedRows.map((row) => row.teamId));
+  const highlightedTeamIds = new Set(highlightedRows.map((item) => item.row.teamId));
+  const coefficientByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.coefficient]));
   const standingsWithHighlights = standings.map((row) => ({
     ...row,
     isHighlighted: highlightedTeamIds.has(row.teamId),
+    coefficient: coefficientByTeamId.get(row.teamId) ?? null,
   }));
   const highlightedRowsWithFlag = standingsWithHighlights.filter((row) =>
     highlightedTeamIds.has(row.teamId),
@@ -221,7 +247,7 @@ const createLeagueSnapshot = ({ leagueId, highlightTeams }, payload, generatedAt
       season: league.season,
       updatedAt: standingsWithHighlights[0]?.updatedAt ?? null,
     },
-    highlightTeams,
+    highlightTeams: highlightTeams.map((team) => team.name),
     top5: standingsWithHighlights.slice(0, 5),
     highlightedTeams,
     standings: standingsWithHighlights,
@@ -253,6 +279,7 @@ const run = async () => {
         leagueName: snapshot.league.name,
         leagueCountry: snapshot.league.country,
         leagueLogo: snapshot.league.logo,
+        leagueFlag: snapshot.league.flag,
         teamId: team.teamId,
         teamName: team.teamName,
         teamLogo: team.teamLogo,
@@ -264,10 +291,24 @@ const run = async () => {
         pointsDeltaToComparison: team.pointsDeltaToComparison,
         comparisonTeamName: team.comparisonTeamName,
         focusIsFirst: team.focusIsFirst,
+        coefficient: team.coefficient ?? 0,
         summary: team.summary,
       })),
     )
-    .sort((a, b) => a.pointsToFirst - b.pointsToFirst || a.rank - b.rank || b.points - a.points);
+    .sort((a, b) => {
+      const aIsLeader = a.rank === 1;
+      const bIsLeader = b.rank === 1;
+
+      if (aIsLeader !== bIsLeader) {
+        return aIsLeader ? -1 : 1;
+      }
+
+      if (b.coefficient !== a.coefficient) {
+        return b.coefficient - a.coefficient;
+      }
+
+      return a.teamName.localeCompare(b.teamName);
+    });
 
   const raceSnapshot = {
     generatedAt,
