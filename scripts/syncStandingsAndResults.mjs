@@ -9,34 +9,162 @@ for (const key of requiredEnv) {
   }
 }
 
+const activeEuropeStatus = (competition, stage, nextFixtureDate, nextFixtureLabel) => ({
+  isActiveInEurope: true,
+  europeCompetition: competition,
+  europeStage: stage,
+  europeNextFixtureDate: nextFixtureDate,
+  europeNextFixtureLabel: nextFixtureLabel,
+  europeStatusNote: null,
+});
+
+const inactiveEuropeStatus = (statusNote) => ({
+  isActiveInEurope: false,
+  europeCompetition: null,
+  europeStage: null,
+  europeNextFixtureDate: null,
+  europeNextFixtureLabel: null,
+  europeStatusNote: statusNote,
+});
+
 const TRACKED_LEAGUES = [
   {
     leagueId: 197,
     highlightTeams: [
-      { name: "Olympiakos Piraeus", coefficient: 62.25 },
-      { name: "PAOK", coefficient: 48.25 },
+      {
+        name: "Olympiakos Piraeus",
+        coefficient: 62.25,
+        ...activeEuropeStatus(
+          "UEFA Champions League",
+          "KO Play-offs",
+          "2026-02-24",
+          "Leverkusen vs Olympiacos",
+        ),
+      },
+      {
+        name: "PAOK",
+        coefficient: 48.25,
+        ...activeEuropeStatus("UEFA Europa League", "KO Play-offs", "2026-02-26", "Celta vs PAOK"),
+      },
     ],
   },
   {
     leagueId: 179,
     highlightTeams: [
-      { name: "Rangers", coefficient: 59.25 },
-      { name: "Celtic", coefficient: 44.0 },
+      {
+        name: "Rangers",
+        coefficient: 59.25,
+        ...inactiveEuropeStatus(
+          "Europa League campaign ended on 2026-01-22 (no KO playoff qualification).",
+        ),
+      },
+      {
+        name: "Celtic",
+        coefficient: 44.0,
+        ...activeEuropeStatus("UEFA Europa League", "KO Play-offs", "2026-02-26", "Stuttgart vs Celtic"),
+      },
     ],
   },
   {
     leagueId: 119,
     highlightTeams: [
-      { name: "FC Copenhagen", coefficient: 54.375 },
-      { name: "FC Midtjylland", coefficient: 46.25 },
+      {
+        name: "FC Copenhagen",
+        coefficient: 54.375,
+        ...inactiveEuropeStatus("Champions League campaign ended on 2026-01-28 (no KO playoff)."),
+      },
+      {
+        name: "FC Midtjylland",
+        coefficient: 46.25,
+        ...inactiveEuropeStatus("Europa League campaign ended on 2026-01-29 (no KO playoff)."),
+      },
     ],
   },
-  { leagueId: 333, highlightTeams: [{ name: "Shakhtar Donetsk", coefficient: 50.25 }] },
-  { leagueId: 271, highlightTeams: [{ name: "Ferencvarosi TC", coefficient: 48.25 }] },
-  { leagueId: 286, highlightTeams: [{ name: "FK Crvena Zvezda", coefficient: 46.5 }] },
-  { leagueId: 210, highlightTeams: [{ name: "Dinamo Zagreb", coefficient: 46.5 }] },
-  { leagueId: 218, highlightTeams: [{ name: "Red Bull Salzburg", coefficient: 45.0 }] },
-  { leagueId: 332, highlightTeams: [{ name: "Slovan Bratislava", coefficient: 36.0 }] },
+  {
+    leagueId: 333,
+    highlightTeams: [
+      {
+        name: "Shakhtar Donetsk",
+        coefficient: 50.25,
+        ...inactiveEuropeStatus("Eliminated in summer qualification block (through 2025-08-14)."),
+      },
+    ],
+  },
+  {
+    leagueId: 271,
+    highlightTeams: [
+      {
+        name: "Ferencvarosi TC",
+        coefficient: 48.25,
+        ...activeEuropeStatus(
+          "UEFA Europa League",
+          "KO Play-offs",
+          "2026-02-26",
+          "Ferencvaros vs Ludogorets",
+        ),
+      },
+    ],
+  },
+  {
+    leagueId: 286,
+    highlightTeams: [
+      {
+        name: "FK Crvena Zvezda",
+        coefficient: 46.5,
+        ...activeEuropeStatus(
+          "UEFA Europa League",
+          "KO Play-offs",
+          "2026-02-26",
+          "Crvena Zvezda vs Lille",
+        ),
+      },
+    ],
+  },
+  {
+    leagueId: 210,
+    highlightTeams: [
+      {
+        name: "Dinamo Zagreb",
+        coefficient: 46.5,
+        ...activeEuropeStatus("UEFA Europa League", "KO Play-offs", "2026-02-26", "Genk vs Dinamo"),
+      },
+    ],
+  },
+  {
+    leagueId: 218,
+    highlightTeams: [
+      {
+        name: "Red Bull Salzburg",
+        coefficient: 45.0,
+        ...inactiveEuropeStatus("Europa League campaign ended on 2026-01-29 (no KO playoff)."),
+      },
+    ],
+  },
+  {
+    leagueId: 332,
+    highlightTeams: [
+      {
+        name: "Slovan Bratislava",
+        coefficient: 36.0,
+        ...inactiveEuropeStatus("Conference League campaign ended on 2025-12-18 (no KO playoff)."),
+      },
+    ],
+  },
+];
+
+const COEFFICIENT_TIEBREAKER_ORDER = [
+  "Olympiakos Piraeus",
+  "Rangers",
+  "FC Copenhagen",
+  "Shakhtar Donetsk",
+  "Ferencvarosi TC",
+  "PAOK",
+  "FK Crvena Zvezda",
+  "Dinamo Zagreb",
+  "FC Midtjylland",
+  "Red Bull Salzburg",
+  "Celtic",
+  "Slovan Bratislava",
 ];
 
 const getEnvOrDefault = (key, fallback) => {
@@ -53,6 +181,11 @@ const parsePositiveInt = (name, value) => {
 };
 
 const normalizeName = (value) => value.trim().toLocaleLowerCase();
+const CLUB_TIEBREAKER_INDEX = new Map(
+  COEFFICIENT_TIEBREAKER_ORDER.map((teamName, index) => [normalizeName(teamName), index]),
+);
+
+const getClubTieBreaker = (teamName) => CLUB_TIEBREAKER_INDEX.get(normalizeName(teamName)) ?? Number.MAX_SAFE_INTEGER;
 
 const API_BASE_URL = getEnvOrDefault("API_BASE_URL", "https://v3.football.api-sports.io");
 const API_FOOTBALL_HOST = getEnvOrDefault("API_FOOTBALL_HOST", new URL(API_BASE_URL).host);
@@ -117,6 +250,12 @@ const mapStanding = (entry) => ({
   updatedAt: entry.update ?? null,
   isHighlighted: false,
   coefficient: null,
+  isActiveInEurope: null,
+  europeCompetition: null,
+  europeStage: null,
+  europeNextFixtureDate: null,
+  europeNextFixtureLabel: null,
+  europeStatusNote: null,
 });
 
 const resolveHighlightedRows = (standings, highlightTeams) => {
@@ -145,6 +284,12 @@ const resolveHighlightedRows = (standings, highlightTeams) => {
     foundRows.push({
       row: match,
       coefficient: teamConfig.coefficient,
+      isActiveInEurope: teamConfig.isActiveInEurope,
+      europeCompetition: teamConfig.europeCompetition,
+      europeStage: teamConfig.europeStage,
+      europeNextFixtureDate: teamConfig.europeNextFixtureDate,
+      europeNextFixtureLabel: teamConfig.europeNextFixtureLabel,
+      europeStatusNote: teamConfig.europeStatusNote,
     });
   }
 
@@ -217,10 +362,26 @@ const createLeagueSnapshot = ({ leagueId, highlightTeams }, payload, generatedAt
 
   const highlightedTeamIds = new Set(highlightedRows.map((item) => item.row.teamId));
   const coefficientByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.coefficient]));
+  const activityByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.isActiveInEurope]));
+  const competitionByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.europeCompetition]));
+  const stageByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.europeStage]));
+  const nextFixtureDateByTeamId = new Map(
+    highlightedRows.map((item) => [item.row.teamId, item.europeNextFixtureDate]),
+  );
+  const nextFixtureLabelByTeamId = new Map(
+    highlightedRows.map((item) => [item.row.teamId, item.europeNextFixtureLabel]),
+  );
+  const statusNoteByTeamId = new Map(highlightedRows.map((item) => [item.row.teamId, item.europeStatusNote]));
   const standingsWithHighlights = standings.map((row) => ({
     ...row,
     isHighlighted: highlightedTeamIds.has(row.teamId),
     coefficient: coefficientByTeamId.get(row.teamId) ?? null,
+    isActiveInEurope: activityByTeamId.get(row.teamId) ?? null,
+    europeCompetition: competitionByTeamId.get(row.teamId) ?? null,
+    europeStage: stageByTeamId.get(row.teamId) ?? null,
+    europeNextFixtureDate: nextFixtureDateByTeamId.get(row.teamId) ?? null,
+    europeNextFixtureLabel: nextFixtureLabelByTeamId.get(row.teamId) ?? null,
+    europeStatusNote: statusNoteByTeamId.get(row.teamId) ?? null,
   }));
   const highlightedRowsWithFlag = standingsWithHighlights.filter((row) =>
     highlightedTeamIds.has(row.teamId),
@@ -292,6 +453,12 @@ const run = async () => {
         comparisonTeamName: team.comparisonTeamName,
         focusIsFirst: team.focusIsFirst,
         coefficient: team.coefficient ?? 0,
+        isActiveInEurope: team.isActiveInEurope ?? false,
+        europeCompetition: team.europeCompetition ?? null,
+        europeStage: team.europeStage ?? null,
+        europeNextFixtureDate: team.europeNextFixtureDate ?? null,
+        europeNextFixtureLabel: team.europeNextFixtureLabel ?? null,
+        europeStatusNote: team.europeStatusNote ?? null,
         summary: team.summary,
       })),
     )
@@ -305,6 +472,12 @@ const run = async () => {
 
       if (b.coefficient !== a.coefficient) {
         return b.coefficient - a.coefficient;
+      }
+
+      const tieA = getClubTieBreaker(a.teamName);
+      const tieB = getClubTieBreaker(b.teamName);
+      if (tieA !== tieB) {
+        return tieA - tieB;
       }
 
       return a.teamName.localeCompare(b.teamName);

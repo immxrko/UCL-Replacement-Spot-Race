@@ -10,6 +10,12 @@ export interface StandingRow {
   updatedAt: string | null;
   isHighlighted: boolean;
   coefficient: number | null;
+  isActiveInEurope: boolean | null;
+  europeCompetition: string | null;
+  europeStage: string | null;
+  europeNextFixtureDate: string | null;
+  europeNextFixtureLabel: string | null;
+  europeStatusNote: string | null;
 }
 
 export interface HighlightedTeamRow extends StandingRow {
@@ -58,6 +64,12 @@ export interface RaceEntry {
   pointsToFirst: number;
   pointsDeltaToComparison: number;
   coefficient: number;
+  isActiveInEurope: boolean;
+  europeCompetition: string | null;
+  europeStage: string | null;
+  europeNextFixtureDate: string | null;
+  europeNextFixtureLabel: string | null;
+  europeStatusNote: string | null;
   comparisonTeamName: string | null;
   focusIsFirst: boolean;
   summary: string;

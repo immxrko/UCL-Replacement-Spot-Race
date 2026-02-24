@@ -23,6 +23,23 @@ const formatViennaTime = (iso: string) => {
   }).format(date);
 };
 
+const formatShortViennaDate = (isoDate: string | null) => {
+  if (!isoDate) {
+    return "Date TBD";
+  }
+
+  const date = new Date(isoDate);
+  if (Number.isNaN(date.getTime())) {
+    return isoDate;
+  }
+
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Vienna",
+    day: "2-digit",
+    month: "short",
+  }).format(date);
+};
+
 const raceDataPath = "data/race.json";
 
 const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
@@ -135,6 +152,55 @@ export default async function HomePage() {
                 ))}
               </div>
 
+              <div className="mt-3 rounded-lg border border-white/10 bg-black/20 p-2">
+                <p className="mb-1 text-[10px] uppercase tracking-wide text-slate-400">Placeholder Fixtures</p>
+                <div className="space-y-1">
+                  {league.highlightedTeams.map((team) => {
+                    const opponent =
+                      league.top5.find((candidate) => candidate.teamId !== team.teamId) ?? team;
+                    return (
+                      <div
+                        key={team.teamId}
+                        className="flex items-center justify-between gap-3 rounded-md border border-white/10 bg-white/[0.03] px-2 py-1.5 text-xs"
+                      >
+                        <span className="min-w-[64px] text-left text-slate-400">
+                          {team.isActiveInEurope
+                            ? formatShortViennaDate(team.europeNextFixtureDate)
+                            : "Inactive"}
+                        </span>
+                        <div className="ml-auto flex items-center gap-2 text-slate-200">
+                          {team.isActiveInEurope ? (
+                            <>
+                              <Image
+                                src={team.teamLogo}
+                                alt={team.teamName}
+                                width={16}
+                                height={16}
+                                className="h-4 w-4 rounded-full"
+                              />
+                              <span className="text-slate-300">#{team.rank}</span>
+                              <span className="text-slate-500">-</span>
+                              <Image
+                                src={opponent.teamLogo}
+                                alt={opponent.teamName}
+                                width={16}
+                                height={16}
+                                className="h-4 w-4 rounded-full"
+                              />
+                              <span className="text-slate-300">#{opponent.rank}</span>
+                            </>
+                          ) : (
+                            <span className="max-w-[190px] truncate text-slate-400">
+                              {team.europeStatusNote ?? "No active European fixture"}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
               <p className="mt-3 text-xs text-slate-400">Open full standings</p>
             </Link>
           ))}
@@ -155,21 +221,25 @@ export default async function HomePage() {
                   <th className="px-4 py-3">Club</th>
                   <th className="px-4 py-3">League</th>
                   <th className="px-4 py-3">Rank</th>
-                  <th className="px-4 py-3">Pts</th>
                   <th className="px-4 py-3">Coeff.</th>
-                  <th className="px-4 py-3">Gap to 1st</th>
+                  <th className="px-4 py-3">Europe</th>
                   <th className="px-4 py-3">Delta</th>
-                  <th className="px-4 py-3">Compared With</th>
                 </tr>
               </thead>
               <tbody>
-                {snapshot.race.map((entry) => {
+                {snapshot.race.map((entry, index) => {
                   const leagueSummary = snapshot.leagues.find((league) => league.leagueId === entry.leagueId);
                   const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
                   const leagueLogo = entry.leagueLogo || leagueSummary?.leagueLogo;
+                  const isRaceLeader = index === 0;
 
                   return (
-                    <tr key={`${entry.leagueId}-${entry.teamId}`} className="border-t border-white/5 text-sm">
+                    <tr
+                      key={`${entry.leagueId}-${entry.teamId}`}
+                      className={`border-t border-white/5 text-sm ${
+                        isRaceLeader ? "bg-amber-400/15" : ""
+                      }`}
+                    >
                       <td className="px-4 py-3 text-white">
                         <div className="flex items-center gap-2">
                           <Image
@@ -180,6 +250,7 @@ export default async function HomePage() {
                             className="h-5 w-5 rounded-full"
                           />
                           <span>{entry.teamName}</span>
+                         
                         </div>
                       </td>
                       <td className="px-4 py-3 text-slate-300">
@@ -206,11 +277,19 @@ export default async function HomePage() {
                         </div>
                       </td>
                       <td className="px-4 py-3 text-slate-300">#{entry.rank}</td>
-                      <td className="px-4 py-3 text-slate-300">{entry.points}</td>
                       <td className="px-4 py-3 text-slate-300">{formatCoefficient(entry.coefficient ?? 0)}</td>
-                      <td className="px-4 py-3 text-slate-300">{entry.pointsToFirst}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`inline-flex rounded-full border px-2 py-0.5 text-xs ${
+                            entry.isActiveInEurope
+                              ? "border-emerald-300/40 bg-emerald-400/20 text-emerald-100"
+                              : "border-slate-400/30 bg-slate-500/20 text-slate-200"
+                          }`}
+                        >
+                          {entry.isActiveInEurope ? "Active" : "Out"}
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-slate-300">{formatSigned(entry.pointsDeltaToComparison)}</td>
-                      <td className="px-4 py-3 text-slate-300">{entry.comparisonTeamName ?? "-"}</td>
                     </tr>
                   );
                 })}
