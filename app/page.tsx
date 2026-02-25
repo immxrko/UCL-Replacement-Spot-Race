@@ -101,7 +101,7 @@ const domesticFixturesDataPath = "data/domestic-fixtures.json";
 
 const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
   const url = `${buildDataUrl(raceDataPath)}?ts=${Date.now()}`;
-  const response = await fetch(url, { cache: "no-store", next: { revalidate: 0 } });
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch race snapshot from ${url} (${response.status}).`);
@@ -117,7 +117,7 @@ const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
 
 const getDomesticFixturesSnapshot = async (): Promise<DomesticFixturesSnapshot | null> => {
   const url = `${buildDataUrl(domesticFixturesDataPath)}?ts=${Date.now()}`;
-  const response = await fetch(url, { cache: "no-store", next: { revalidate: 0 } });
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     return null;
@@ -194,6 +194,10 @@ export default async function HomePage() {
   const fixtureTeams = raceByCoefficient.map((entry) => ({
     teamName: entry.teamName,
     teamLogo: entry.teamLogo,
+    leagueName:
+      entry.leagueName ||
+      snapshot.leagues.find((league) => league.leagueId === entry.leagueId)?.leagueName ||
+      "League",
     leagueFlag:
       entry.leagueFlag ||
       snapshot.leagues.find((league) => league.leagueId === entry.leagueId)?.leagueFlag ||
@@ -204,19 +208,15 @@ export default async function HomePage() {
     <main className="min-h-screen bg-hero-grad px-4 py-10 sm:px-6 lg:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
         <header className="space-y-2">
-          <h1 className="text-3xl font-semibold text-white sm:text-4xl">UCL Replacement Spot Race</h1>
+          <h1 className="text-3xl font-semibold text-white sm:text-4xl">UCL Titleholder Replacement Spot Race</h1>
           <p className="max-w-3xl text-sm text-slate-300">
-            UCL race table is sorted by coefficient. League snapshots are listed below.
-          </p>
+         Track who would claim the UCL Titleholder replacement spot right now — based on coefficients and domestic title races. </p>
           <p className="text-xs text-slate-400">
-            Updated (Vienna): {formatViennaTime(snapshot.generatedAt)} • Season: {snapshot.season}
-          </p>
-          <p className="text-[11px] text-slate-500">
-            Data URL: {expectedUrl}
-            {snapshot.coefficients?.generatedAt
-              ? ` • Coeff updated: ${formatViennaTime(snapshot.coefficients.generatedAt)}`
+            Data updated: {formatViennaTime(snapshot.generatedAt)}  {snapshot.coefficients?.generatedAt
+              ? `• Coefficients updated: ${formatViennaTime(snapshot.coefficients.generatedAt)}`
               : ""}
           </p>
+    
         </header>
 
         <UclExplainerCard />
@@ -252,9 +252,9 @@ export default async function HomePage() {
 
         <section className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-lg">
           <div className="border-b border-white/10 px-4 py-3">
-            <h2 className="text-lg font-semibold text-white">UCL Replacement Spot Race Standings</h2>
+            <h2 className="text-lg font-semibold text-white">UCL Titleholder Replacement Spot Race Standings</h2>
             <p className="text-xs text-slate-400">
-              Team shown with league flag + team logo. Coefficient is green when active and red when out.
+            The team highlighted in gold would currently earn direct entry to the 2026/27 UEFA Champions League.
             </p>
           </div>
 
@@ -364,7 +364,7 @@ export default async function HomePage() {
                           <span className="truncate">{entry.teamName}</span>
                           {isBestDomesticLeader ? (
                             <span className="rounded-full border border-amber-300/40 bg-amber-400/20 px-2 py-0.5 text-[10px] uppercase tracking-wide text-amber-100">
-                              Direct UCL
+                              Direct UCL 2026/27
                             </span>
                           ) : null}
                         </div>
