@@ -26,6 +26,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         {children}
+        <footer className="border-t border-white/10 bg-slate-950/90 px-4 py-5 sm:px-6 lg:px-10">
+          <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+            <p>Unofficial: not affiliated with UEFA, clubs, or leagues.</p>
+            <a
+              href="https://www.cvejicm.net/#contact"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sky-300 transition hover:text-sky-200"
+            >
+              Contact
+            </a>
+          </div>
+        </footer>
         <Script
           defer
           src="https://umami.cvejicm.net/script.js"
