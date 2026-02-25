@@ -48,11 +48,11 @@
           "updatedAt": "2026-02-23T00:00:00+00:00",
           "isHighlighted": true,
           "coefficient": 62.25,
-          "isActiveInEurope": true,
-          "europeCompetition": "UEFA Champions League",
-          "europeStage": "KO Play-offs",
-          "europeNextFixtureDate": "2026-02-24",
-          "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
+          "isActiveInEurope": null,
+          "europeCompetition": null,
+          "europeStage": null,
+          "europeNextFixtureDate": null,
+          "europeNextFixtureLabel": null,
           "europeStatusNote": null
         },
         {
