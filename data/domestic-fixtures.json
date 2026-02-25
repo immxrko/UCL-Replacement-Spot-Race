@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-02-25T03:03:21.319Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/fixtures",
+    "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
+    "season": 2025,
+    "timezone": "Europe/Vienna",
+    "leaguesFetched": 9
+  },
+  "windows": {
+    "currentWeek": {
+      "from": "2026-02-23",
+      "to": "2026-03-01"
+    },
+    "lastWeek": {
+      "from": "2026-02-16",
+      "to": "2026-02-22"
+    }
+  },
+  "coverage": {
+    "trackedTeams": 12,
+    "currentWeekResolved": 12,
+    "lastWeekResolved": 11
+  },
+  "teams": {
+    "FK Crvena Zvezda": {
+      "currentWeek": {
+        "fixtureId": 1385088,
+        "opponent": "Radnicki 1923",
+        "opponentLogo": "https://media.api-sports.io/football/teams/2644.png",
+        "date": "2026-03-01T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "away",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1385075,
+        "opponent": "FK Partizan",
+        "opponentLogo": "https://media.api-sports.io/football/teams/573.png",
+        "date": "2026-02-22T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "home",
+        "result": "3-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Dinamo Zagreb": {
+      "currentWeek": {
+        "fixtureId": 1384034,
+        "opponent": "HNK Gorica",
+        "opponentLogo": "https://media.api-sports.io/football/teams/1068.png",
+        "date": "2026-03-01T17:15:00+01:00",
+        "kickoff": "17:15",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1384032,
+        "opponent": "NK Varazdin",
+        "opponentLogo": "https://media.api-sports.io/football/teams/1483.png",
+        "date": "2026-02-22T15:00:00+01:00",
+        "kickoff": "15:00",
+        "venue": "away",
+        "result": "4-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Red Bull Salzburg": {
+      "currentWeek": {
+        "fixtureId": 1390148,
+        "opponent": "TSV Hartberg",
+        "opponentLogo": "https://media.api-sports.io/football/teams/1072.png",
+        "date": "2026-03-01T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1390142,
+        "opponent": "Lask Linz",
+        "opponentLogo": "https://media.api-sports.io/football/teams/1026.png",
+        "date": "2026-02-22T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "away",
+        "result": "5-1 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Slovan Bratislava": {
+      "currentWeek": {
+        "fixtureId": 1384229,
+        "opponent": "Spartak Trnava",
+        "opponentLogo": "https://media.api-sports.io/football/teams/1120.png",
+        "date": "2026-02-28T15:30:00+01:00",
+        "kickoff": "15:30",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1384222,
+        "opponent": "Ružomberok",
+        "opponentLogo": "https://media.api-sports.io/football/teams/3549.png",
+        "date": "2026-02-22T15:30:00+01:00",
+        "kickoff": "15:30",
+        "venue": "away",
+        "result": "2-2 D",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Olympiakos Piraeus": {
+      "currentWeek": {
+        "fixtureId": 1400899,
+        "opponent": "Panserraikos",
+        "opponentLogo": "https://media.api-sports.io/football/teams/2099.png",
+        "date": "2026-03-01T15:00:00+01:00",
+        "kickoff": "15:00",
+        "venue": "away",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1400891,
+        "opponent": "Panetolikos",
+        "opponentLogo": "https://media.api-sports.io/football/teams/949.png",
+        "date": "2026-02-21T16:00:00+01:00",
+        "kickoff": "16:00",
+        "venue": "home",
+        "result": "2-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Rangers": {
+      "currentWeek": {
+        "fixtureId": 1382839,
+        "opponent": "Celtic",
+        "opponentLogo": "https://media.api-sports.io/football/teams/247.png",
+        "date": "2026-03-01T13:00:00+01:00",
+        "kickoff": "13:00",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1382832,
+        "opponent": "Livingston",
+        "opponentLogo": "https://media.api-sports.io/football/teams/255.png",
+        "date": "2026-02-22T16:00:00+01:00",
+        "kickoff": "16:00",
+        "venue": "away",
+        "result": "2-2 D",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "FC Copenhagen": {
+      "currentWeek": {
+        "fixtureId": 1379475,
+        "opponent": "Randers FC",
+        "opponentLogo": "https://media.api-sports.io/football/teams/401.png",
+        "date": "2026-03-01T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1379472,
+        "opponent": "Odense",
+        "opponentLogo": "https://media.api-sports.io/football/teams/405.png",
+        "date": "2026-02-21T14:00:00+01:00",
+        "kickoff": "14:00",
+        "venue": "away",
+        "result": "2-2 D",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Shakhtar Donetsk": {
+      "currentWeek": {
+        "fixtureId": 1391551,
+        "opponent": "Veres Rivne",
+        "opponentLogo": "https://media.api-sports.io/football/teams/6501.png",
+        "date": "2026-02-27T14:30:00+01:00",
+        "kickoff": "14:30",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1391547,
+        "opponent": "Karpaty",
+        "opponentLogo": "https://media.api-sports.io/football/teams/3617.png",
+        "date": "2026-02-22T14:30:00+01:00",
+        "kickoff": "14:30",
+        "venue": "home",
+        "result": "3-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Ferencvarosi TC": {
+      "currentWeek": {
+        "fixtureId": 1380314,
+        "opponent": "Kazincbarcikai",
+        "opponentLogo": "https://media.api-sports.io/football/teams/2410.png",
+        "date": "2026-03-01T18:45:00+01:00",
+        "kickoff": "18:45",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": null
+    },
+    "PAOK": {
+      "currentWeek": {
+        "fixtureId": 1400898,
+        "opponent": "Asteras Tripolis",
+        "opponentLogo": "https://media.api-sports.io/football/teams/955.png",
+        "date": "2026-03-01T18:00:00+01:00",
+        "kickoff": "18:00",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1400892,
+        "opponent": "Larisa",
+        "opponentLogo": "https://media.api-sports.io/football/teams/953.png",
+        "date": "2026-02-22T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "away",
+        "result": "1-1 D",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "FC Midtjylland": {
+      "currentWeek": {
+        "fixtureId": 1379477,
+        "opponent": "Brondby",
+        "opponentLogo": "https://media.api-sports.io/football/teams/407.png",
+        "date": "2026-03-01T17:00:00+01:00",
+        "kickoff": "17:00",
+        "venue": "home",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1379474,
+        "opponent": "Silkeborg",
+        "opponentLogo": "https://media.api-sports.io/football/teams/2073.png",
+        "date": "2026-02-22T16:00:00+01:00",
+        "kickoff": "16:00",
+        "venue": "away",
+        "result": "4-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
+    "Celtic": {
+      "currentWeek": {
+        "fixtureId": 1382839,
+        "opponent": "Rangers",
+        "opponentLogo": "https://media.api-sports.io/football/teams/257.png",
+        "date": "2026-03-01T13:00:00+01:00",
+        "kickoff": "13:00",
+        "venue": "away",
+        "result": null,
+        "statusShort": "NS",
+        "statusLong": "Not Started"
+      },
+      "lastWeek": {
+        "fixtureId": 1382829,
+        "opponent": "Hibernian",
+        "opponentLogo": "https://media.api-sports.io/football/teams/249.png",
+        "date": "2026-02-22T16:00:00+01:00",
+        "kickoff": "16:00",
+        "venue": "home",
+        "result": "1-2 L",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    }
+  }
+}
