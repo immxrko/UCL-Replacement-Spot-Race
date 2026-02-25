@@ -5,6 +5,7 @@
 GitHub Actions writes data into the `data` branch every day at `23:59 UTC`:
 - `data/race.json` (aggregated snapshot for homepage)
 - `data/leagues/<leagueId>.json` (full table per league)
+- `data/coefficients.json` (UEFA top-100 coefficient snapshot from separate `Get Coeff` workflow)
 
 Tracked leagues:
 - `197` Greece
@@ -53,9 +54,10 @@ Cron:
 
 Behavior:
 1. Fetch standings for all 9 leagues.
-2. Generate JSON snapshots.
-3. Overwrite `data/` folder in branch `data`.
-4. Commit only if content changed.
+2. Pull latest coefficients from `data/coefficients.json` (fallback to built-in values if unavailable).
+3. Generate JSON snapshots.
+4. Overwrite `data/` folder in branch `data`.
+5. Commit only if content changed.
 
 ## Local generation
 

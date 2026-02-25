@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
 const requiredEnv = ["API_FOOTBALL_KEY"];
@@ -167,9 +167,20 @@ const COEFFICIENT_TIEBREAKER_ORDER = [
   "Slovan Bratislava",
 ];
 
+const COEFFICIENT_NAME_ALIASES = new Map([
+  ["Olympiakos Piraeus", ["Olympiacos", "Olympiacos FC"]],
+  ["FC Copenhagen", ["Copenhagen", "F.C. Copenhagen"]],
+  ["Shakhtar Donetsk", ["Shakhtar", "FC Shakhtar Donetsk"]],
+  ["Ferencvarosi TC", ["Ferencvaros", "Ferencvarosi TC", "Ferencvarosi"]],
+  ["FK Crvena Zvezda", ["Crvena Zvezda"]],
+  ["Dinamo Zagreb", ["GNK Dinamo", "GNK Dinamo Zagreb"]],
+  ["Red Bull Salzburg", ["Salzburg", "FC Salzburg"]],
+  ["Slovan Bratislava", ["SK Slovan Bratislava", "Slovan Bratislava"]],
+]);
+
 const getEnvOrDefault = (key, fallback) => {
   const value = process.env[key];
-  return value && value.trim() ? value : fallback;
+  return value && value.trim() ? value.trim() : fallback;
 };
 
 const parsePositiveInt = (name, value) => {
@@ -192,6 +203,28 @@ const API_FOOTBALL_HOST = getEnvOrDefault("API_FOOTBALL_HOST", new URL(API_BASE_
 const API_FOOTBALL_KEY = process.env.API_FOOTBALL_KEY;
 const SEASON = parsePositiveInt("SEASON", getEnvOrDefault("SEASON", "2025"));
 const OUTPUT_DIR = getEnvOrDefault("OUTPUT_DIR", "data");
+const DATA_REPO_OWNER = getEnvOrDefault("DATA_REPO_OWNER", "immxrko");
+const DATA_REPO_NAME = getEnvOrDefault("DATA_REPO_NAME", "UCL-Replacement-Spot-Race");
+const DATA_BRANCH = getEnvOrDefault("DATA_BRANCH", "data");
+const DATA_ROOT_URL = getEnvOrDefault(
+  "DATA_ROOT_URL",
+  `https://raw.githubusercontent.com/${DATA_REPO_OWNER}/${DATA_REPO_NAME}/refs/heads/${DATA_BRANCH}`,
+);
+const COEFFICIENTS_FILE_PATH = getEnvOrDefault("COEFFICIENTS_FILE_PATH", "data/coefficients.json");
+const COEFFICIENTS_URL = getEnvOrDefault(
+  "COEFFICIENTS_URL",
+  `${DATA_ROOT_URL.replace(/\/$/, "")}/${COEFFICIENTS_FILE_PATH.replace(/^\//, "")}`,
+);
+const LOCAL_COEFFICIENTS_FILE = getEnvOrDefault("LOCAL_COEFFICIENTS_FILE", "data/coefficients.json");
+
+const normalizeClubNameForLookup = (value) =>
+  value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/gi, " ")
+    .trim()
+    .toLocaleLowerCase();
 
 const createApiUrl = (endpoint, query = {}) => {
   const base = API_BASE_URL.endsWith("/") ? API_BASE_URL : `${API_BASE_URL}/`;
@@ -213,6 +246,129 @@ const parseApiErrors = (errors) => {
     return Object.values(errors).filter(Boolean).map(String);
   }
   return [String(errors)];
+};
+
+const buildCoefficientLookup = (payload) => {
+  if (!Array.isArray(payload?.clubs)) {
+    throw new Error("Invalid coefficients payload: clubs[] is missing.");
+  }
+
+  const lookup = new Map();
+
+  for (const club of payload.clubs) {
+    const coefficient = Number(club?.coefficient);
+    if (!Number.isFinite(coefficient)) {
+      continue;
+    }
+
+    const candidateNames = [club?.teamName, club?.teamOfficialName].filter(Boolean);
+    for (const candidateName of candidateNames) {
+      const key = normalizeClubNameForLookup(String(candidateName));
+      if (!key) {
+        continue;
+      }
+
+      const existing = lookup.get(key);
+      if (!existing || coefficient > existing.coefficient) {
+        lookup.set(key, {
+          coefficient,
+          matchedClub: club?.teamName ?? club?.teamOfficialName ?? String(candidateName),
+        });
+      }
+    }
+  }
+
+  return lookup;
+};
+
+const loadCoefficientSnapshot = async () => {
+  let payload = null;
+  let source = null;
+
+  try {
+    const response = await fetch(COEFFICIENTS_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    payload = await response.json();
+    source = COEFFICIENTS_URL;
+  } catch (error) {
+    console.warn(`Warning: failed to fetch coefficients from ${COEFFICIENTS_URL}: ${error.message}`);
+  }
+
+  if (!payload) {
+    try {
+      const raw = await readFile(LOCAL_COEFFICIENTS_FILE, "utf8");
+      payload = JSON.parse(raw);
+      source = LOCAL_COEFFICIENTS_FILE;
+    } catch (error) {
+      console.warn(
+        `Warning: failed to read local coefficients file ${LOCAL_COEFFICIENTS_FILE}: ${error.message}`,
+      );
+    }
+  }
+
+  if (!payload) {
+    return {
+      lookup: new Map(),
+      source: null,
+      generatedAt: null,
+    };
+  }
+
+  try {
+    return {
+      lookup: buildCoefficientLookup(payload),
+      source,
+      generatedAt: payload.generatedAt ?? null,
+    };
+  } catch (error) {
+    console.warn(`Warning: invalid coefficients payload from ${source}: ${error.message}`);
+    return {
+      lookup: new Map(),
+      source,
+      generatedAt: payload.generatedAt ?? null,
+    };
+  }
+};
+
+const resolveCoefficientForTeam = (teamName, coefficientLookup) => {
+  const aliases = COEFFICIENT_NAME_ALIASES.get(teamName) ?? [];
+  const candidates = [teamName, ...aliases];
+
+  for (const candidate of candidates) {
+    const key = normalizeClubNameForLookup(candidate);
+    const coefficient = coefficientLookup.get(key)?.coefficient;
+    if (Number.isFinite(coefficient)) {
+      return coefficient;
+    }
+  }
+
+  return null;
+};
+
+const applyCoefficientOverrides = (trackedLeagues, coefficientLookup) => {
+  let matchedTeams = 0;
+  const fallbackTeams = [];
+
+  const leagues = trackedLeagues.map((leagueConfig) => ({
+    ...leagueConfig,
+    highlightTeams: leagueConfig.highlightTeams.map((teamConfig) => {
+      const resolvedCoefficient = resolveCoefficientForTeam(teamConfig.name, coefficientLookup);
+      if (!Number.isFinite(resolvedCoefficient)) {
+        fallbackTeams.push(teamConfig.name);
+        return teamConfig;
+      }
+
+      matchedTeams += 1;
+      return {
+        ...teamConfig,
+        coefficient: resolvedCoefficient,
+      };
+    }),
+  }));
+
+  return { leagues, matchedTeams, fallbackTeams };
 };
 
 const fetchStandings = async (leagueId) => {
@@ -422,8 +578,26 @@ const writeJson = async (filePath, payload) => {
 
 const run = async () => {
   const generatedAt = new Date().toISOString();
+  const coefficientSnapshot = await loadCoefficientSnapshot();
+  const { leagues: trackedLeagues, matchedTeams, fallbackTeams } = applyCoefficientOverrides(
+    TRACKED_LEAGUES,
+    coefficientSnapshot.lookup,
+  );
+
+  if (coefficientSnapshot.source) {
+    console.log(
+      `Loaded coefficients from ${coefficientSnapshot.source} (generatedAt: ${coefficientSnapshot.generatedAt ?? "n/a"})`,
+    );
+  } else {
+    console.warn("Warning: no coefficients snapshot available, using fallback values.");
+  }
+
+  if (fallbackTeams.length > 0) {
+    console.warn(`Warning: using fallback coefficients for: ${fallbackTeams.join(", ")}`);
+  }
+
   const leaguePayloads = await Promise.all(
-    TRACKED_LEAGUES.map(async (config) => ({
+    trackedLeagues.map(async (config) => ({
       config,
       payload: await fetchStandings(config.leagueId),
     })),
@@ -486,6 +660,12 @@ const run = async () => {
   const raceSnapshot = {
     generatedAt,
     season: SEASON,
+    coefficients: {
+      source: coefficientSnapshot.source,
+      generatedAt: coefficientSnapshot.generatedAt,
+      matchedTeams,
+      fallbackTeams,
+    },
     leagues: leagueSnapshots.map((snapshot) => ({
       leagueId: snapshot.league.id,
       leagueName: snapshot.league.name,
