@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-02-25T01:45:12.586Z",
+  "generatedAt": "2026-02-25T01:46:40.742Z",
   "season": 2025,
   "coefficients": {
     "source": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/coefficients.json",
-    "generatedAt": "2026-02-25T01:31:40.677Z",
+    "generatedAt": "2026-02-25T01:46:20.060Z",
     "matchedTeams": 12,
     "fallbackTeams": []
   },
@@ -760,7 +760,7 @@
           "form": "WWWWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 48.5,
+          "coefficient": 46.5,
           "isActiveInEurope": true,
           "europeCompetition": "UEFA Europa League",
           "europeStage": "KO Play-offs",
@@ -857,7 +857,7 @@
           "form": "WWWWW",
           "updatedAt": "2026-02-24T00:00:00+00:00",
           "isHighlighted": true,
-          "coefficient": 48.5,
+          "coefficient": 46.5,
           "isActiveInEurope": true,
           "europeCompetition": "UEFA Europa League",
           "europeStage": "KO Play-offs",
@@ -1287,7 +1287,7 @@
       "pointsDeltaToComparison": 4,
       "comparisonTeamName": "FK Partizan",
       "focusIsFirst": true,
-      "coefficient": 48.5,
+      "coefficient": 46.5,
       "isActiveInEurope": true,
       "europeCompetition": "UEFA Europa League",
       "europeStage": "KO Play-offs",

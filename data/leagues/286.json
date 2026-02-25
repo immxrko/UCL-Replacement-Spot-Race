@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-25T01:45:12.586Z",
+  "generatedAt": "2026-02-25T01:46:40.742Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 286,
@@ -29,7 +29,7 @@
       "form": "WWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.5,
+      "coefficient": 46.5,
       "isActiveInEurope": true,
       "europeCompetition": "UEFA Europa League",
       "europeStage": "KO Play-offs",
@@ -126,7 +126,7 @@
       "form": "WWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.5,
+      "coefficient": 46.5,
       "isActiveInEurope": true,
       "europeCompetition": "UEFA Europa League",
       "europeStage": "KO Play-offs",
@@ -152,7 +152,7 @@
       "form": "WWWWW",
       "updatedAt": "2026-02-24T00:00:00+00:00",
       "isHighlighted": true,
-      "coefficient": 48.5,
+      "coefficient": 46.5,
       "isActiveInEurope": true,
       "europeCompetition": "UEFA Europa League",
       "europeStage": "KO Play-offs",
