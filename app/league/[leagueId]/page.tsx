@@ -32,8 +32,8 @@ const formatViennaTime = (iso: string) => {
 };
 
 const getLeagueSnapshot = async (leagueId: string): Promise<LeagueSnapshot> => {
-  const url = buildDataUrl(`data/leagues/${leagueId}.json`);
-  const response = await fetch(url, { cache: "no-store" });
+  const url = `${buildDataUrl(`data/leagues/${leagueId}.json`)}?ts=${Date.now()}`;
+  const response = await fetch(url, { cache: "no-store", next: { revalidate: 0 } });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch league snapshot from ${url} (${response.status}).`);

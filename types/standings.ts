@@ -90,6 +90,56 @@ export interface RaceLeagueSummary {
 export interface RaceSnapshot {
   generatedAt: string;
   season: number;
+  coefficients?: {
+    source: string | null;
+    generatedAt: string | null;
+    matchedTeams: number;
+    fallbackTeams: string[];
+  };
   leagues: RaceLeagueSummary[];
   race: RaceEntry[];
+}
+
+export interface DomesticFixtureRow {
+  fixtureId: number | null;
+  opponent: string;
+  opponentLogo: string | null;
+  date: string | null;
+  kickoff: string;
+  venue: "home" | "away";
+  result: string | null;
+  statusShort: string | null;
+  statusLong: string | null;
+}
+
+export interface TeamDomesticFixtures {
+  currentWeek: DomesticFixtureRow | null;
+  lastWeek: DomesticFixtureRow | null;
+}
+
+export interface DomesticFixturesSnapshot {
+  generatedAt: string;
+  source: {
+    endpoint: string;
+    raceSnapshotUrl: string;
+    season: number;
+    timezone: string;
+    leaguesFetched: number;
+  };
+  windows: {
+    currentWeek: {
+      from: string;
+      to: string;
+    };
+    lastWeek: {
+      from: string;
+      to: string;
+    };
+  };
+  coverage: {
+    trackedTeams: number;
+    currentWeekResolved: number;
+    lastWeekResolved: number;
+  };
+  teams: Record<string, TeamDomesticFixtures>;
 }

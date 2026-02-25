@@ -3,7 +3,7 @@ import { DomesticFixturesCard } from "@/components/DomesticFixturesCard";
 import { TrackedLink } from "@/components/TrackedLink";
 import { UclExplainerCard } from "@/components/UclExplainerCard";
 import { buildDataUrl } from "@/lib/dataBranch";
-import { RaceSnapshot } from "@/types/standings";
+import { DomesticFixturesSnapshot, RaceSnapshot } from "@/types/standings";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +13,53 @@ const formatSigned = (value: number) => {
 };
 
 const formatCoefficient = (value: number) => value.toFixed(3);
+const FORM_RESULT_CLASS: Record<string, string> = {
+  W: "text-emerald-300",
+  D: "text-amber-300",
+  L: "text-rose-300",
+};
+
+type LeaguePhaseConfig = {
+  regularMatchdays: number;
+  splitMatchdays?: number;
+  splitLabel?: string;
+};
+
+const LEAGUE_PHASE_CONFIG: Record<number, LeaguePhaseConfig> = {
+  119: {
+    regularMatchdays: 22,
+    splitMatchdays: 10,
+    splitLabel: "Split",
+  }, // Denmark
+  179: {
+    regularMatchdays: 33,
+    splitMatchdays: 5,
+    splitLabel: "Split",
+  }, // Scotland
+  197: {
+    regularMatchdays: 26,
+    splitMatchdays: 10,
+    splitLabel: "Split",
+  }, // Greece
+  210: { regularMatchdays: 36 }, // Croatia
+  218: {
+    regularMatchdays: 22,
+    splitMatchdays: 10,
+    splitLabel: "Split",
+  }, // Austria
+  271: { regularMatchdays: 33 }, // Hungary
+  286: {
+    regularMatchdays: 30,
+    splitMatchdays: 7,
+    splitLabel: "Split",
+  }, // Serbia
+  332: {
+    regularMatchdays: 22,
+    splitMatchdays: 10,
+    splitLabel: "Split",
+  }, // Slovakia
+  333: { regularMatchdays: 30 }, // Ukraine
+};
 
 const formatViennaTime = (iso: string) => {
   const date = new Date(iso);
@@ -50,10 +97,11 @@ const getClubTieBreaker = (teamName: string) =>
   CLUB_TIEBREAKER_INDEX.get(teamName.toLocaleLowerCase()) ?? Number.MAX_SAFE_INTEGER;
 
 const raceDataPath = "data/race.json";
+const domesticFixturesDataPath = "data/domestic-fixtures.json";
 
 const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
-  const url = buildDataUrl(raceDataPath);
-  const response = await fetch(url, { cache: "no-store" });
+  const url = `${buildDataUrl(raceDataPath)}?ts=${Date.now()}`;
+  const response = await fetch(url, { cache: "no-store", next: { revalidate: 0 } });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch race snapshot from ${url} (${response.status}).`);
@@ -67,13 +115,33 @@ const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
   return payload;
 };
 
+const getDomesticFixturesSnapshot = async (): Promise<DomesticFixturesSnapshot | null> => {
+  const url = `${buildDataUrl(domesticFixturesDataPath)}?ts=${Date.now()}`;
+  const response = await fetch(url, { cache: "no-store", next: { revalidate: 0 } });
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const payload = (await response.json()) as DomesticFixturesSnapshot;
+  if (!payload?.teams || !payload?.windows) {
+    return null;
+  }
+
+  return payload;
+};
+
 export default async function HomePage() {
   const expectedUrl = buildDataUrl(raceDataPath);
   let snapshot: RaceSnapshot | null = null;
+  let domesticFixturesSnapshot: DomesticFixturesSnapshot | null = null;
   let loadError: string | null = null;
 
   try {
-    snapshot = await getRaceSnapshot();
+    [snapshot, domesticFixturesSnapshot] = await Promise.all([
+      getRaceSnapshot(),
+      getDomesticFixturesSnapshot().catch(() => null),
+    ]);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown snapshot loading error.";
     loadError = message;
@@ -142,6 +210,12 @@ export default async function HomePage() {
           </p>
           <p className="text-xs text-slate-400">
             Updated (Vienna): {formatViennaTime(snapshot.generatedAt)} • Season: {snapshot.season}
+          </p>
+          <p className="text-[11px] text-slate-500">
+            Data URL: {expectedUrl}
+            {snapshot.coefficients?.generatedAt
+              ? ` • Coeff updated: ${formatViennaTime(snapshot.coefficients.generatedAt)}`
+              : ""}
           </p>
         </header>
 
@@ -317,7 +391,31 @@ export default async function HomePage() {
         </section>
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {snapshot.leagues.map((league) => (
+          {snapshot.leagues.map((league) => {
+            const currentMatchday = league.top5.reduce(
+              (max, row) => Math.max(max, row.played ?? 0),
+              0,
+            );
+            const phaseConfig = LEAGUE_PHASE_CONFIG[league.leagueId];
+            let progressLabel = `Matchday ${currentMatchday}`;
+
+            if (phaseConfig) {
+              const regularPlayed = Math.min(currentMatchday, phaseConfig.regularMatchdays);
+              const splitTotal = phaseConfig.splitMatchdays ?? 0;
+
+              if (splitTotal > 0) {
+                const splitPlayed = Math.min(
+                  Math.max(currentMatchday - phaseConfig.regularMatchdays, 0),
+                  splitTotal,
+                );
+                const splitLabel = phaseConfig.splitLabel ?? "Phase 2";
+                progressLabel = `Regular ${regularPlayed}/${phaseConfig.regularMatchdays} • ${splitLabel} ${splitPlayed}/${splitTotal}`;
+              } else {
+                progressLabel = `Matchday ${regularPlayed}/${phaseConfig.regularMatchdays}`;
+              }
+            }
+
+            return (
             <TrackedLink
               key={league.leagueId}
               href={`/league/${league.leagueId}`}
@@ -343,7 +441,9 @@ export default async function HomePage() {
                   />
                   <div>
                     <h2 className="text-lg font-semibold text-white group-hover:text-sky-200">{league.leagueName}</h2>
-                    <p className="text-xs text-slate-400">{league.leagueCountry}</p>
+                    <p className="text-xs text-slate-400">
+                      {league.leagueCountry} • {progressLabel}
+                    </p>
                   </div>
                 </div>
                 <span className="rounded-full border border-sky-300/20 bg-sky-500/10 px-2 py-1 text-xs text-sky-200">
@@ -367,7 +467,25 @@ export default async function HomePage() {
                       height={20}
                       className="h-5 w-5 rounded-full"
                     />
-                    <span className="truncate">{row.teamName}</span>
+                    <div className="flex min-w-0 items-center gap-2">
+                      <span className="truncate">{row.teamName}</span>
+                      <span className="shrink-0 rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-slate-300">
+                        {row.form ? (
+                          <span className="inline-flex items-center gap-0.5 font-semibold">
+                            {row.form.toUpperCase().split("").map((result, index) => (
+                              <span
+                                key={`${row.teamId}-${result}-${index}`}
+                                className={FORM_RESULT_CLASS[result] ?? "text-slate-300"}
+                              >
+                                {result}
+                              </span>
+                            ))}
+                          </span>
+                        ) : (
+                          "-"
+                        )}
+                      </span>
+                    </div>
                     <span>{row.points}</span>
                   </div>
                 ))}
@@ -375,10 +493,11 @@ export default async function HomePage() {
 
               <p className="mt-3 text-xs text-slate-400">Open full standings</p>
             </TrackedLink>
-          ))}
+            );
+          })}
         </section>
 
-        <DomesticFixturesCard teams={fixtureTeams} />
+        <DomesticFixturesCard teams={fixtureTeams} snapshot={domesticFixturesSnapshot} />
       </div>
     </main>
   );

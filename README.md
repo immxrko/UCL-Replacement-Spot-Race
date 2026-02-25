@@ -6,6 +6,7 @@ GitHub Actions writes data into the `data` branch every day at `23:59 UTC`:
 - `data/race.json` (aggregated snapshot for homepage)
 - `data/leagues/<leagueId>.json` (full table per league)
 - `data/coefficients.json` (UEFA top-100 coefficient snapshot from separate `Get Coeff` workflow)
+- `data/domestic-fixtures.json` (weekly domestic fixtures/results snapshot for highlighted teams)
 
 Tracked leagues:
 - `197` Greece
@@ -45,12 +46,14 @@ Tracked clubs:
 
 Workflow file:
 - `.github/workflows/sync-standings-results.yml`
+- `.github/workflows/sync-domestic-fixtures.yml`
 
 Required repository secret:
 - `API_FOOTBALL_KEY`
 
 Cron:
 - `59 23 * * *` (23:59 UTC)
+- `10 0 * * 1` (every Monday at 00:10 UTC, domestic fixtures snapshot)
 
 Behavior:
 1. Fetch standings for all 9 leagues.
@@ -58,6 +61,12 @@ Behavior:
 3. Generate JSON snapshots.
 4. Overwrite `data/` folder in branch `data`.
 5. Commit only if content changed.
+
+Domestic fixtures workflow behavior:
+1. Load tracked teams from `data/race.json`.
+2. Fetch domestic league fixtures via API-Football `/fixtures` for last+current week windows.
+3. Build per-team current week fixture and last week result entries.
+4. Write `data/domestic-fixtures.json` to `data` branch.
 
 ## Local generation
 
@@ -70,11 +79,13 @@ cp .env.example .env
 ```bash
 export $(grep -v '^#' .env | xargs)
 npm run sync:data
+npm run sync:fixtures
 ```
 
 This writes:
 - `data/race.json`
 - `data/leagues/*.json`
+- `data/domestic-fixtures.json`
 
 ## Frontend data source
 

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { sampleDomesticFixtures } from "@/data/sampleDomesticFixtures";
 import { trackUmamiEvent } from "@/lib/umami";
+import { DomesticFixturesSnapshot } from "@/types/standings";
 
 type FixtureView = "current" | "last";
 
@@ -15,6 +16,7 @@ interface FixtureTeam {
 
 interface DomesticFixturesCardProps {
   teams: FixtureTeam[];
+  snapshot?: DomesticFixturesSnapshot | null;
 }
 
 const formatDate = (dateValue: string) => {
@@ -46,7 +48,7 @@ const formatWeekRange = (dates: Date[]) => {
   return `${start} - ${end}`;
 };
 
-export function DomesticFixturesCard({ teams }: DomesticFixturesCardProps) {
+export function DomesticFixturesCard({ teams, snapshot }: DomesticFixturesCardProps) {
   const [view, setView] = useState<FixtureView>("current");
 
   const handleViewChange = (nextView: FixtureView) => {
@@ -59,6 +61,13 @@ export function DomesticFixturesCard({ teams }: DomesticFixturesCardProps) {
   };
 
   const weekRanges = useMemo(() => {
+    if (snapshot?.windows) {
+      return {
+        current: `${formatDate(snapshot.windows.currentWeek.from)} - ${formatDate(snapshot.windows.currentWeek.to)}`,
+        last: `${formatDate(snapshot.windows.lastWeek.from)} - ${formatDate(snapshot.windows.lastWeek.to)}`,
+      };
+    }
+
     const currentDates: Date[] = [];
     const lastDates: Date[] = [];
 
@@ -77,20 +86,23 @@ export function DomesticFixturesCard({ teams }: DomesticFixturesCardProps) {
       current: formatWeekRange(currentDates),
       last: formatWeekRange(lastDates),
     };
-  }, [teams]);
+  }, [snapshot, teams]);
 
   const rows = useMemo(
     () =>
       teams.map((team) => {
+        const liveTeamData = snapshot?.teams?.[team.teamName] ?? null;
+        const fixtureFromLive = liveTeamData ? liveTeamData[view === "current" ? "currentWeek" : "lastWeek"] : null;
         const sample = sampleDomesticFixtures[team.teamName];
-        const fixture = sample ? sample[view === "current" ? "currentWeek" : "lastWeek"] : null;
+        const fixtureFromSample = sample ? sample[view === "current" ? "currentWeek" : "lastWeek"] : null;
+        const fixture = fixtureFromLive ?? fixtureFromSample ?? null;
 
         return {
           ...team,
           fixture,
         };
       }),
-    [teams, view],
+    [snapshot, teams, view],
   );
 
   return (
@@ -98,7 +110,9 @@ export function DomesticFixturesCard({ teams }: DomesticFixturesCardProps) {
       <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
         <div>
           <h2 className="text-lg font-semibold text-white">Domestic Games This Week</h2>
-          <p className="text-xs text-slate-400">Sample data for now. Toggle current fixtures or last week results.</p>
+          <p className="text-xs text-slate-400">
+            {snapshot ? "Live domestic league fixtures/results from API-Football." : "Sample fallback data."}
+          </p>
         </div>
         <div className="inline-flex rounded-lg border border-white/10 bg-black/20 p-1 text-xs">
           <button
@@ -137,7 +151,7 @@ export function DomesticFixturesCard({ teams }: DomesticFixturesCardProps) {
                   {row.fixture.venue === "home" ? "vs" : "at"} {row.fixture.opponent}
                 </p>
                 <p className="text-slate-400">
-                  {formatDate(row.fixture.date)} • {row.fixture.kickoff} (Vienna)
+                  {row.fixture.date ? formatDate(row.fixture.date) : "TBD"} • {row.fixture.kickoff} (Vienna)
                 </p>
                 {view === "last" ? (
                   <p className="font-medium text-emerald-200">{row.fixture.result ?? "Result TBD"}</p>

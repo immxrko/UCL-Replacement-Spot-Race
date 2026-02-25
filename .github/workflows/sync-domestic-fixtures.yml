@@ -1,0 +1,67 @@
+name: Sync Domestic Fixtures
+
+on:
+  schedule:
+    - cron: "10 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-fixtures:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build domestic fixtures snapshot
+        run: node scripts/syncDomesticFixtures.mjs
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_FOOTBALL_HOST: v3.football.api-sports.io
+          API_BASE_URL: https://v3.football.api-sports.io
+          SEASON: "2025"
+          DATA_REPO_OWNER: ${{ github.repository_owner }}
+          DATA_REPO_NAME: ${{ github.event.repository.name }}
+          DATA_BRANCH: data
+          RACE_FILE_PATH: data/race.json
+          DOMESTIC_FIXTURES_OUTPUT_FILE: domestic-fixtures.json
+          DOMESTIC_FIXTURES_TIMEZONE: Europe/Vienna
+          OUTPUT_DIR: ${{ runner.temp }}/data
+
+      - name: Commit fixtures to data branch
+        env:
+          DATA_BRANCH: data
+          DATA_DIR_PATH: data
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin "${DATA_BRANCH}" >/dev/null 2>&1; then
+            git fetch origin "${DATA_BRANCH}"
+            git switch --create "${DATA_BRANCH}" --track "origin/${DATA_BRANCH}" || git switch "${DATA_BRANCH}"
+          else
+            git switch --orphan "${DATA_BRANCH}"
+            git rm -rf . || true
+          fi
+
+          mkdir -p "${DATA_DIR_PATH}"
+          cp "${RUNNER_TEMP}/data/domestic-fixtures.json" "${DATA_DIR_PATH}/domestic-fixtures.json"
+
+          git add "${DATA_DIR_PATH}/domestic-fixtures.json"
+          if git diff --cached --quiet; then
+            echo "No domestic fixtures changes detected."
+            exit 0
+          fi
+
+          git commit -m "chore(data): update domestic fixtures snapshot"
+          git push origin "${DATA_BRANCH}"

@@ -34,11 +34,8 @@ const TRACKED_LEAGUES = [
       {
         name: "Olympiakos Piraeus",
         coefficient: 62.25,
-        ...activeEuropeStatus(
-          "UEFA Champions League",
-          "KO Play-offs",
-          "2026-02-24",
-          "Leverkusen vs Olympiacos",
+        ...inactiveEuropeStatus(
+          "Champions League campaign ended on 2026-02-24 (eliminated in KO play-offs).",
         ),
       },
       {
