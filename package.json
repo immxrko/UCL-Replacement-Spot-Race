@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync:data": "node scripts/syncStandingsAndResults.mjs"
+    "sync:data": "node scripts/syncStandingsAndResults.mjs",
+    "sync:coeff": "node scripts/getCoeff.mjs"
   },
   "dependencies": {
     "next": "14.2.5",
