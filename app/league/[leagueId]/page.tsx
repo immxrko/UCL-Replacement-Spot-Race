@@ -1,7 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 import { buildDataUrl } from "@/lib/dataBranch";
 import { LeagueSnapshot } from "@/types/standings";
+
+export const dynamic = "force-dynamic";
 
 interface LeaguePageProps {
   params: {
@@ -31,7 +33,7 @@ const formatViennaTime = (iso: string) => {
 
 const getLeagueSnapshot = async (leagueId: string): Promise<LeagueSnapshot> => {
   const url = buildDataUrl(`data/leagues/${leagueId}.json`);
-  const response = await fetch(url, { next: { revalidate: 300 } });
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch league snapshot from ${url} (${response.status}).`);
@@ -64,9 +66,14 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           <h1 className="text-2xl font-semibold text-white">League Snapshot Unavailable</h1>
           <p className="mt-3 text-sm text-rose-100">{loadError}</p>
           <p className="mt-2 text-xs text-slate-300">Expected URL: {expectedUrl}</p>
-          <Link href="/" className="mt-4 inline-block text-sm text-sky-200 hover:text-sky-100">
+          <TrackedLink
+            href="/"
+            eventName="back_to_all_leagues"
+            eventPayload={{ source: "league_error_page", leagueId: params.leagueId }}
+            className="mt-4 inline-block text-sm text-sky-200 hover:text-sky-100"
+          >
             Back to all leagues
-          </Link>
+          </TrackedLink>
         </div>
       </main>
     );
@@ -76,9 +83,14 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
     <main className="min-h-screen bg-hero-grad px-4 py-10 sm:px-6 lg:px-10">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
         <header className="space-y-2">
-          <Link href="/" className="text-xs uppercase tracking-[0.2em] text-sky-300 hover:text-sky-200">
+          <TrackedLink
+            href="/"
+            eventName="back_to_all_leagues"
+            eventPayload={{ source: "league_page", leagueId: params.leagueId }}
+            className="text-xs uppercase tracking-[0.2em] text-sky-300 hover:text-sky-200"
+          >
             Back to all leagues
-          </Link>
+          </TrackedLink>
           <div className="flex items-center gap-3">
             <Image
               src={snapshot.league.logo}
