@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-25T02:32:33.862Z",
+  "generatedAt": "2026-02-26T02:28:39.941Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/standings",
     "leagueId": 197,
@@ -50,12 +50,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 62.25,
-      "isActiveInEurope": true,
-      "europeCompetition": "UEFA Champions League",
-      "europeStage": "KO Play-offs",
-      "europeNextFixtureDate": "2026-02-24",
-      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
-      "europeStatusNote": null
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-02-24 (eliminated in KO play-offs)."
     },
     {
       "rank": 3,
@@ -128,12 +128,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 62.25,
-      "isActiveInEurope": true,
-      "europeCompetition": "UEFA Champions League",
-      "europeStage": "KO Play-offs",
-      "europeNextFixtureDate": "2026-02-24",
-      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
-      "europeStatusNote": null,
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-02-24 (eliminated in KO play-offs).",
       "focusIsFirst": false,
       "pointsToFirst": 2,
       "pointsDeltaToComparison": -2,
@@ -197,12 +197,12 @@
       "updatedAt": "2026-02-23T00:00:00+00:00",
       "isHighlighted": true,
       "coefficient": 62.25,
-      "isActiveInEurope": true,
-      "europeCompetition": "UEFA Champions League",
-      "europeStage": "KO Play-offs",
-      "europeNextFixtureDate": "2026-02-24",
-      "europeNextFixtureLabel": "Leverkusen vs Olympiacos",
-      "europeStatusNote": null
+      "isActiveInEurope": false,
+      "europeCompetition": null,
+      "europeStage": null,
+      "europeNextFixtureDate": null,
+      "europeNextFixtureLabel": null,
+      "europeStatusNote": "Champions League campaign ended on 2026-02-24 (eliminated in KO play-offs)."
     },
     {
       "rank": 3,
