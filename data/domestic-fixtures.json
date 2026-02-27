@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-25T03:03:21.319Z",
+  "generatedAt": "2026-02-27T22:46:09.553Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/fixtures",
     "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
@@ -23,6 +23,30 @@
     "lastWeekResolved": 11
   },
   "teams": {
+    "Shakhtar Donetsk": {
+      "currentWeek": {
+        "fixtureId": 1391551,
+        "opponent": "Veres Rivne",
+        "opponentLogo": "https://media.api-sports.io/football/teams/6501.png",
+        "date": "2026-02-27T14:30:00+01:00",
+        "kickoff": "14:30",
+        "venue": "home",
+        "result": "1-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      },
+      "lastWeek": {
+        "fixtureId": 1391547,
+        "opponent": "Karpaty",
+        "opponentLogo": "https://media.api-sports.io/football/teams/3617.png",
+        "date": "2026-02-22T14:30:00+01:00",
+        "kickoff": "14:30",
+        "venue": "home",
+        "result": "3-0 W",
+        "statusShort": "FT",
+        "statusLong": "Match Finished"
+      }
+    },
     "FK Crvena Zvezda": {
       "currentWeek": {
         "fixtureId": 1385088,
@@ -187,30 +211,6 @@
         "kickoff": "14:00",
         "venue": "away",
         "result": "2-2 D",
-        "statusShort": "FT",
-        "statusLong": "Match Finished"
-      }
-    },
-    "Shakhtar Donetsk": {
-      "currentWeek": {
-        "fixtureId": 1391551,
-        "opponent": "Veres Rivne",
-        "opponentLogo": "https://media.api-sports.io/football/teams/6501.png",
-        "date": "2026-02-27T14:30:00+01:00",
-        "kickoff": "14:30",
-        "venue": "home",
-        "result": null,
-        "statusShort": "NS",
-        "statusLong": "Not Started"
-      },
-      "lastWeek": {
-        "fixtureId": 1391547,
-        "opponent": "Karpaty",
-        "opponentLogo": "https://media.api-sports.io/football/teams/3617.png",
-        "date": "2026-02-22T14:30:00+01:00",
-        "kickoff": "14:30",
-        "venue": "home",
-        "result": "3-0 W",
         "statusShort": "FT",
         "statusLong": "Match Finished"
       }
