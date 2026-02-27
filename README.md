@@ -7,6 +7,7 @@ GitHub Actions writes data into the `data` branch every day at `23:59 UTC`:
 - `data/leagues/<leagueId>.json` (full table per league)
 - `data/coefficients.json` (UEFA top-100 coefficient snapshot from separate `Get Coeff` workflow)
 - `data/domestic-fixtures.json` (weekly domestic fixtures/results snapshot for highlighted teams)
+- `data/european-active-teams.json` (weekly active/inactive status in UCL/UEL/UECL for tracked teams)
 
 Tracked leagues:
 - `197` Greece
@@ -47,6 +48,7 @@ Tracked clubs:
 Workflow file:
 - `.github/workflows/sync-standings-results.yml`
 - `.github/workflows/sync-domestic-fixtures.yml`
+- `.github/workflows/sync-european-active.yml`
 
 Required repository secret:
 - `API_FOOTBALL_KEY`
@@ -54,6 +56,7 @@ Required repository secret:
 Cron:
 - `59 23 * * *` (23:59 UTC)
 - `10 0 * * 1` (every Monday at 00:10 UTC, domestic fixtures snapshot)
+- `15 0 * * 1` (every Monday at 00:15 UTC, european active teams snapshot)
 
 Behavior:
 1. Fetch standings for all 9 leagues.
@@ -68,6 +71,12 @@ Domestic fixtures workflow behavior:
 3. Build per-team current week fixture and last week result entries.
 4. Write `data/domestic-fixtures.json` to `data` branch.
 
+European active teams workflow behavior:
+1. Load tracked teams from `data/race.json`.
+2. Fetch fixtures from API-Football for `league=2,3,848` from today until configured end date.
+3. Mark tracked teams as active when they still have upcoming/live fixtures in those competitions.
+4. Write `data/european-active-teams.json` to `data` branch.
+
 ## Local generation
 
 1. Copy env file:
@@ -80,12 +89,14 @@ cp .env.example .env
 export $(grep -v '^#' .env | xargs)
 npm run sync:data
 npm run sync:fixtures
+npm run sync:europe-active
 ```
 
 This writes:
 - `data/race.json`
 - `data/leagues/*.json`
 - `data/domestic-fixtures.json`
+- `data/european-active-teams.json`
 
 ## Frontend data source
 

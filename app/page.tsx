@@ -3,7 +3,7 @@ import { DomesticFixturesCard } from "@/components/DomesticFixturesCard";
 import { TrackedLink } from "@/components/TrackedLink";
 import { UclExplainerCard } from "@/components/UclExplainerCard";
 import { buildDataUrl } from "@/lib/dataBranch";
-import { DomesticFixturesSnapshot, RaceSnapshot } from "@/types/standings";
+import { DomesticFixturesSnapshot, EuropeanActiveSnapshot, RaceSnapshot } from "@/types/standings";
 
 export const dynamic = "force-dynamic";
 
@@ -98,6 +98,7 @@ const getClubTieBreaker = (teamName: string) =>
 
 const raceDataPath = "data/race.json";
 const domesticFixturesDataPath = "data/domestic-fixtures.json";
+const europeActiveDataPath = "data/european-active-teams.json";
 
 const getRaceSnapshot = async (): Promise<RaceSnapshot> => {
   const url = `${buildDataUrl(raceDataPath)}?ts=${Date.now()}`;
@@ -131,16 +132,34 @@ const getDomesticFixturesSnapshot = async (): Promise<DomesticFixturesSnapshot |
   return payload;
 };
 
+const getEuropeActiveSnapshot = async (): Promise<EuropeanActiveSnapshot | null> => {
+  const url = `${buildDataUrl(europeActiveDataPath)}?ts=${Date.now()}`;
+  const response = await fetch(url, { cache: "no-store" });
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const payload = (await response.json()) as EuropeanActiveSnapshot;
+  if (!Array.isArray(payload?.teams)) {
+    return null;
+  }
+
+  return payload;
+};
+
 export default async function HomePage() {
   const expectedUrl = buildDataUrl(raceDataPath);
   let snapshot: RaceSnapshot | null = null;
   let domesticFixturesSnapshot: DomesticFixturesSnapshot | null = null;
+  let europeActiveSnapshot: EuropeanActiveSnapshot | null = null;
   let loadError: string | null = null;
 
   try {
-    [snapshot, domesticFixturesSnapshot] = await Promise.all([
+    [snapshot, domesticFixturesSnapshot, europeActiveSnapshot] = await Promise.all([
       getRaceSnapshot(),
       getDomesticFixturesSnapshot().catch(() => null),
+      getEuropeActiveSnapshot().catch(() => null),
     ]);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown snapshot loading error.";
@@ -191,6 +210,20 @@ export default async function HomePage() {
   const bestDomesticLeaderKey = bestDomesticLeader
     ? `${bestDomesticLeader.leagueId}-${bestDomesticLeader.teamId}`
     : null;
+
+  const europeanActiveByTeamId = new Map(
+    (europeActiveSnapshot?.teams ?? [])
+      .filter((team) => Number.isFinite(team.teamId))
+      .map((team) => [team.teamId, team.isActiveInEurope]),
+  );
+  const europeanActiveByTeamName = new Map(
+    (europeActiveSnapshot?.teams ?? []).map((team) => [team.teamName.toLocaleLowerCase(), team.isActiveInEurope]),
+  );
+  const resolveIsActiveInEurope = (entry: RaceSnapshot["race"][number]) =>
+    europeanActiveByTeamId.get(entry.teamId) ??
+    europeanActiveByTeamName.get(entry.teamName.toLocaleLowerCase()) ??
+    entry.isActiveInEurope;
+
   const fixtureTeams = raceByCoefficient.map((entry) => ({
     teamName: entry.teamName,
     teamLogo: entry.teamLogo,
@@ -270,6 +303,7 @@ export default async function HomePage() {
               const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
               const rowKey = `${entry.leagueId}-${entry.teamId}`;
               const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
+              const isActiveInEurope = resolveIsActiveInEurope(entry);
 
               return (
                 <div
@@ -300,7 +334,7 @@ export default async function HomePage() {
                     </div>
                     <span
                       className={`text-right tabular-nums ${
-                        entry.isActiveInEurope ? "text-emerald-300" : "text-rose-300"
+                        isActiveInEurope ? "text-emerald-300" : "text-rose-300"
                       }`}
                     >
                       {formatCoefficient(entry.coefficient ?? 0)}
@@ -337,6 +371,7 @@ export default async function HomePage() {
                   const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
                   const rowKey = `${entry.leagueId}-${entry.teamId}`;
                   const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
+                  const isActiveInEurope = resolveIsActiveInEurope(entry);
 
                   return (
                     <tr
@@ -371,7 +406,7 @@ export default async function HomePage() {
                       </td>
                       <td
                         className={
-                          entry.isActiveInEurope
+                          isActiveInEurope
                             ? "px-2 py-2 sm:px-4 sm:py-3 text-emerald-300"
                             : "px-2 py-2 sm:px-4 sm:py-3 text-rose-300"
                         }
@@ -455,7 +490,7 @@ export default async function HomePage() {
                 {league.top5.map((row) => (
                   <div
                     key={row.teamId}
-                    className={`grid grid-cols-[auto_auto_1fr_auto] items-center gap-2 rounded-md px-2 py-1 text-sm ${
+                    className={`grid grid-cols-[auto_auto_1fr_auto_auto] items-center gap-2 rounded-md px-2 py-1 text-sm ${
                       row.isHighlighted ? "bg-emerald-400/15 text-emerald-100" : "text-slate-200"
                     }`}
                   >
@@ -486,7 +521,8 @@ export default async function HomePage() {
                         )}
                       </span>
                     </div>
-                    <span>{row.points}</span>
+                    <span className="text-xs tabular-nums text-slate-400">MP {row.played}</span>
+                    <span className="tabular-nums">{row.points}</span>
                   </div>
                 ))}
               </div>

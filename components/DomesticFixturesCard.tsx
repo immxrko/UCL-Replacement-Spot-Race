@@ -244,12 +244,12 @@ export function DomesticFixturesCard({ teams, snapshot }: DomesticFixturesCardPr
 
                         <span
                           className={`rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] ${
-                            view === "last"
+                            getResultScore(row.fixture.result)
                               ? getResultClassName(row.fixture.result)
                               : "uppercase tracking-wide text-slate-300"
                           }`}
                         >
-                          {view === "last" ? getResultScore(row.fixture.result) ?? "vs" : "vs"}
+                          {getResultScore(row.fixture.result) ?? "vs"}
                         </span>
 
                         <div className="flex min-w-0 items-center justify-end gap-2">

@@ -143,3 +143,41 @@ export interface DomesticFixturesSnapshot {
   };
   teams: Record<string, TeamDomesticFixtures>;
 }
+
+export interface EuropeanActiveCompetitionSummary {
+  leagueId: number;
+  leagueName: string;
+  fixtures: number;
+}
+
+export interface EuropeanActiveTeamStatus {
+  teamId: number;
+  teamName: string;
+  teamLogo: string;
+  isActiveInEurope: boolean;
+  competitions: Array<{
+    leagueId: number;
+    leagueName: string;
+  }>;
+  nextFixtureDate: string | null;
+  nextFixtureLabel: string | null;
+}
+
+export interface EuropeanActiveSnapshot {
+  generatedAt: string;
+  source: {
+    endpoint: string;
+    raceSnapshotUrl: string;
+    season: number;
+    timezone: string;
+    from: string;
+    to: string;
+    competitionIds: number[];
+  };
+  competitions: EuropeanActiveCompetitionSummary[];
+  summary: {
+    trackedTeams: number;
+    activeTeams: number;
+  };
+  teams: EuropeanActiveTeamStatus[];
+}
