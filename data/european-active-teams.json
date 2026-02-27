@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-02-27T23:57:45.525Z",
+  "source": {
+    "endpoint": "https://v3.football.api-sports.io/fixtures",
+    "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
+    "season": 2025,
+    "timezone": "UTC",
+    "from": "2026-02-27",
+    "to": "2026-08-27",
+    "competitionIds": [
+      2,
+      3,
+      848
+    ]
+  },
+  "competitions": [
+    {
+      "leagueId": 2,
+      "leagueName": "UEFA Champions League",
+      "fixtures": 16
+    },
+    {
+      "leagueId": 3,
+      "leagueName": "UEFA Europa League",
+      "fixtures": 16
+    },
+    {
+      "leagueId": 848,
+      "leagueName": "UEFA Europa Conference League",
+      "fixtures": 16
+    }
+  ],
+  "summary": {
+    "trackedTeams": 12,
+    "activeTeams": 3
+  },
+  "teams": [
+    {
+      "teamId": 247,
+      "teamName": "Celtic",
+      "teamLogo": "https://media.api-sports.io/football/teams/247.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 620,
+      "teamName": "Dinamo Zagreb",
+      "teamLogo": "https://media.api-sports.io/football/teams/620.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 400,
+      "teamName": "FC Copenhagen",
+      "teamLogo": "https://media.api-sports.io/football/teams/400.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 397,
+      "teamName": "FC Midtjylland",
+      "teamLogo": "https://media.api-sports.io/football/teams/397.png",
+      "isActiveInEurope": true,
+      "competitions": [
+        {
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League"
+        }
+      ],
+      "nextFixtureDate": "2026-03-12T20:00:00.000Z",
+      "nextFixtureLabel": "Nottingham Forest vs FC Midtjylland"
+    },
+    {
+      "teamId": 651,
+      "teamName": "Ferencvarosi TC",
+      "teamLogo": "https://media.api-sports.io/football/teams/651.png",
+      "isActiveInEurope": true,
+      "competitions": [
+        {
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League"
+        }
+      ],
+      "nextFixtureDate": "2026-03-12T20:00:00.000Z",
+      "nextFixtureLabel": "Ferencvarosi TC vs SC Braga"
+    },
+    {
+      "teamId": 598,
+      "teamName": "FK Crvena Zvezda",
+      "teamLogo": "https://media.api-sports.io/football/teams/598.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 553,
+      "teamName": "Olympiakos Piraeus",
+      "teamLogo": "https://media.api-sports.io/football/teams/553.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 619,
+      "teamName": "PAOK",
+      "teamLogo": "https://media.api-sports.io/football/teams/619.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 257,
+      "teamName": "Rangers",
+      "teamLogo": "https://media.api-sports.io/football/teams/257.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 571,
+      "teamName": "Red Bull Salzburg",
+      "teamLogo": "https://media.api-sports.io/football/teams/571.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    },
+    {
+      "teamId": 550,
+      "teamName": "Shakhtar Donetsk",
+      "teamLogo": "https://media.api-sports.io/football/teams/550.png",
+      "isActiveInEurope": true,
+      "competitions": [
+        {
+          "leagueId": 848,
+          "leagueName": "UEFA Europa Conference League"
+        }
+      ],
+      "nextFixtureDate": "2026-03-12T20:00:00.000Z",
+      "nextFixtureLabel": "Lech Poznan vs Shakhtar Donetsk"
+    },
+    {
+      "teamId": 656,
+      "teamName": "Slovan Bratislava",
+      "teamLogo": "https://media.api-sports.io/football/teams/656.png",
+      "isActiveInEurope": false,
+      "competitions": [],
+      "nextFixtureDate": null,
+      "nextFixtureLabel": null
+    }
+  ]
+}
