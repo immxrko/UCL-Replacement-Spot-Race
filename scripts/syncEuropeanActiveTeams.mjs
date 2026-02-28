@@ -194,6 +194,7 @@ const run = async () => {
   const competitionSummary = competitionFixtures.map(({ leagueId, fixtures }) => ({
     leagueId,
     leagueName: fixtures[0]?.league?.name ?? `League ${leagueId}`,
+    leagueLogo: fixtures[0]?.league?.logo ?? null,
     fixtures: fixtures.length,
   }));
 
@@ -218,6 +219,7 @@ const run = async () => {
       const fixtureDate = parseFixtureDate(fixture);
       const statusShort = fixture?.fixture?.status?.short ?? "";
       const leagueName = fixture?.league?.name ?? `League ${leagueId}`;
+      const leagueLogo = fixture?.league?.logo ?? null;
 
       const home = fixture?.teams?.home;
       const away = fixture?.teams?.away;
@@ -239,7 +241,7 @@ const run = async () => {
         }
 
         if (!status.competitions.some((item) => item.leagueId === leagueId)) {
-          status.competitions.push({ leagueId, leagueName });
+          status.competitions.push({ leagueId, leagueName, leagueLogo });
         }
 
         if (isFixtureStillActive(fixtureDate, statusShort, now)) {
@@ -255,6 +257,7 @@ const run = async () => {
                 fixtureId,
                 leagueId,
                 leagueName,
+                leagueLogo,
                 fixtureDate: fixtureDate.toISOString(),
                 fixtureLabel: `${home?.name ?? "TBD"} vs ${away?.name ?? "TBD"}`,
                 opponentName: opponent?.name ?? null,

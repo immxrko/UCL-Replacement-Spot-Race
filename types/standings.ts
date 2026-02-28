@@ -147,6 +147,7 @@ export interface DomesticFixturesSnapshot {
 export interface EuropeanActiveCompetitionSummary {
   leagueId: number;
   leagueName: string;
+  leagueLogo: string | null;
   fixtures: number;
 }
 
@@ -158,6 +159,7 @@ export interface EuropeanActiveTeamStatus {
   competitions: Array<{
     leagueId: number;
     leagueName: string;
+    leagueLogo: string | null;
   }>;
   nextFixtureDate: string | null;
   nextFixtureLabel: string | null;
@@ -167,6 +169,7 @@ export interface EuropeanActiveTeamStatus {
     fixtureId: number | null;
     leagueId: number;
     leagueName: string;
+    leagueLogo: string | null;
     fixtureDate: string;
     fixtureLabel: string;
     opponentName: string | null;

@@ -3,7 +3,12 @@ import { DomesticFixturesCard } from "@/components/DomesticFixturesCard";
 import { TrackedLink } from "@/components/TrackedLink";
 import { UclExplainerCard } from "@/components/UclExplainerCard";
 import { buildDataUrl } from "@/lib/dataBranch";
-import { DomesticFixturesSnapshot, EuropeanActiveSnapshot, RaceSnapshot } from "@/types/standings";
+import {
+  DomesticFixturesSnapshot,
+  EuropeanActiveSnapshot,
+  EuropeanActiveTeamStatus,
+  RaceSnapshot,
+} from "@/types/standings";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +18,49 @@ const formatSigned = (value: number) => {
 };
 
 const formatCoefficient = (value: number) => value.toFixed(3);
+const normalizeTeamKey = (value: string) =>
+  value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/gi, " ")
+    .trim()
+    .toLocaleLowerCase();
+
+type EuropeFooterFixture = {
+  teamId: number;
+  teamName: string;
+  teamLogo: string;
+  fixtureId: number | null;
+  fixtureDate: string;
+  fixtureLabel: string;
+  opponentName: string | null;
+  opponentLogo: string | null;
+  leagueName: string;
+  leagueLogo: string | null;
+};
+
+const getTeamNextFixtures = (team: EuropeanActiveTeamStatus) => {
+  if (Array.isArray(team.nextFixtures) && team.nextFixtures.length > 0) {
+    return team.nextFixtures.slice(0, 2);
+  }
+
+  if (!team.nextFixtureDate) {
+    return [];
+  }
+
+  return [
+    {
+      fixtureId: null,
+      leagueId: team.competitions[0]?.leagueId ?? 0,
+      leagueName: team.competitions[0]?.leagueName ?? "European Competition",
+      leagueLogo: team.competitions[0]?.leagueLogo ?? null,
+      fixtureDate: team.nextFixtureDate,
+      fixtureLabel: team.nextFixtureLabel ?? "",
+      opponentName: team.nextOpponentName ?? null,
+      opponentLogo: team.nextOpponentLogo ?? null,
+    },
+  ];
+};
 const FORM_RESULT_CLASS: Record<string, string> = {
   W: "text-emerald-300",
   D: "text-amber-300",
@@ -213,15 +261,15 @@ export default async function HomePage() {
 
   const europeanActiveByTeamId = new Map(
     (europeActiveSnapshot?.teams ?? [])
-      .filter((team) => Number.isFinite(team.teamId))
-      .map((team) => [team.teamId, team]),
+      .filter((team) => Number.isFinite(Number(team.teamId)))
+      .map((team) => [Number(team.teamId), team]),
   );
   const europeanActiveByTeamName = new Map(
-    (europeActiveSnapshot?.teams ?? []).map((team) => [team.teamName.toLocaleLowerCase(), team]),
+    (europeActiveSnapshot?.teams ?? []).map((team) => [normalizeTeamKey(team.teamName), team]),
   );
   const resolveEuropeStatus = (entry: RaceSnapshot["race"][number]) =>
-    europeanActiveByTeamId.get(entry.teamId) ??
-    europeanActiveByTeamName.get(entry.teamName.toLocaleLowerCase()) ??
+    europeanActiveByTeamId.get(Number(entry.teamId)) ??
+    europeanActiveByTeamName.get(normalizeTeamKey(entry.teamName)) ??
     {
       isActiveInEurope: entry.isActiveInEurope,
       nextFixtureDate: null,
@@ -230,6 +278,24 @@ export default async function HomePage() {
       nextOpponentLogo: null,
       nextFixtures: [],
     };
+
+  const activeEuropeFixtures: EuropeFooterFixture[] = (europeActiveSnapshot?.teams ?? [])
+    .filter((team) => team.isActiveInEurope)
+    .flatMap((team) =>
+      getTeamNextFixtures(team).map((fixture) => ({
+        teamId: team.teamId,
+        teamName: team.teamName,
+        teamLogo: team.teamLogo,
+        fixtureId: fixture.fixtureId ?? null,
+        fixtureDate: fixture.fixtureDate,
+        fixtureLabel: fixture.fixtureLabel,
+        opponentName: fixture.opponentName ?? null,
+        opponentLogo: fixture.opponentLogo ?? null,
+        leagueName: fixture.leagueName,
+        leagueLogo: fixture.leagueLogo ?? null,
+      })),
+    )
+    .sort((a, b) => new Date(a.fixtureDate).getTime() - new Date(b.fixtureDate).getTime());
 
   const fixtureTeams = raceByCoefficient.map((entry) => ({
     teamName: entry.teamName,
@@ -311,22 +377,6 @@ export default async function HomePage() {
               const rowKey = `${entry.leagueId}-${entry.teamId}`;
               const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
               const europeStatus = resolveEuropeStatus(entry);
-              const tooltipFixtures =
-                Array.isArray(europeStatus.nextFixtures) && europeStatus.nextFixtures.length > 0
-                  ? europeStatus.nextFixtures
-                  : europeStatus.nextFixtureDate
-                    ? [
-                        {
-                          fixtureId: null,
-                          leagueId: 0,
-                          leagueName: "",
-                          fixtureDate: europeStatus.nextFixtureDate,
-                          fixtureLabel: europeStatus.nextFixtureLabel ?? "",
-                          opponentName: europeStatus.nextOpponentName ?? null,
-                          opponentLogo: europeStatus.nextOpponentLogo ?? null,
-                        },
-                      ]
-                    : [];
 
               return (
                 <div
@@ -361,32 +411,6 @@ export default async function HomePage() {
                       }`}
                     >
                       <span>{formatCoefficient(entry.coefficient ?? 0)}</span>
-                      {tooltipFixtures.length > 0 ? (
-                        <span className="group relative inline-flex">
-                          <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[10px] leading-none text-slate-200">
-                            i
-                          </span>
-                          <span className="pointer-events-none absolute right-0 top-5 z-20 hidden min-w-[200px] flex-col gap-1 rounded-md border border-white/10 bg-slate-950/95 p-2 text-left text-[10px] text-slate-100 shadow-xl group-hover:flex">
-                            {tooltipFixtures.slice(0, 2).map((fixture, idx) => (
-                              <span key={`${rowKey}-mobile-tooltip-${fixture.fixtureId ?? idx}`} className="flex items-center gap-2">
-                                {fixture.opponentLogo ? (
-                                  <Image
-                                    src={fixture.opponentLogo}
-                                    alt={fixture.opponentName ?? "Opponent"}
-                                    width={18}
-                                    height={18}
-                                    className="h-[18px] w-[18px] rounded-full"
-                                  />
-                                ) : null}
-                                <span className="leading-tight">
-                                  <span className="block font-medium">{fixture.opponentName ?? fixture.fixtureLabel}</span>
-                                  <span className="block text-slate-400">{formatViennaTime(fixture.fixtureDate)}</span>
-                                </span>
-                              </span>
-                            ))}
-                          </span>
-                        </span>
-                      ) : null}
                     </span>
                     <span className="text-right text-slate-300 tabular-nums">#{entry.rank}</span>
                     <span className="text-right text-slate-300 tabular-nums">
@@ -421,22 +445,6 @@ export default async function HomePage() {
                   const rowKey = `${entry.leagueId}-${entry.teamId}`;
                   const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
                   const europeStatus = resolveEuropeStatus(entry);
-                  const tooltipFixtures =
-                    Array.isArray(europeStatus.nextFixtures) && europeStatus.nextFixtures.length > 0
-                      ? europeStatus.nextFixtures
-                      : europeStatus.nextFixtureDate
-                        ? [
-                            {
-                              fixtureId: null,
-                              leagueId: 0,
-                              leagueName: "",
-                              fixtureDate: europeStatus.nextFixtureDate,
-                              fixtureLabel: europeStatus.nextFixtureLabel ?? "",
-                              opponentName: europeStatus.nextOpponentName ?? null,
-                              opponentLogo: europeStatus.nextOpponentLogo ?? null,
-                            },
-                          ]
-                        : [];
 
                   return (
                     <tr
@@ -478,34 +486,6 @@ export default async function HomePage() {
                       >
                         <div className="flex items-center gap-1">
                           <span>{formatCoefficient(entry.coefficient ?? 0)}</span>
-                          {tooltipFixtures.length > 0 ? (
-                            <span className="group relative inline-flex">
-                              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[10px] leading-none text-slate-200">
-                                i
-                              </span>
-                              <span className="pointer-events-none absolute left-0 top-5 z-20 hidden min-w-[220px] flex-col gap-1 rounded-md border border-white/10 bg-slate-950/95 p-2 text-left text-[10px] text-slate-100 shadow-xl group-hover:flex">
-                                {tooltipFixtures.slice(0, 2).map((fixture, idx) => (
-                                  <span key={`${rowKey}-desktop-tooltip-${fixture.fixtureId ?? idx}`} className="flex items-center gap-2">
-                                    {fixture.opponentLogo ? (
-                                      <Image
-                                        src={fixture.opponentLogo}
-                                        alt={fixture.opponentName ?? "Opponent"}
-                                        width={20}
-                                        height={20}
-                                        className="h-5 w-5 rounded-full"
-                                      />
-                                    ) : null}
-                                    <span className="leading-tight">
-                                      <span className="block font-medium">{fixture.opponentName ?? fixture.fixtureLabel}</span>
-                                      <span className="block text-slate-400">
-                                        {formatViennaTime(fixture.fixtureDate)}
-                                      </span>
-                                    </span>
-                                  </span>
-                                ))}
-                              </span>
-                            </span>
-                          ) : null}
                         </div>
                       </td>
                       <td className="px-2 py-2 sm:px-4 sm:py-3 text-slate-300">#{entry.rank}</td>
@@ -517,6 +497,55 @@ export default async function HomePage() {
                 })}
               </tbody>
             </table>
+          </div>
+
+          <div className="border-t border-white/10 bg-white/[0.03] px-4 py-3">
+            <p className="text-[11px] uppercase tracking-wide text-slate-400">Active European Matches</p>
+            {activeEuropeFixtures.length === 0 ? (
+              <p className="mt-2 text-sm text-slate-400">No active teams with upcoming European fixtures in the current snapshot.</p>
+            ) : (
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                {activeEuropeFixtures.map((fixture, index) => (
+                  <div
+                    key={`${fixture.teamId}-${fixture.fixtureId ?? fixture.fixtureDate}-${index}`}
+                    className="flex items-center gap-2 rounded-lg border border-white/10 bg-slate-900/60 px-3 py-2"
+                  >
+                    <Image
+                      src={fixture.teamLogo}
+                      alt={fixture.teamName}
+                      width={18}
+                      height={18}
+                      className="h-[18px] w-[18px] rounded-full"
+                    />
+                    <span className="truncate text-xs font-medium text-white">{fixture.teamName}</span>
+                    <span className="text-slate-500">vs</span>
+                    {fixture.opponentLogo ? (
+                      <Image
+                        src={fixture.opponentLogo}
+                        alt={fixture.opponentName ?? "Opponent"}
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] rounded-full"
+                      />
+                    ) : null}
+                    <span className="truncate text-xs text-slate-200">{fixture.opponentName ?? "TBD"}</span>
+                    <span className="ml-auto shrink-0 text-[11px] text-slate-400">{formatViennaTime(fixture.fixtureDate)}</span>
+                    <span className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-slate-300">
+                      {fixture.leagueLogo ? (
+                        <Image
+                          src={fixture.leagueLogo}
+                          alt={fixture.leagueName}
+                          width={12}
+                          height={12}
+                          className="h-3 w-3 rounded-full"
+                        />
+                      ) : null}
+                      <span className="truncate max-w-[120px]">{fixture.leagueName}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
