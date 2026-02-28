@@ -207,6 +207,9 @@ const run = async () => {
       competitions: [],
       nextFixtureDate: null,
       nextFixtureLabel: null,
+      nextOpponentName: null,
+      nextOpponentLogo: null,
+      nextFixtures: [],
     });
   }
 
@@ -241,6 +244,24 @@ const run = async () => {
 
         if (isFixtureStillActive(fixtureDate, statusShort, now)) {
           status.isActiveInEurope = true;
+          const isTrackedTeamHome = home?.id === trackedEntry.teamId;
+          const opponent = isTrackedTeamHome ? away : home;
+
+          if (fixtureDate) {
+            const existingIds = new Set(status.nextFixtures.map((item) => item.fixtureId));
+            const fixtureId = fixture?.fixture?.id ?? null;
+            if (!existingIds.has(fixtureId)) {
+              status.nextFixtures.push({
+                fixtureId,
+                leagueId,
+                leagueName,
+                fixtureDate: fixtureDate.toISOString(),
+                fixtureLabel: `${home?.name ?? "TBD"} vs ${away?.name ?? "TBD"}`,
+                opponentName: opponent?.name ?? null,
+                opponentLogo: opponent?.logo ?? null,
+              });
+            }
+          }
 
           if (
             fixtureDate &&
@@ -248,6 +269,8 @@ const run = async () => {
           ) {
             status.nextFixtureDate = fixtureDate.toISOString();
             status.nextFixtureLabel = `${home?.name ?? "TBD"} vs ${away?.name ?? "TBD"}`;
+            status.nextOpponentName = opponent?.name ?? null;
+            status.nextOpponentLogo = opponent?.logo ?? null;
           }
         }
       }
@@ -255,6 +278,12 @@ const run = async () => {
   }
 
   const teams = [...activeByTeamId.values()]
+    .map((team) => ({
+      ...team,
+      nextFixtures: team.nextFixtures
+        .sort((a, b) => new Date(a.fixtureDate).getTime() - new Date(b.fixtureDate).getTime())
+        .slice(0, 2),
+    }))
     .sort((a, b) => a.teamName.localeCompare(b.teamName));
   const activeTeams = teams.filter((team) => team.isActiveInEurope).length;
 

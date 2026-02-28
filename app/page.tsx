@@ -214,15 +214,22 @@ export default async function HomePage() {
   const europeanActiveByTeamId = new Map(
     (europeActiveSnapshot?.teams ?? [])
       .filter((team) => Number.isFinite(team.teamId))
-      .map((team) => [team.teamId, team.isActiveInEurope]),
+      .map((team) => [team.teamId, team]),
   );
   const europeanActiveByTeamName = new Map(
-    (europeActiveSnapshot?.teams ?? []).map((team) => [team.teamName.toLocaleLowerCase(), team.isActiveInEurope]),
+    (europeActiveSnapshot?.teams ?? []).map((team) => [team.teamName.toLocaleLowerCase(), team]),
   );
-  const resolveIsActiveInEurope = (entry: RaceSnapshot["race"][number]) =>
+  const resolveEuropeStatus = (entry: RaceSnapshot["race"][number]) =>
     europeanActiveByTeamId.get(entry.teamId) ??
     europeanActiveByTeamName.get(entry.teamName.toLocaleLowerCase()) ??
-    entry.isActiveInEurope;
+    {
+      isActiveInEurope: entry.isActiveInEurope,
+      nextFixtureDate: null,
+      nextFixtureLabel: null,
+      nextOpponentName: null,
+      nextOpponentLogo: null,
+      nextFixtures: [],
+    };
 
   const fixtureTeams = raceByCoefficient.map((entry) => ({
     teamName: entry.teamName,
@@ -303,7 +310,23 @@ export default async function HomePage() {
               const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
               const rowKey = `${entry.leagueId}-${entry.teamId}`;
               const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
-              const isActiveInEurope = resolveIsActiveInEurope(entry);
+              const europeStatus = resolveEuropeStatus(entry);
+              const tooltipFixtures =
+                Array.isArray(europeStatus.nextFixtures) && europeStatus.nextFixtures.length > 0
+                  ? europeStatus.nextFixtures
+                  : europeStatus.nextFixtureDate
+                    ? [
+                        {
+                          fixtureId: null,
+                          leagueId: 0,
+                          leagueName: "",
+                          fixtureDate: europeStatus.nextFixtureDate,
+                          fixtureLabel: europeStatus.nextFixtureLabel ?? "",
+                          opponentName: europeStatus.nextOpponentName ?? null,
+                          opponentLogo: europeStatus.nextOpponentLogo ?? null,
+                        },
+                      ]
+                    : [];
 
               return (
                 <div
@@ -333,11 +356,37 @@ export default async function HomePage() {
                       <span className="truncate">{entry.teamName}</span>
                     </div>
                     <span
-                      className={`text-right tabular-nums ${
-                        isActiveInEurope ? "text-emerald-300" : "text-rose-300"
+                      className={`flex items-center justify-end gap-1 text-right tabular-nums ${
+                        europeStatus.isActiveInEurope ? "text-emerald-300" : "text-rose-300"
                       }`}
                     >
-                      {formatCoefficient(entry.coefficient ?? 0)}
+                      <span>{formatCoefficient(entry.coefficient ?? 0)}</span>
+                      {tooltipFixtures.length > 0 ? (
+                        <span className="group relative inline-flex">
+                          <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[10px] leading-none text-slate-200">
+                            i
+                          </span>
+                          <span className="pointer-events-none absolute right-0 top-5 z-20 hidden min-w-[200px] flex-col gap-1 rounded-md border border-white/10 bg-slate-950/95 p-2 text-left text-[10px] text-slate-100 shadow-xl group-hover:flex">
+                            {tooltipFixtures.slice(0, 2).map((fixture, idx) => (
+                              <span key={`${rowKey}-mobile-tooltip-${fixture.fixtureId ?? idx}`} className="flex items-center gap-2">
+                                {fixture.opponentLogo ? (
+                                  <Image
+                                    src={fixture.opponentLogo}
+                                    alt={fixture.opponentName ?? "Opponent"}
+                                    width={18}
+                                    height={18}
+                                    className="h-[18px] w-[18px] rounded-full"
+                                  />
+                                ) : null}
+                                <span className="leading-tight">
+                                  <span className="block font-medium">{fixture.opponentName ?? fixture.fixtureLabel}</span>
+                                  <span className="block text-slate-400">{formatViennaTime(fixture.fixtureDate)}</span>
+                                </span>
+                              </span>
+                            ))}
+                          </span>
+                        </span>
+                      ) : null}
                     </span>
                     <span className="text-right text-slate-300 tabular-nums">#{entry.rank}</span>
                     <span className="text-right text-slate-300 tabular-nums">
@@ -371,7 +420,23 @@ export default async function HomePage() {
                   const leagueFlag = entry.leagueFlag || leagueSummary?.leagueFlag;
                   const rowKey = `${entry.leagueId}-${entry.teamId}`;
                   const isBestDomesticLeader = rowKey === bestDomesticLeaderKey;
-                  const isActiveInEurope = resolveIsActiveInEurope(entry);
+                  const europeStatus = resolveEuropeStatus(entry);
+                  const tooltipFixtures =
+                    Array.isArray(europeStatus.nextFixtures) && europeStatus.nextFixtures.length > 0
+                      ? europeStatus.nextFixtures
+                      : europeStatus.nextFixtureDate
+                        ? [
+                            {
+                              fixtureId: null,
+                              leagueId: 0,
+                              leagueName: "",
+                              fixtureDate: europeStatus.nextFixtureDate,
+                              fixtureLabel: europeStatus.nextFixtureLabel ?? "",
+                              opponentName: europeStatus.nextOpponentName ?? null,
+                              opponentLogo: europeStatus.nextOpponentLogo ?? null,
+                            },
+                          ]
+                        : [];
 
                   return (
                     <tr
@@ -406,12 +471,42 @@ export default async function HomePage() {
                       </td>
                       <td
                         className={
-                          isActiveInEurope
+                          europeStatus.isActiveInEurope
                             ? "px-2 py-2 sm:px-4 sm:py-3 text-emerald-300"
                             : "px-2 py-2 sm:px-4 sm:py-3 text-rose-300"
                         }
                       >
-                        {formatCoefficient(entry.coefficient ?? 0)}
+                        <div className="flex items-center gap-1">
+                          <span>{formatCoefficient(entry.coefficient ?? 0)}</span>
+                          {tooltipFixtures.length > 0 ? (
+                            <span className="group relative inline-flex">
+                              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[10px] leading-none text-slate-200">
+                                i
+                              </span>
+                              <span className="pointer-events-none absolute left-0 top-5 z-20 hidden min-w-[220px] flex-col gap-1 rounded-md border border-white/10 bg-slate-950/95 p-2 text-left text-[10px] text-slate-100 shadow-xl group-hover:flex">
+                                {tooltipFixtures.slice(0, 2).map((fixture, idx) => (
+                                  <span key={`${rowKey}-desktop-tooltip-${fixture.fixtureId ?? idx}`} className="flex items-center gap-2">
+                                    {fixture.opponentLogo ? (
+                                      <Image
+                                        src={fixture.opponentLogo}
+                                        alt={fixture.opponentName ?? "Opponent"}
+                                        width={20}
+                                        height={20}
+                                        className="h-5 w-5 rounded-full"
+                                      />
+                                    ) : null}
+                                    <span className="leading-tight">
+                                      <span className="block font-medium">{fixture.opponentName ?? fixture.fixtureLabel}</span>
+                                      <span className="block text-slate-400">
+                                        {formatViennaTime(fixture.fixtureDate)}
+                                      </span>
+                                    </span>
+                                  </span>
+                                ))}
+                              </span>
+                            </span>
+                          ) : null}
+                        </div>
                       </td>
                       <td className="px-2 py-2 sm:px-4 sm:py-3 text-slate-300">#{entry.rank}</td>
                       <td className="px-2 py-2 sm:px-4 sm:py-3 text-slate-300">

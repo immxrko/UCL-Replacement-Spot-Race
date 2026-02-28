@@ -161,6 +161,17 @@ export interface EuropeanActiveTeamStatus {
   }>;
   nextFixtureDate: string | null;
   nextFixtureLabel: string | null;
+  nextOpponentName: string | null;
+  nextOpponentLogo: string | null;
+  nextFixtures: Array<{
+    fixtureId: number | null;
+    leagueId: number;
+    leagueName: string;
+    fixtureDate: string;
+    fixtureLabel: string;
+    opponentName: string | null;
+    opponentLogo: string | null;
+  }>;
 }
 
 export interface EuropeanActiveSnapshot {
