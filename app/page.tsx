@@ -31,12 +31,14 @@ type EuropeFooterFixture = {
   teamName: string;
   teamLogo: string;
   fixtureId: number | null;
+  leagueId: number;
   fixtureDate: string;
   fixtureLabel: string;
   opponentName: string | null;
   opponentLogo: string | null;
   leagueName: string;
   leagueLogo: string | null;
+  venue: "home" | "away" | null;
 };
 
 const getTeamNextFixtures = (team: EuropeanActiveTeamStatus) => {
@@ -58,8 +60,56 @@ const getTeamNextFixtures = (team: EuropeanActiveTeamStatus) => {
       fixtureLabel: team.nextFixtureLabel ?? "",
       opponentName: team.nextOpponentName ?? null,
       opponentLogo: team.nextOpponentLogo ?? null,
+      venue: null,
     },
   ];
+};
+
+const getVenueFromFixtureLabel = (teamName: string, fixtureLabel: string) => {
+  const parts = fixtureLabel.split(" vs ").map((value) => value.trim());
+  if (parts.length !== 2) {
+    return null;
+  }
+
+  const normalizedTeam = normalizeTeamKey(teamName);
+  if (normalizeTeamKey(parts[0]) === normalizedTeam) {
+    return "home";
+  }
+  if (normalizeTeamKey(parts[1]) === normalizedTeam) {
+    return "away";
+  }
+  return null;
+};
+
+const getOpponentFromFixtureLabel = (teamName: string, fixtureLabel: string) => {
+  const parts = fixtureLabel.split(" vs ").map((value) => value.trim());
+  if (parts.length !== 2) {
+    return null;
+  }
+
+  const normalizedTeam = normalizeTeamKey(teamName);
+  if (normalizeTeamKey(parts[0]) === normalizedTeam) {
+    return parts[1];
+  }
+  if (normalizeTeamKey(parts[1]) === normalizedTeam) {
+    return parts[0];
+  }
+  return null;
+};
+
+type EuropeFooterTie = {
+  teamId: number;
+  teamName: string;
+  teamLogo: string;
+  opponentName: string;
+  opponentLogo: string | null;
+  leagueName: string;
+  leagueLogo: string | null;
+  legs: Array<{
+    fixtureId: number | null;
+    fixtureDate: string;
+    venue: "home" | "away" | null;
+  }>;
 };
 const FORM_RESULT_CLASS: Record<string, string> = {
   W: "text-emerald-300",
@@ -258,6 +308,9 @@ export default async function HomePage() {
   const bestDomesticLeaderKey = bestDomesticLeader
     ? `${bestDomesticLeader.leagueId}-${bestDomesticLeader.teamId}`
     : null;
+  const raceOrderByTeamId = new Map(
+    raceByCoefficient.map((entry, index) => [Number(entry.teamId), index]),
+  );
 
   const europeanActiveByTeamId = new Map(
     (europeActiveSnapshot?.teams ?? [])
@@ -287,15 +340,63 @@ export default async function HomePage() {
         teamName: team.teamName,
         teamLogo: team.teamLogo,
         fixtureId: fixture.fixtureId ?? null,
+        leagueId: fixture.leagueId,
         fixtureDate: fixture.fixtureDate,
         fixtureLabel: fixture.fixtureLabel,
-        opponentName: fixture.opponentName ?? null,
+        opponentName: fixture.opponentName ?? getOpponentFromFixtureLabel(team.teamName, fixture.fixtureLabel) ?? null,
         opponentLogo: fixture.opponentLogo ?? null,
         leagueName: fixture.leagueName,
-        leagueLogo: fixture.leagueLogo ?? null,
+        leagueLogo: fixture.leagueLogo ?? team.competitions.find((item) => item.leagueId === fixture.leagueId)?.leagueLogo ?? null,
+        venue: fixture.venue ?? getVenueFromFixtureLabel(team.teamName, fixture.fixtureLabel),
       })),
     )
     .sort((a, b) => new Date(a.fixtureDate).getTime() - new Date(b.fixtureDate).getTime());
+
+  const activeEuropeTies: EuropeFooterTie[] = Object.values(
+    activeEuropeFixtures.reduce<Record<string, EuropeFooterTie>>((acc, fixture) => {
+      const opponentName = fixture.opponentName ?? "TBD";
+      const key = `${fixture.teamId}-${fixture.leagueId}-${normalizeTeamKey(opponentName)}`;
+
+      if (!acc[key]) {
+        acc[key] = {
+          teamId: fixture.teamId,
+          teamName: fixture.teamName,
+          teamLogo: fixture.teamLogo,
+          opponentName,
+          opponentLogo: fixture.opponentLogo,
+          leagueName: fixture.leagueName,
+          leagueLogo: fixture.leagueLogo,
+          legs: [],
+        };
+      }
+
+      if (!acc[key].opponentLogo && fixture.opponentLogo) {
+        acc[key].opponentLogo = fixture.opponentLogo;
+      }
+
+      acc[key].legs.push({
+        fixtureId: fixture.fixtureId,
+        fixtureDate: fixture.fixtureDate,
+        venue: fixture.venue,
+      });
+
+      return acc;
+    }, {}),
+  )
+    .map((tie) => ({
+      ...tie,
+      legs: tie.legs
+        .sort((a, b) => new Date(a.fixtureDate).getTime() - new Date(b.fixtureDate).getTime())
+        .slice(0, 2),
+    }))
+    .sort((a, b) => {
+      const raceOrderA = raceOrderByTeamId.get(Number(a.teamId)) ?? Number.MAX_SAFE_INTEGER;
+      const raceOrderB = raceOrderByTeamId.get(Number(b.teamId)) ?? Number.MAX_SAFE_INTEGER;
+      if (raceOrderA !== raceOrderB) {
+        return raceOrderA - raceOrderB;
+      }
+      return new Date(a.legs[0]?.fixtureDate ?? 0).getTime() - new Date(b.legs[0]?.fixtureDate ?? 0).getTime();
+    });
 
   const fixtureTeams = raceByCoefficient.map((entry) => ({
     teamName: entry.teamName,
@@ -501,47 +602,56 @@ export default async function HomePage() {
 
           <div className="border-t border-white/10 bg-white/[0.03] px-4 py-3">
             <p className="text-[11px] uppercase tracking-wide text-slate-400">Active European Matches</p>
-            {activeEuropeFixtures.length === 0 ? (
+            {activeEuropeTies.length === 0 ? (
               <p className="mt-2 text-sm text-slate-400">No active teams with upcoming European fixtures in the current snapshot.</p>
             ) : (
-              <div className="mt-3 grid gap-2 md:grid-cols-2">
-                {activeEuropeFixtures.map((fixture, index) => (
+              <div className="mt-3 grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                {activeEuropeTies.map((fixture, index) => (
                   <div
-                    key={`${fixture.teamId}-${fixture.fixtureId ?? fixture.fixtureDate}-${index}`}
-                    className="flex items-center gap-2 rounded-lg border border-white/10 bg-slate-900/60 px-3 py-2"
+                    key={`${fixture.teamId}-${normalizeTeamKey(fixture.opponentName)}-${index}`}
+                    className="rounded-lg border border-white/10 bg-slate-900/60 px-2.5 py-2"
                   >
-                    <Image
-                      src={fixture.teamLogo}
-                      alt={fixture.teamName}
-                      width={18}
-                      height={18}
-                      className="h-[18px] w-[18px] rounded-full"
-                    />
-                    <span className="truncate text-xs font-medium text-white">{fixture.teamName}</span>
-                    <span className="text-slate-500">vs</span>
-                    {fixture.opponentLogo ? (
+                    <div className="flex items-center gap-2">
                       <Image
-                        src={fixture.opponentLogo}
-                        alt={fixture.opponentName ?? "Opponent"}
+                        src={fixture.teamLogo}
+                        alt={fixture.teamName}
                         width={18}
                         height={18}
                         className="h-[18px] w-[18px] rounded-full"
                       />
-                    ) : null}
-                    <span className="truncate text-xs text-slate-200">{fixture.opponentName ?? "TBD"}</span>
-                    <span className="ml-auto shrink-0 text-[11px] text-slate-400">{formatViennaTime(fixture.fixtureDate)}</span>
-                    <span className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-slate-300">
+                      <span className="truncate text-xs font-medium text-white">{fixture.teamName}</span>
+                      <span className="text-slate-500">vs</span>
+                      {fixture.opponentLogo ? (
+                        <Image
+                          src={fixture.opponentLogo}
+                          alt={fixture.opponentName}
+                          width={18}
+                          height={18}
+                          className="h-[18px] w-[18px] rounded-full"
+                        />
+                      ) : null}
+                      <span className="truncate text-xs text-slate-200">{fixture.opponentName}</span>
                       {fixture.leagueLogo ? (
                         <Image
                           src={fixture.leagueLogo}
                           alt={fixture.leagueName}
-                          width={12}
-                          height={12}
-                          className="h-3 w-3 rounded-full"
+                          width={18}
+                          height={18}
+                          className="ml-auto h-[18px] w-[18px] rounded-full"
                         />
                       ) : null}
-                      <span className="truncate max-w-[120px]">{fixture.leagueName}</span>
-                    </span>
+                    </div>
+                    <div className="mt-1.5 space-y-1">
+                      {fixture.legs.map((leg, legIndex) => (
+                        <div
+                          key={`${fixture.teamId}-${leg.fixtureId ?? leg.fixtureDate}-${legIndex}`}
+                          className="flex items-center justify-between rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-slate-300"
+                        >
+                          <span>{leg.venue === "home" ? "Home" : leg.venue === "away" ? "Away" : "TBD"}</span>
+                          <span className="text-slate-400">{formatViennaTime(leg.fixtureDate)}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

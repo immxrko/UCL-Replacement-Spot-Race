@@ -262,6 +262,7 @@ const run = async () => {
                 fixtureLabel: `${home?.name ?? "TBD"} vs ${away?.name ?? "TBD"}`,
                 opponentName: opponent?.name ?? null,
                 opponentLogo: opponent?.logo ?? null,
+                venue: isTrackedTeamHome ? "home" : "away",
               });
             }
           }

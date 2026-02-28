@@ -174,6 +174,7 @@ export interface EuropeanActiveTeamStatus {
     fixtureLabel: string;
     opponentName: string | null;
     opponentLogo: string | null;
+    venue: "home" | "away" | null;
   }>;
 }
 
