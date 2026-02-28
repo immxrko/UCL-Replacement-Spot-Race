@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-28T00:07:16.984Z",
+  "generatedAt": "2026-02-28T00:17:49.342Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/fixtures",
     "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
@@ -17,16 +17,19 @@
     {
       "leagueId": 2,
       "leagueName": "UEFA Champions League",
+      "leagueLogo": "https://media.api-sports.io/football/leagues/2.png",
       "fixtures": 16
     },
     {
       "leagueId": 3,
       "leagueName": "UEFA Europa League",
+      "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
       "fixtures": 16
     },
     {
       "leagueId": 848,
       "leagueName": "UEFA Europa Conference League",
+      "leagueLogo": "https://media.api-sports.io/football/leagues/848.png",
       "fixtures": 16
     }
   ],
@@ -79,7 +82,8 @@
       "competitions": [
         {
           "leagueId": 3,
-          "leagueName": "UEFA Europa League"
+          "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png"
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
@@ -91,6 +95,7 @@
           "fixtureId": 1528339,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
           "fixtureDate": "2026-03-12T20:00:00.000Z",
           "fixtureLabel": "Nottingham Forest vs FC Midtjylland",
           "opponentName": "Nottingham Forest",
@@ -100,6 +105,7 @@
           "fixtureId": 1528347,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
           "fixtureDate": "2026-03-19T20:00:00.000Z",
           "fixtureLabel": "FC Midtjylland vs Nottingham Forest",
           "opponentName": "Nottingham Forest",
@@ -115,7 +121,8 @@
       "competitions": [
         {
           "leagueId": 3,
-          "leagueName": "UEFA Europa League"
+          "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png"
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
@@ -127,6 +134,7 @@
           "fixtureId": 1528340,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
           "fixtureDate": "2026-03-12T20:00:00.000Z",
           "fixtureLabel": "Ferencvarosi TC vs SC Braga",
           "opponentName": "SC Braga",
@@ -136,6 +144,7 @@
           "fixtureId": 1528348,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
           "fixtureDate": "2026-03-19T20:00:00.000Z",
           "fixtureLabel": "SC Braga vs Ferencvarosi TC",
           "opponentName": "SC Braga",
@@ -211,7 +220,8 @@
       "competitions": [
         {
           "leagueId": 848,
-          "leagueName": "UEFA Europa Conference League"
+          "leagueName": "UEFA Europa Conference League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/848.png"
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
@@ -223,6 +233,7 @@
           "fixtureId": 1528355,
           "leagueId": 848,
           "leagueName": "UEFA Europa Conference League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/848.png",
           "fixtureDate": "2026-03-12T20:00:00.000Z",
           "fixtureLabel": "Lech Poznan vs Shakhtar Donetsk",
           "opponentName": "Lech Poznan",
@@ -232,6 +243,7 @@
           "fixtureId": 1528363,
           "leagueId": 848,
           "leagueName": "UEFA Europa Conference League",
+          "leagueLogo": "https://media.api-sports.io/football/leagues/848.png",
           "fixtureDate": "2026-03-19T20:00:00.000Z",
           "fixtureLabel": "Shakhtar Donetsk vs Lech Poznan",
           "opponentName": "Lech Poznan",
