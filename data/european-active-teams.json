@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-02-27T23:57:45.525Z",
+  "generatedAt": "2026-02-28T00:07:16.984Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/fixtures",
     "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
     "season": 2025,
     "timezone": "UTC",
-    "from": "2026-02-27",
+    "from": "2026-02-28",
     "to": "2026-08-27",
     "competitionIds": [
       2,
@@ -42,7 +42,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 620,
@@ -51,7 +54,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 400,
@@ -60,7 +66,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 397,
@@ -74,7 +83,29 @@
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
-      "nextFixtureLabel": "Nottingham Forest vs FC Midtjylland"
+      "nextFixtureLabel": "Nottingham Forest vs FC Midtjylland",
+      "nextOpponentName": "Nottingham Forest",
+      "nextOpponentLogo": "https://media.api-sports.io/football/teams/65.png",
+      "nextFixtures": [
+        {
+          "fixtureId": 1528339,
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League",
+          "fixtureDate": "2026-03-12T20:00:00.000Z",
+          "fixtureLabel": "Nottingham Forest vs FC Midtjylland",
+          "opponentName": "Nottingham Forest",
+          "opponentLogo": "https://media.api-sports.io/football/teams/65.png"
+        },
+        {
+          "fixtureId": 1528347,
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League",
+          "fixtureDate": "2026-03-19T20:00:00.000Z",
+          "fixtureLabel": "FC Midtjylland vs Nottingham Forest",
+          "opponentName": "Nottingham Forest",
+          "opponentLogo": "https://media.api-sports.io/football/teams/65.png"
+        }
+      ]
     },
     {
       "teamId": 651,
@@ -88,7 +119,29 @@
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
-      "nextFixtureLabel": "Ferencvarosi TC vs SC Braga"
+      "nextFixtureLabel": "Ferencvarosi TC vs SC Braga",
+      "nextOpponentName": "SC Braga",
+      "nextOpponentLogo": "https://media.api-sports.io/football/teams/217.png",
+      "nextFixtures": [
+        {
+          "fixtureId": 1528340,
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League",
+          "fixtureDate": "2026-03-12T20:00:00.000Z",
+          "fixtureLabel": "Ferencvarosi TC vs SC Braga",
+          "opponentName": "SC Braga",
+          "opponentLogo": "https://media.api-sports.io/football/teams/217.png"
+        },
+        {
+          "fixtureId": 1528348,
+          "leagueId": 3,
+          "leagueName": "UEFA Europa League",
+          "fixtureDate": "2026-03-19T20:00:00.000Z",
+          "fixtureLabel": "SC Braga vs Ferencvarosi TC",
+          "opponentName": "SC Braga",
+          "opponentLogo": "https://media.api-sports.io/football/teams/217.png"
+        }
+      ]
     },
     {
       "teamId": 598,
@@ -97,7 +150,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 553,
@@ -106,7 +162,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 619,
@@ -115,7 +174,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 257,
@@ -124,7 +186,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 571,
@@ -133,7 +198,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     },
     {
       "teamId": 550,
@@ -147,7 +215,29 @@
         }
       ],
       "nextFixtureDate": "2026-03-12T20:00:00.000Z",
-      "nextFixtureLabel": "Lech Poznan vs Shakhtar Donetsk"
+      "nextFixtureLabel": "Lech Poznan vs Shakhtar Donetsk",
+      "nextOpponentName": "Lech Poznan",
+      "nextOpponentLogo": "https://media.api-sports.io/football/teams/347.png",
+      "nextFixtures": [
+        {
+          "fixtureId": 1528355,
+          "leagueId": 848,
+          "leagueName": "UEFA Europa Conference League",
+          "fixtureDate": "2026-03-12T20:00:00.000Z",
+          "fixtureLabel": "Lech Poznan vs Shakhtar Donetsk",
+          "opponentName": "Lech Poznan",
+          "opponentLogo": "https://media.api-sports.io/football/teams/347.png"
+        },
+        {
+          "fixtureId": 1528363,
+          "leagueId": 848,
+          "leagueName": "UEFA Europa Conference League",
+          "fixtureDate": "2026-03-19T20:00:00.000Z",
+          "fixtureLabel": "Shakhtar Donetsk vs Lech Poznan",
+          "opponentName": "Lech Poznan",
+          "opponentLogo": "https://media.api-sports.io/football/teams/347.png"
+        }
+      ]
     },
     {
       "teamId": 656,
@@ -156,7 +246,10 @@
       "isActiveInEurope": false,
       "competitions": [],
       "nextFixtureDate": null,
-      "nextFixtureLabel": null
+      "nextFixtureLabel": null,
+      "nextOpponentName": null,
+      "nextOpponentLogo": null,
+      "nextFixtures": []
     }
   ]
 }
