@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-02-28T00:17:49.342Z",
+  "generatedAt": "2026-03-02T03:10:13.121Z",
   "source": {
     "endpoint": "https://v3.football.api-sports.io/fixtures",
     "raceSnapshotUrl": "https://raw.githubusercontent.com/immxrko/UCL-Replacement-Spot-Race/refs/heads/data/data/race.json",
     "season": 2025,
     "timezone": "UTC",
-    "from": "2026-02-28",
+    "from": "2026-03-02",
     "to": "2026-08-27",
     "competitionIds": [
       2,
@@ -99,17 +99,19 @@
           "fixtureDate": "2026-03-12T20:00:00.000Z",
           "fixtureLabel": "Nottingham Forest vs FC Midtjylland",
           "opponentName": "Nottingham Forest",
-          "opponentLogo": "https://media.api-sports.io/football/teams/65.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/65.png",
+          "venue": "away"
         },
         {
           "fixtureId": 1528347,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
           "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
-          "fixtureDate": "2026-03-19T20:00:00.000Z",
+          "fixtureDate": "2026-03-19T17:45:00.000Z",
           "fixtureLabel": "FC Midtjylland vs Nottingham Forest",
           "opponentName": "Nottingham Forest",
-          "opponentLogo": "https://media.api-sports.io/football/teams/65.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/65.png",
+          "venue": "home"
         }
       ]
     },
@@ -138,17 +140,19 @@
           "fixtureDate": "2026-03-12T20:00:00.000Z",
           "fixtureLabel": "Ferencvarosi TC vs SC Braga",
           "opponentName": "SC Braga",
-          "opponentLogo": "https://media.api-sports.io/football/teams/217.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/217.png",
+          "venue": "home"
         },
         {
           "fixtureId": 1528348,
           "leagueId": 3,
           "leagueName": "UEFA Europa League",
           "leagueLogo": "https://media.api-sports.io/football/leagues/3.png",
-          "fixtureDate": "2026-03-19T20:00:00.000Z",
+          "fixtureDate": "2026-03-18T15:30:00.000Z",
           "fixtureLabel": "SC Braga vs Ferencvarosi TC",
           "opponentName": "SC Braga",
-          "opponentLogo": "https://media.api-sports.io/football/teams/217.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/217.png",
+          "venue": "away"
         }
       ]
     },
@@ -224,7 +228,7 @@
           "leagueLogo": "https://media.api-sports.io/football/leagues/848.png"
         }
       ],
-      "nextFixtureDate": "2026-03-12T20:00:00.000Z",
+      "nextFixtureDate": "2026-03-12T17:45:00.000Z",
       "nextFixtureLabel": "Lech Poznan vs Shakhtar Donetsk",
       "nextOpponentName": "Lech Poznan",
       "nextOpponentLogo": "https://media.api-sports.io/football/teams/347.png",
@@ -234,10 +238,11 @@
           "leagueId": 848,
           "leagueName": "UEFA Europa Conference League",
           "leagueLogo": "https://media.api-sports.io/football/leagues/848.png",
-          "fixtureDate": "2026-03-12T20:00:00.000Z",
+          "fixtureDate": "2026-03-12T17:45:00.000Z",
           "fixtureLabel": "Lech Poznan vs Shakhtar Donetsk",
           "opponentName": "Lech Poznan",
-          "opponentLogo": "https://media.api-sports.io/football/teams/347.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/347.png",
+          "venue": "away"
         },
         {
           "fixtureId": 1528363,
@@ -247,7 +252,8 @@
           "fixtureDate": "2026-03-19T20:00:00.000Z",
           "fixtureLabel": "Shakhtar Donetsk vs Lech Poznan",
           "opponentName": "Lech Poznan",
-          "opponentLogo": "https://media.api-sports.io/football/teams/347.png"
+          "opponentLogo": "https://media.api-sports.io/football/teams/347.png",
+          "venue": "home"
         }
       ]
     },
