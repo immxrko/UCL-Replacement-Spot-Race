@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T00:01:03.058Z",
+  "generatedAt": "2026-03-10T00:00:45.902Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -11,7 +11,7 @@
     "language": "DE",
     "pageSize": 50,
     "requestedLimit": 100,
-    "totalAvailable": 416,
+    "totalAvailable": 415,
     "fetched": 100,
     "lastUpdateDate": "2026-02-26T22:39:54+0000"
   },
