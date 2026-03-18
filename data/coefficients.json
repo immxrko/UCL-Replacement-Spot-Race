@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-17T00:56:35.090Z",
+  "generatedAt": "2026-03-18T00:59:52.811Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -13,7 +13,7 @@
     "requestedLimit": 100,
     "totalAvailable": 415,
     "fetched": 100,
-    "lastUpdateDate": "2026-03-12T21:55:15+0000"
+    "lastUpdateDate": "2026-03-17T21:54:59+0000"
   },
   "clubs": [
     {
@@ -32,8 +32,8 @@
       "competitionId": "1",
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
-      "coefficient": 141,
-      "nationalAssociationCoefficient": 18.671,
+      "coefficient": 143,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -99,7 +99,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 126.5,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -121,7 +121,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 125.5,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -142,8 +142,8 @@
       "competitionId": "1",
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
-      "coefficient": 117.5,
-      "nationalAssociationCoefficient": 16.171,
+      "coefficient": 119.5,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -165,7 +165,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 107.75,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -186,8 +186,8 @@
       "competitionId": "1",
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
-      "coefficient": 105.5,
-      "nationalAssociationCoefficient": 22.737,
+      "coefficient": 107.5,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -253,7 +253,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 99.25,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -275,7 +275,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 98.75,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -319,7 +319,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 90,
-      "nationalAssociationCoefficient": 13.933,
+      "nationalAssociationCoefficient": 14.013,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -370,6 +370,28 @@
     },
     {
       "rank": 17,
+      "teamId": "50149",
+      "teamName": "Sporting CP",
+      "teamOfficialName": "Sporting Clube de Portugal",
+      "teamCode": "SPO",
+      "countryCode": "POR",
+      "countryName": "Portugal",
+      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/50149.png",
+      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/50149.png",
+      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/50149.png",
+      "associationId": 200110,
+      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/POR.svg",
+      "competitionId": "1",
+      "competitionName": "UEFA Champions League",
+      "competitionType": "CUP",
+      "coefficient": 81.5,
+      "nationalAssociationCoefficient": 14.013,
+      "trend": "UP",
+      "baseSeasonYear": 2022,
+      "targetSeasonYear": 2026
+    },
+    {
+      "rank": 18,
       "teamId": "1652",
       "teamName": "Tottenham",
       "teamOfficialName": "Tottenham Hotspur",
@@ -385,30 +407,8 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 80,
-      "nationalAssociationCoefficient": 22.737,
-      "trend": "STABLE",
-      "baseSeasonYear": 2022,
-      "targetSeasonYear": 2026
-    },
-    {
-      "rank": 18,
-      "teamId": "50149",
-      "teamName": "Sporting CP",
-      "teamOfficialName": "Sporting Clube de Portugal",
-      "teamCode": "SPO",
-      "countryCode": "POR",
-      "countryName": "Portugal",
-      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/50149.png",
-      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/50149.png",
-      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/50149.png",
-      "associationId": 200110,
-      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/POR.svg",
-      "competitionId": "1",
-      "competitionName": "UEFA Champions League",
-      "competitionType": "CUP",
-      "coefficient": 79.5,
-      "nationalAssociationCoefficient": 13.933,
-      "trend": "STABLE",
+      "nationalAssociationCoefficient": 22.781,
+      "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
     },
@@ -429,7 +429,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 76.75,
-      "nationalAssociationCoefficient": 13.933,
+      "nationalAssociationCoefficient": 14.013,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -451,7 +451,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 76.5,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -583,7 +583,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 70.5,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -605,7 +605,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 70,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -627,7 +627,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 69,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -649,7 +649,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 68.75,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -693,7 +693,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 65.75,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -847,7 +847,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 59,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -935,7 +935,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 57,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -957,7 +957,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 56,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -979,7 +979,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 54.75,
-      "nationalAssociationCoefficient": 13.933,
+      "nationalAssociationCoefficient": 14.013,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1023,7 +1023,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 54,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1375,7 +1375,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 39,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1397,7 +1397,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 38.75,
-      "nationalAssociationCoefficient": 18.671,
+      "nationalAssociationCoefficient": 18.721,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1463,7 +1463,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 35,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1595,7 +1595,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 29.75,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1881,7 +1881,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 14,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1903,7 +1903,7 @@
       "competitionName": "UEFA Conference League",
       "competitionType": "CUP",
       "coefficient": 10.375,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1925,7 +1925,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 16,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1947,7 +1947,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 13,
-      "nationalAssociationCoefficient": 22.737,
+      "nationalAssociationCoefficient": 22.781,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -2189,7 +2189,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 20,
-      "nationalAssociationCoefficient": 16.171,
+      "nationalAssociationCoefficient": 16.228,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
