@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T01:11:18.157Z",
+  "generatedAt": "2026-04-15T01:09:57.228Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -13,7 +13,7 @@
     "requestedLimit": 100,
     "totalAvailable": 415,
     "fetched": 100,
-    "lastUpdateDate": "2026-04-09T20:59:09+0000"
+    "lastUpdateDate": "2026-04-14T21:25:01+0000"
   },
   "clubs": [
     {
@@ -33,7 +33,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 144.5,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -106,6 +106,28 @@
     },
     {
       "rank": 5,
+      "teamId": "52747",
+      "teamName": "Paris",
+      "teamOfficialName": "Paris Saint-Germain",
+      "teamCode": "PSG",
+      "countryCode": "FRA",
+      "countryName": "Frankreich",
+      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/52747.png",
+      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/52747.png",
+      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/52747.png",
+      "associationId": 200043,
+      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/FRA.svg",
+      "competitionId": "1",
+      "competitionName": "UEFA Champions League",
+      "competitionType": "CUP",
+      "coefficient": 126.5,
+      "nationalAssociationCoefficient": 16.471,
+      "trend": "UP",
+      "baseSeasonYear": 2022,
+      "targetSeasonYear": 2026
+    },
+    {
+      "rank": 6,
       "teamId": "52919",
       "teamName": "Man City",
       "teamOfficialName": "Manchester City",
@@ -122,29 +144,7 @@
       "competitionType": "CUP",
       "coefficient": 125.5,
       "nationalAssociationCoefficient": 23.281,
-      "trend": "STABLE",
-      "baseSeasonYear": 2022,
-      "targetSeasonYear": 2026
-    },
-    {
-      "rank": 6,
-      "teamId": "52747",
-      "teamName": "Paris",
-      "teamOfficialName": "Paris Saint-Germain",
-      "teamCode": "PSG",
-      "countryCode": "FRA",
-      "countryName": "Frankreich",
-      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/52747.png",
-      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/52747.png",
-      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/52747.png",
-      "associationId": 200043,
-      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/FRA.svg",
-      "competitionId": "1",
-      "competitionName": "UEFA Champions League",
-      "competitionType": "CUP",
-      "coefficient": 123,
-      "nationalAssociationCoefficient": 16.371,
-      "trend": "STABLE",
+      "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
     },
@@ -164,8 +164,8 @@
       "competitionId": "1",
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
-      "coefficient": 111.25,
-      "nationalAssociationCoefficient": 19.171,
+      "coefficient": 113.25,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -230,8 +230,8 @@
       "competitionId": "1",
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
-      "coefficient": 102.25,
-      "nationalAssociationCoefficient": 19.171,
+      "coefficient": 103.75,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -517,7 +517,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 74.5,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -649,7 +649,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 68.75,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -693,7 +693,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 65.75,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -847,7 +847,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 59,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -957,7 +957,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 57,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -979,7 +979,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 56,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1045,7 +1045,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 54,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1375,7 +1375,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 39,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1397,7 +1397,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 38.75,
-      "nationalAssociationCoefficient": 19.171,
+      "nationalAssociationCoefficient": 19.259,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1463,7 +1463,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 35,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -2189,7 +2189,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 20,
-      "nationalAssociationCoefficient": 16.371,
+      "nationalAssociationCoefficient": 16.471,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
