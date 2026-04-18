@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-17T01:11:26.846Z",
+  "generatedAt": "2026-04-18T01:04:56.622Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -1890,7 +1890,7 @@
       "rank": 86,
       "teamId": "52916",
       "teamName": "Crystal Palace",
-      "teamOfficialName": "Crystal Palace FC",
+      "teamOfficialName": "Crystal Palace F.C.",
       "teamCode": "CRY",
       "countryCode": "ENG",
       "countryName": "England",
