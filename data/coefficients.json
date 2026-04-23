@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T01:08:44.599Z",
+  "generatedAt": "2026-04-23T01:14:59.871Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -438,7 +438,7 @@
       "rank": 20,
       "teamId": "52683",
       "teamName": "Aston Villa",
-      "teamOfficialName": "Aston Villa FC",
+      "teamOfficialName": "Aston Villa",
       "teamCode": "AVL",
       "countryCode": "ENG",
       "countryName": "England",
