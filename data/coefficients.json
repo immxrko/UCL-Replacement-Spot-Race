@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T01:51:08.419Z",
+  "generatedAt": "2026-05-21T01:50:25.117Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -13,7 +13,7 @@
     "requestedLimit": 100,
     "totalAvailable": 415,
     "fetched": 100,
-    "lastUpdateDate": "2026-05-07T21:42:31+0000"
+    "lastUpdateDate": "2026-05-20T20:51:25+0000"
   },
   "clubs": [
     {
@@ -99,7 +99,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 130,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -143,7 +143,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 125.5,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -165,7 +165,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 118,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -275,7 +275,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 99.25,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -370,6 +370,28 @@
     },
     {
       "rank": 17,
+      "teamId": "52683",
+      "teamName": "Aston Villa",
+      "teamOfficialName": "Aston Villa",
+      "teamCode": "AVL",
+      "countryCode": "ENG",
+      "countryName": "England",
+      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/52683.png",
+      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/52683.png",
+      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/52683.png",
+      "associationId": 200039,
+      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/ENG.svg",
+      "competitionId": "14",
+      "competitionName": "UEFA Europa League",
+      "competitionType": "CUP",
+      "coefficient": 83,
+      "nationalAssociationCoefficient": 23.837,
+      "trend": "UP",
+      "baseSeasonYear": 2022,
+      "targetSeasonYear": 2026
+    },
+    {
+      "rank": 18,
       "teamId": "50072",
       "teamName": "Frankfurt",
       "teamOfficialName": "Eintracht Frankfurt",
@@ -391,7 +413,7 @@
       "targetSeasonYear": 2026
     },
     {
-      "rank": 18,
+      "rank": 19,
       "teamId": "1652",
       "teamName": "Tottenham",
       "teamOfficialName": "Tottenham Hotspur",
@@ -407,30 +429,8 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 82,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
-      "baseSeasonYear": 2022,
-      "targetSeasonYear": 2026
-    },
-    {
-      "rank": 19,
-      "teamId": "52683",
-      "teamName": "Aston Villa",
-      "teamOfficialName": "Aston Villa",
-      "teamCode": "AVL",
-      "countryCode": "ENG",
-      "countryName": "England",
-      "teamLogo": "https://img.uefa.com/imgml/TP/teams/logos/70x70/52683.png",
-      "teamLogoMedium": "https://img.uefa.com/imgml/TP/teams/logos/240x240/52683.png",
-      "teamLogoLarge": "https://img.uefa.com/imgml/TP/teams/logos/700x700/52683.png",
-      "associationId": 200039,
-      "associationLogo": "https://img.uefa.com/imgml/uefacom/elements/logos/ma/ENG.svg",
-      "competitionId": "14",
-      "competitionName": "UEFA Europa League",
-      "competitionType": "CUP",
-      "coefficient": 81,
-      "nationalAssociationCoefficient": 23.792,
-      "trend": "UP",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
     },
@@ -473,7 +473,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 76.5,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -627,7 +627,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 69,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1617,7 +1617,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 29.75,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1881,7 +1881,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 23,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1903,7 +1903,7 @@
       "competitionName": "UEFA Conference League",
       "competitionType": "CUP",
       "coefficient": 19.875,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1925,7 +1925,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 16,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1947,7 +1947,7 @@
       "competitionName": null,
       "competitionType": null,
       "coefficient": 13,
-      "nationalAssociationCoefficient": 23.792,
+      "nationalAssociationCoefficient": 23.837,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
