@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T01:22:20.592Z",
+  "generatedAt": "2026-07-04T01:22:14.891Z",
   "source": {
     "rankingsPageUrl": "https://de.uefa.com/nationalassociations/uefarankings/club/?year=2026",
     "endpoint": "https://comp.uefa.com/v2/coefficients",
@@ -13,7 +13,7 @@
     "requestedLimit": 100,
     "totalAvailable": 415,
     "fetched": 100,
-    "lastUpdateDate": "2026-05-30T19:00:25+0000"
+    "lastUpdateDate": "2026-07-03T14:22:35+0000"
   },
   "clubs": [
     {
@@ -1133,7 +1133,7 @@
       "competitionName": "UEFA Europa League",
       "competitionType": "CUP",
       "coefficient": 50.5,
-      "nationalAssociationCoefficient": 9.705,
+      "nationalAssociationCoefficient": 7.5,
       "trend": "DOWN",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1309,7 +1309,7 @@
       "competitionName": "UEFA Champions League",
       "competitionType": "CUP",
       "coefficient": 44,
-      "nationalAssociationCoefficient": 9.705,
+      "nationalAssociationCoefficient": 7.5,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
@@ -1419,7 +1419,7 @@
       "competitionName": "UEFA Conference League",
       "competitionType": "CUP",
       "coefficient": 38.25,
-      "nationalAssociationCoefficient": 9.705,
+      "nationalAssociationCoefficient": 7.5,
       "trend": "STABLE",
       "baseSeasonYear": 2022,
       "targetSeasonYear": 2026
